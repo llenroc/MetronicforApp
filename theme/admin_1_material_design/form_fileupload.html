@@ -28,7 +28,6 @@ License: You must have a valid license purchased only from themeforest(the above
             name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        
         <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -1801,11 +1800,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
                             <div class="slides"> </div>
                             <h3 class="title"></h3>
-                            <a class="prev"> < </a>
-                            <a class="next"> > </a>
-                            <a class="close white"> </a>
-                            <a class="play-pause"> </a>
-                            <ol class="indicator"> </ol>
+                            <a class="prev">
+                                < </a>
+                                    <a class="next"> > </a>
+                                    <a class="close white"> </a>
+                                    <a class="play-pause"> </a>
+                                    <ol class="indicator"> </ol>
                         </div>
                         <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
                         <script id="template-upload" type="text/x-tmpl"> {% for (var i=0, file; file=o.files[i]; i++) { %}
@@ -1839,8 +1839,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <td>
                                     <span class="preview"> {% if (file.thumbnailUrl) { %}
                                         <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery>
-                                            <img src="{%=file.thumbnailUrl%}">
-                                        </a> {% } %} </span>
+                                            <img src="{%=file.thumbnailUrl%}"> </a> {% } %} </span>
                                 </td>
                                 <td>
                                     <p class="name"> {% if (file.url) { %}
@@ -2441,7 +2440,6 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
             <!-- END FOOTER -->
         </div>
-        
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>
 <script src="../assets/global/plugins/excanvas.min.js"></script> 
