@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>类型1:左半边图</title>
+	</head>
+
+	<body>
+		<div id="chart-container">FusionCharts will render here</div>
+		<script src="js/fusioncharts.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/themes/fusioncharts.theme.fint.js"></script>
+		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.carbon.js"></script> -->
+		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.ocean.js"></script> -->
+		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.zune.js"></script> -->
+		<script>
+			FusionCharts.ready(function() {
+				var cSatScoreChart = new FusionCharts({
+					type: 'angulargauge',
+					renderAt: 'chart-container',
+					width: '200',
+					height: '200',
+					dataFormat: 'json',
+					dataSource: {
+						"chart": {
+							"captionOnTop": "1",
+							"captionAlignment": "left",
+							"caption": "图例",
+							"captionFontSize": "15",
+							"captionFontColor": "#a2a200",
+							"subcaption": "速度",
+							"subCaptionFontSize": "12",
+							"subCaptionFontColor": "#e1f2a3",
+							"gaugeStartAngle": "180",
+							"gaugeEndAngle": "90",
+							"lowerLimit": "0",
+							"upperLimit": "100",
+							"gaugeInnerRadius": "95%",
+							"gaugeFillMix": "{dark-40},{light-40},{dark-20}",
+							"showValue": "1",
+							"placeValuesInside": "1",
+							"theme": "fint"
+						},
+						"colorRange": {
+							"color": [{
+								"minValue": "0",
+								"maxValue": "50",
+								"code": "#e44a00"
+							}, {
+								"minValue": "50",
+								"maxValue": "75",
+								"code": "#f8bd19"
+							}, {
+								"minValue": "75",
+								"maxValue": "100",
+								"code": "#6baa01"
+							}]
+						},
+						"dials": {
+							"dial": [{
+								"value": "67",
+								"bgcolor": "FFFFFF"
+									// "radius": "140",
+									// "rearExtension": "15"
+							}]
+						}
+					},
+					events: {
+						'beforeRender': function(evt, args) {
+							//在图形渲染之前
+						},
+						'rendered': function(evtObj, argObj) {
+							//加载数据的时候
+							evtObj.sender.intervalVar = setInterval(function() {
+								var chartIns = evtObj.sender,
+									prcnt = 65 + parseInt(Math.floor(Math.random() * 10), 10);
+								chartIns.feedData("value=" + prcnt);
+							}, 1000);
+						},
+						"realtimeUpdateComplete": function(evtObj, argObj) {
+							//数据变化的时候
+						},
+						"disposed": function(evtObj, argObj) {
+							alert("disposed");
+							clearInterval(evtObj.sender.intervalVar);
+						}
+					}
+				}).render();
+			});
+		</script>
+	</body>
+
+</html>
