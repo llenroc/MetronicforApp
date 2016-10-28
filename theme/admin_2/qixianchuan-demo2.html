@@ -2327,11 +2327,19 @@
 										"subcaption": "速度",
 										"subCaptionFontSize": "12",
 										"subCaptionFontColor": "#ffffff",
+										//"chartLeftMargin": "0",
+										//Modifying chart top margin
+										//"chartTopMargin": "0",
+										//Modifying chart right margin
+										//"chartRightMargin": "0",
+										//Modifying chart bottom margin
+										//"chartBottomMargin": "0",
 										"gaugeStartAngle": "180",
 										"gaugeEndAngle": "90",
 										"lowerLimit": "0",
 										"upperLimit": "100",
 										"gaugeInnerRadius": "98%",
+										"majorTMColor": "#ffffff",
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
@@ -2366,6 +2374,16 @@
 									},
 									"realtimeUpdateComplete": function(evtObj, argObj) {
 										//数据变化的时候
+									},
+									"renderComplete": function(evt, args) {
+										/*$(window).resize(function() {
+											var w = parseInt($(".AngularGaugeChart").width(), 10) || 160,
+												h = parseInt($(".AngularGaugeChart").height(), 10) || 160;
+											if(w && h) {
+												FusionCharts.items[evt.sender.id].resizeTo(w, h);
+												console.log("dd");
+											}
+										})*/
 									},
 									"disposed": function(evtObj, argObj) {
 										clearInterval(evtObj.sender.intervalVar);
