@@ -4,6 +4,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>类型1:左半边图</title>
+		<style>
+			#chart-container {
+				box-shadow: -10px 0 10px red, /*左边阴影*/
+				10px 0 10px yellow, /*右边阴影*/
+				0 -10px 10px blue, /*顶部阴影*/
+				0 10px 10px green;
+				/*底边阴影*/
+			}
+		</style>
+
 	</head>
 
 	<body>
@@ -12,7 +22,10 @@
 		<script type="text/javascript" src="js/themes/fusioncharts.theme.fint.js"></script>
 		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.carbon.js"></script> -->
 		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.ocean.js"></script> -->
-		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.zune.js"></script> -->
+		<!-- <script type="text/javascript" src="js/themes/fusioncharts.theme.zune.js"></script> 
+			
+			box-shadow: 0px 0px 0px 40px rgba(50, 50, 50, .2);
+		-->
 		<script>
 			FusionCharts.ready(function() {
 				var cSatScoreChart = new FusionCharts({

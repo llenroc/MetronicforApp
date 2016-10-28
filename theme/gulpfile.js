@@ -65,7 +65,7 @@ gulp.task('sass:watch', function() {
 gulp.task('sass:w', function() {
 	gulp.watch('./sass/layouts/layout2/*.scss', ['sass']);
 	//自己添加一个编译完立即就压缩了
-	gulp.watch('./sass/layouts/layout2/*.scss', ['minify']);
+	gulp.watch('./sass/layouts/layout2/custom.scss', ['minify']);
 });
 
 //*** CSS & JS minify task
