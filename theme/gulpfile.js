@@ -176,3 +176,16 @@ gulp.task('prettify', function() {
 	})).
 	pipe(gulp.dest('./'));
 });
+
+//自己定义默认任务
+//gulp.task('default',['localhost-live']);
+
+var browserSync = require('browser-sync');
+gulp.task('serve', function() {
+	browserSync.init({
+		server: {
+			baseDir: "../"
+		}
+	});
+	gulp.watch("../theme/*.*").on('change', browserSync.reload);
+})
