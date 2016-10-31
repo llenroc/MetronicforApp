@@ -247,5 +247,30 @@
 }
 /*返回顶部图标颜色*/
 .scroll-to-top>i {
-    color:#000000;
+    color: #000000;
+}
+/*各种图表的大小*/
+.AngularGaugeChart {
+    width: 100%;
+    height: 160px;
+}
+.CylinderChart {
+    width: 100%;
+    height: 360px;
+}
+.VbulletChart {
+    width: 100%;
+    height: 360px;
+}
+.ThermometerChart {
+    width: 100%;
+    height: 360px;
+}
+.AngularGaugeChartB {
+    width: 100%;
+    height: 160px;
+}
+.nopadding {
+    padding-left: 0;
+    padding-right: 0;
 }
