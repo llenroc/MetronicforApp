@@ -1724,6 +1724,18 @@
 						<div class="col-lg-2 col-xs-12 col-sm-12">
 							<div id="chart-container13" class="AngularGaugeChartB">FusionCharts will render here</div>
 						</div>
+						<div class="col-lg-2 col-xs-12 col-sm-12">
+							<div id="chart-container14" class="AngularGaugeChartB">FusionCharts will render here</div>
+						</div>
+						<div class="col-lg-2 col-xs-12 col-sm-12">
+							<div id="chart-container15" class="AngularGaugeChartB">FusionCharts will render here</div>
+						</div>
+					</div>
+
+					<div class="row margin-bottom-20">
+						<div class="col-lg-2 col-xs-12 col-sm-12">
+							<div id="chart-container16" class="DoughNut2d">FusionCharts will render here</div>
+						</div>
 					</div>
 					<!-- END CONTENT BODY -->
 				</div>
@@ -2360,6 +2372,7 @@
 										"upperLimit": "100",
 										"gaugeInnerRadius": "98%",
 										"majorTMColor": "#ffffff",
+										"baseFontColor": "#ffffff",
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
@@ -2375,8 +2388,8 @@
 									},
 									"dials": {
 										"dial": [{
-											"value": "67",
-											"bgcolor": "FFFFFF"
+											"value": "67" //,
+												//"bgcolor": "FFFFFF"
 										}]
 									}
 								},
@@ -2434,9 +2447,12 @@
 									"chart": {
 										"theme": "fint",
 										"lowerLimit": "0",
-										"bgColor": "EEEEEE,CCCCCC",
-										"bgratio": "60,40",
-										"bgAlpha": "70,80",
+										"baseFontColor": "#ffffff",
+										"plotFillColor":"#6AD2C7",
+										"targetColor":"#FFFFFF",
+										"bgColor": "438383,76BBB6",
+										"bgratio": "10,90",
+										"bgAlpha": "100,100",
 										// "subCaptionFontSize": "11",
 										"upperLimit": "10",
 										"caption": "油压"
@@ -2495,7 +2511,12 @@
 										"valueBelowPivot": "1",
 										"majorTMNumber": "9",
 										"minorTMNumber": "4",
+										"placeValuesInside": "1",
+										"gaugeStartAngle": "-65",
+										"gaugeEndAngle": "245",
 										"majorTMColor": "#ffffff",
+										"majorTMAlpha": "0",
+										"baseFontColor": "#ffffff",
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
@@ -2508,12 +2529,73 @@
 									},
 									"dials": {
 										"dial": [{
-											"value": "67"
+											"value": "67",
+											"bgcolor": "FFFFFF",
+											"borderColor": "#ffffff",
 										}]
 									}
 								}
 							});
 							fusioncharts.render();
+						});
+					}
+					
+					$(".DoughNut2d").each(function(n, e) {
+						CreateDoughNut2d(e.id);
+					});
+					function CreateDoughNut2d(id) {
+						FusionCharts.ready(function() {
+							var revenueChart = new FusionCharts({
+								type: 'doughnut2d',
+								renderAt: id,
+								width: '100%',
+								height: '100%',
+								dataFormat: 'json',
+								dataSource: {
+									"chart": {
+										"caption": "COS",
+										//"subCaption": "Last year",
+										//"numberPrefix": "$",
+										//"paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
+										"bgColor": "#ffffff",
+										"showBorder": "0",
+										"use3DLighting": "1",
+										"showShadow": "1",
+										"enableSmartLabels": "0",
+										"startingAngle": "310",
+										"showLabels": "0",
+										"showPercentValues": "1",
+										//"showLegend": "1",
+										//"legendShadow": "0",
+										//"legendBorderAlpha": "0",
+										"defaultCenterLabel": "COS占比",
+										"centerLabel": "所占比例: $value",
+										"centerLabelBold": "1",
+										"showTooltip": "1",
+										"decimals": "0",
+										"captionFontSize": "14",
+										//"subcaptionFontSize": "14",
+										//"subcaptionFontBold": "0"
+									},
+									"data": [{
+											"label": "Food",
+											"value": "28504"
+										}, {
+											"label": "Apparels",
+											"value": "14633"
+										}
+										/*
+										 * , {
+											"label": "Electronics",
+											"value": "10507"
+										}, {
+											"label": "Household",
+											"value": "4910"
+										}
+										*/
+									]
+								}
+							}).render();
 						});
 					}
 				</script>

@@ -61,11 +61,16 @@ gulp.task('sass:watch', function() {
 	gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-//自己改造的方法,仅针对layout2中的custom.scss这个文件
+gulp.task('samin', function() {
+	// theme layouts compilation
+	gulp.src('./sass/layouts/layout2/*.scss').pipe(sass()).pipe(gulp.dest('./assets/layouts/layout2/css')).pipe(rename({
+		suffix: '.min'
+	})).pipe(minifyCss()).pipe(gulp.dest('./assets/layouts/layout2/css'));
+});
+
+//自己改造的方法,仅针对layout2
 gulp.task('sass:w', function() {
-	gulp.watch('./sass/layouts/layout2/custom.scss', ['sass']);
-	//自己添加一个编译完立即就压缩了
-	gulp.watch('./sass/layouts/layout2/custom.scss', ['minify']);
+	gulp.watch('./sass/layouts/layout2/custom.scss', ['samin']);
 });
 
 //*** CSS & JS minify task
