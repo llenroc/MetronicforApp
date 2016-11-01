@@ -2360,6 +2360,13 @@
 										"subcaption": "速度",
 										"subCaptionFontSize": "12",
 										"subCaptionFontColor": "#ffffff",
+										//"chartLeftMargin": "0",
+										//Modifying chart top margin
+										//"chartTopMargin": "0",
+										//Modifying chart right margin
+										//"chartRightMargin": "0",
+										//Modifying chart bottom margin
+										//"chartBottomMargin": "0",
 										"gaugeStartAngle": "180",
 										"gaugeEndAngle": "90",
 										"lowerLimit": "0",
@@ -2370,6 +2377,7 @@
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
+										//"gaugeFillMix": "{dark-40},{light-40},{dark-20}",
 										"showValue": "1",
 										"placeValuesInside": "1",
 										"theme": "fint"
@@ -2383,7 +2391,8 @@
 										"dial": [{
 											"value": "67",
 											"borderAlpha": "10",
-											"bgColor": "#549997,#1A625C,#549997"
+											"bgColor": "#549997,#1A625C,#549997", //,
+											//"bgcolor": "FFFFFF"
 										}]
 									}
 								},
@@ -2402,7 +2411,16 @@
 									"realtimeUpdateComplete": function(evtObj, argObj) {
 										//数据变化的时候
 									},
-									"renderComplete": function(evt, args) {},
+									"renderComplete": function(evt, args) {
+										/*$(window).resize(function() {
+											var w = parseInt($(".AngularGaugeChart").width(), 10) || 160,
+												h = parseInt($(".AngularGaugeChart").height(), 10) || 160;
+											if(w && h) {
+												FusionCharts.items[evt.sender.id].resizeTo(w, h);
+												console.log("dd");
+											}
+										})*/
+									},
 									"disposed": function(evtObj, argObj) {
 										clearInterval(evtObj.sender.intervalVar);
 									}
@@ -2424,6 +2442,7 @@
 							var fusioncharts = new FusionCharts({
 								type: 'vbullet',
 								renderAt: id,
+								//id: 'rev-bullet-2',
 								width: '100%',
 								height: '100%',
 								dataFormat: 'json',
@@ -2441,25 +2460,34 @@
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
+										// "subCaptionFontSize": "11",
 										"upperLimit": "10",
 										"caption": "油压"
+											// "subcaption": "Actual vs Target<br>Bakersfield Central",
+											// "numberPrefix": "$",
+											// "numberSuffix": "K",
+											// "chartBottomMargin": "25"
 									},
 									"colorRange": {
 										"color": [{
 											"minValue": "0",
 											"maxValue": "50",
+											// "code": "#e44a00",
 											"alpha": "25"
 										}, {
 											"minValue": "50",
 											"maxValue": "75",
+											// "code": "#f8bd19",
 											"alpha": "25"
 										}, {
 											"minValue": "75",
 											"maxValue": "120",
+											// "code": "#6baa01",
 											"alpha": "25"
 										}]
 									},
-									"value": "8"
+									"value": "8" //,
+										// "target": "90"
 								}
 							});
 							fusioncharts.render();
@@ -2480,9 +2508,12 @@
 								dataSource: {
 									"chart": {
 										"caption": "KVA",
+										//"subcaption": "Last week",
 										"lowerLimit": "0",
 										"upperLimit": "100",
 										"gaugeInnerRadius": "98%",
+										//"lowerLimitDisplay": "Bad",
+										//"upperLimitDisplay": "Good",
 										"showBorder": "1",
 										"showValue": "1",
 										"valueBelowPivot": "1",
@@ -2517,40 +2548,11 @@
 						});
 					}
 
-					$.ajax({
-							type: 'GET',
-							url: 'json/DoughNut2d.json',
-							dataType: 'json',
-							success: function(DoughNut2d) {
-								$(".DoughNut2d").each(function(n, e) {
-									CreateDoughNut2d(e.id, DoughNut2d);
-								});
-							}
-						})
-						/*var DoughNut2d = {
-							"chart": {
-								"caption": "COS",
-								"defaultCenterLabel": "COS占比"
-							},
-							"data": [{
-								"label": "cos",
-								"value": "60"
-							}, {
-								"label": "其余",
-								"value": "40"
-							}]
-						};*/
-						//					DoughNut2d.data = [{
-						//						"label": "cos",
-						//						"value": "80"
-						//					}, {
-						//						"label": "其余",
-						//						"value": "20"
-						//					}];
-						//					DoughNut2d.caption = "COS";
-						//					DoughNut2d.defaultCenterLabel = "COS占比";
+					$(".DoughNut2d").each(function(n, e) {
+						CreateDoughNut2d(e.id);
+					});
 
-					function CreateDoughNut2d(id, DoughNut2d) {
+					function CreateDoughNut2d(id) {
 						FusionCharts.ready(function() {
 							var revenueChart = new FusionCharts({
 								type: 'doughnut2d',
@@ -2560,8 +2562,12 @@
 								dataFormat: 'json',
 								dataSource: {
 									"chart": {
-										"caption": DoughNut2d.chart.caption,
+										"caption": "COS",
+										//"subCaption": "Last year",
+										//"numberPrefix": "$",
+										//"paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
 										"paletteColors": "#6BD4C8,#ffffff",
+										//"bgColor": "#ffffff",
 										"showBorder": "1",
 										"use3DLighting": "1",
 										"radius3D": "1",
@@ -2571,17 +2577,42 @@
 										"showLabels": "0",
 										"showPercentValues": "1",
 										"pieRadius": "60",
-										"defaultCenterLabel": DoughNut2d.chart.defaultCenterLabel,
+										//"showLegend": "1",
+										//"legendShadow": "0",
+										//"legendBorderAlpha": "0",
+										"defaultCenterLabel": "COS占比",
 										"centerLabel": "$value",
 										"centerLabelBold": "1",
 										"showTooltip": "1",
+										//"decimals": "0",
+										//"captionFontSize": "14",
 										"baseFontColor": "#ffffff",
 										"bgColor": "438383,76BBB6",
 										"bgratio": "10,90",
 										"bgAlpha": "100,100",
+										//"slicingDistance ": "100",
 										"theme": "fint"
+											//"subcaptionFontSize": "14",
+											//"subcaptionFontBold": "0"
 									},
-									"data": DoughNut2d.data
+									"data": [{
+											"label": "cos",
+											"value": "90"
+										}, {
+											"label": "其余",
+											"value": "10"
+										}
+
+										/*
+										 * , {
+											"label": "Electronics",
+											"value": "10507"
+										}, {
+											"label": "Household",
+											"value": "4910"
+										}
+										*/
+									]
 								}
 							}).render();
 						});

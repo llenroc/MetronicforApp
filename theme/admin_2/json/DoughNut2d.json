@@ -1,0 +1,15 @@
+{
+	"chart": {
+		"caption": "COS",
+		"defaultCenterLabel": "COS占比"
+	},
+	"data": [
+		{
+			"label": "cos",
+			"value": "50"
+		}, {
+			"label": "其余",
+			"value": "50"
+		}
+	]
+}
