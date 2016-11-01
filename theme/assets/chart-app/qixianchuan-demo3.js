@@ -185,6 +185,27 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 						"bgColor": "#549997,#1A625C,#549997"
 					}]
 				}
+			},
+			events: {
+				'beforeRender': function(evt, args) {
+					//在图形渲染之前
+				},
+				'rendered': function(evtObj, argObj) {
+					//加载数据的时候
+
+					evtObj.sender.intervalVar = setInterval(function() {
+						var chartIns = evtObj.sender,
+							prcnt = AngularGaugeTypeB.dials.dial[0].value - 0 + parseInt(Math.floor(Math.random() * 10), 10);
+						chartIns.feedData("value=" + prcnt);
+					}, 2000);
+				},
+				"realtimeUpdateComplete": function(evtObj, argObj) {
+					//数据变化的时候
+				},
+				"renderComplete": function(evt, args) {},
+				"disposed": function(evtObj, argObj) {
+					clearInterval(evtObj.sender.intervalVar);
+				}
 			}
 		});
 		fusioncharts.render();
