@@ -6,10 +6,10 @@
 	"data": [
 		{
 			"label": "cos",
-			"value": "50"
+			"value": "75"
 		}, {
 			"label": "其余",
-			"value": "50"
+			"value": "25"
 		}
 	]
 }

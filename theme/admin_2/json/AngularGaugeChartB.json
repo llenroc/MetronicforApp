@@ -1,0 +1,12 @@
+{
+	"chart": {
+		"caption": "KVA"
+	},
+	"dials": {
+		"dial": [
+			{
+				"value": "67"
+			}
+		]
+	}
+}

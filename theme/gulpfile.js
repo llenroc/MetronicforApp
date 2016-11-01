@@ -111,6 +111,10 @@ gulp.task('minify', function() {
 	gulp.src(['./assets/layouts/**/scripts/*.js', '!./assets/layouts/**/scripts/*.min.js']).pipe(uglify()).pipe(rename({
 		suffix: '.min'
 	})).pipe(gulp.dest('./assets/layouts/'));
+	//自己加的，针对demojs
+	gulp.src(['./assets/chart-app/qixianchuan-demo3.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
 });
 
 //*** RTL convertor task

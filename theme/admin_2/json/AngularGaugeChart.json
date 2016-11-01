@@ -1,0 +1,11 @@
+{
+	"chart": {
+		"caption": "图例",
+		"subcaption": "速度"
+	},
+	"dials": {
+		"dial": [{
+			"value": "67"
+		}]
+	}
+}

@@ -4,24 +4,26 @@ $.ajax({
 	async: true,
 	dataType: 'json',
 	success: function(data) {
+		//console.log(data);
+		//console.log(data.AngularGaugeChart.length);
 		for(var i = 0; i < data.AngularGaugeChart.length; i++) {
+			//console.log(data.AngularGaugeChart[i]);
 			CreateAngularGaugeChart(data.AngularGaugeChart[i].id, data.AngularGaugeChart[i]);
-		}
-
-		for(var i = 0; i < data.VbulletChart.length; i++) {
-			CreateVbulletChart(data.VbulletChart[i].id, data.VbulletChart[i]);
-		}
-
-		for(var i = 0; i < data.AngularGaugeChartB.length; i++) {
-			CreateAngularGaugeTypeB(data.AngularGaugeChartB[i].id, data.AngularGaugeChartB[i]);
-		}
-
-		for(var i = 0; i < data.DoughNut2d.length; i++) {
-			CreateDoughNut2d(data.DoughNut2d[i].id, data.DoughNut2d[i]);
 		}
 	}
 });
-
+/*
+$.ajax({
+	type: 'GET',
+	url: 'json/AngularGaugeChart.json',
+	dataType: 'json',
+	success: function(AngularGaugeChart) {
+		$(".AngularGaugeChart").each(function(n, e) {
+			CreateAngularGaugeChart(e.id, AngularGaugeChart);
+		});
+	}
+});
+*/
 function CreateAngularGaugeChart(id, AngularGaugeChart) {
 	FusionCharts.ready(function() {
 		var cSatScoreChart = new FusionCharts({
@@ -45,7 +47,6 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 					"gaugeEndAngle": "90",
 					"lowerLimit": "0",
 					"upperLimit": "100",
-					"showTooltip": "1",
 					"gaugeInnerRadius": "98%",
 					"majorTMColor": "#ffffff",
 					"baseFontColor": "#ffffff",
@@ -75,10 +76,9 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 				},
 				'rendered': function(evtObj, argObj) {
 					//加载数据的时候
-
 					evtObj.sender.intervalVar = setInterval(function() {
 						var chartIns = evtObj.sender,
-							prcnt = AngularGaugeChart.dials.dial[0].value - 0 + parseInt(Math.floor(Math.random() * 10), 10);
+							prcnt = 65 + parseInt(Math.floor(Math.random() * 10), 10);
 						chartIns.feedData("value=" + prcnt);
 					}, 2000);
 				},
@@ -94,6 +94,18 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 	});
 }
 
+$.ajax({
+	type: 'GET',
+	url: 'json/VbulletChart.json',
+	dataType: 'json',
+	success: function(VbulletChart) {
+		$(".VbulletChart").each(function(n, e) {
+			CreateVbulletChart(e.id, VbulletChart);
+		});
+
+	}
+});
+
 function CreateVbulletChart(id, VbulletChart) {
 	FusionCharts.ready(function() {
 		var fusioncharts = new FusionCharts({
@@ -107,7 +119,6 @@ function CreateVbulletChart(id, VbulletChart) {
 					"theme": "fint",
 					"lowerLimit": "0",
 					"showBorder": "1",
-					"showTooltip": "1",
 					"minorTMNumber": "3",
 					"majorTMColor": "#ffffff",
 					"minorTMColor": "#ffffff",
@@ -142,6 +153,17 @@ function CreateVbulletChart(id, VbulletChart) {
 	});
 }
 
+$.ajax({
+	type: 'GET',
+	url: 'json/AngularGaugeChartB.json',
+	dataType: 'json',
+	success: function(AngularGaugeTypeB) {
+		$(".AngularGaugeChartB").each(function(n, e) {
+			CreateAngularGaugeTypeB(e.id, AngularGaugeTypeB);
+		});
+	}
+});
+
 function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 	FusionCharts.ready(function() {
 		var fusioncharts = new FusionCharts({
@@ -158,7 +180,6 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 					"gaugeInnerRadius": "98%",
 					"showBorder": "1",
 					"showValue": "1",
-					"showTooltip": "1",
 					"valueBelowPivot": "1",
 					"majorTMNumber": "9",
 					"minorTMNumber": "4",
@@ -181,8 +202,8 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 				"dials": {
 					"dial": [{
 						"value": AngularGaugeTypeB.dials.dial[0].value,
-						"borderAlpha": "10",
-						"bgColor": "#549997,#1A625C,#549997"
+						"bgcolor": "FFFFFF",
+						"borderColor": "#ffffff",
 					}]
 				}
 			}
@@ -190,6 +211,17 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 		fusioncharts.render();
 	});
 }
+
+$.ajax({
+	type: 'GET',
+	url: 'json/DoughNut2d.json',
+	dataType: 'json',
+	success: function(DoughNut2d) {
+		$(".DoughNut2d").each(function(n, e) {
+			CreateDoughNut2d(e.id, DoughNut2d);
+		});
+	}
+});
 
 function CreateDoughNut2d(id, DoughNut2d) {
 	FusionCharts.ready(function() {
@@ -214,8 +246,8 @@ function CreateDoughNut2d(id, DoughNut2d) {
 					"showPercentValues": "1",
 					"pieRadius": "62",
 					"labelDistance": "100",
+					"defaultCenterLabel": DoughNut2d.chart.defaultCenterLabel,
 					"centerLabel": "$value",
-					"defaultCenterLabel": DoughNut2d.data[0].value,
 					"centerLabelBold": "1",
 					"showTooltip": "1",
 					"baseFontColor": "#ffffff",

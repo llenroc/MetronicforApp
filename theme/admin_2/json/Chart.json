@@ -1,0 +1,225 @@
+{
+	"AngularGaugeChart": [
+		{
+			"id": "chart-container1",
+			"chart": {
+				"caption": "图例",
+				"subcaption": "速度"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "67"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container2",
+			"chart": {
+				"caption": "图例2",
+				"subcaption": "速度2"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "76"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container3",
+			"chart": {
+				"caption": "图例3",
+				"subcaption": "速度3"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "73"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container4",
+			"chart": {
+				"caption": "图例4",
+				"subcaption": "速度4"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "74"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container5",
+			"chart": {
+				"caption": "图例5",
+				"subcaption": "速度5"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "75"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container6",
+			"chart": {
+				"caption": "图例6",
+				"subcaption": "速度6"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "76"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container7",
+			"chart": {
+				"caption": "图例7",
+				"subcaption": "速度7"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "77"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container8",
+			"chart": {
+				"caption": "图例8",
+				"subcaption": "速度8"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "78"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container9",
+			"chart": {
+				"caption": "图例9",
+				"subcaption": "速度9"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "79"
+					}
+				]
+			}
+		}
+		, {
+			"id": "chart-container17",
+			"chart": {
+				"caption": "图例17",
+				"subcaption": "速度17"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "27"
+					}
+				]
+			}
+		}
+	],
+	"VbulletChart": [
+		{
+			"id": "chart-container10",
+			"chart": {
+				"caption": "油位"
+			},
+			"value": "5"
+		}, {
+			"id": "chart-container11",
+			"chart": {
+				"caption": "油压"
+			},
+			"value": "8"
+		}, {
+			"id": "chart-container12",
+			"chart": {
+				"caption": "水温"
+			},
+			"value": "7"
+		}
+	],
+	"AngularGaugeChartB": [
+		{
+			"id": "chart-container13",
+			"chart": {
+				"caption": "VUM"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "21"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container14",
+			"chart": {
+				"caption": "KVA"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "45"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container15",
+			"chart": {
+				"caption": "Vtrix"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "98"
+					}
+				]
+			}
+		}, {
+			"id": "chart-container18",
+			"chart": {
+				"caption": "KVMD"
+			},
+			"dials": {
+				"dial": [
+					{
+						"value": "32"
+					}
+				]
+			}
+		}
+	],
+	"DoughNut2d": [
+		{
+			"id": "chart-container16",
+			"chart": {
+				"caption": "COS"
+			},
+			"data": [
+				{
+					"label": "cos",
+					"value": "75"
+				}, {
+					"label": "其余",
+					"value": "25"
+				}
+			]
+		}
+	]
+}
