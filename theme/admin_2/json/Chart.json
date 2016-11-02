@@ -133,19 +133,30 @@
 			}
 		}
 	],
-	"VbulletChart": [
+	"CylinderChart": [
 		{
 			"id": "chart-container10",
 			"chart": {
 				"caption": "油位"
 			},
-			"value": "5"
-		}, {
+			"value": "70"
+		}
+	],
+	"Thermometer": [
+		{
 			"id": "chart-container11",
+			"mid": "container11",
 			"chart": {
 				"caption": "油压"
 			},
-			"value": "8"
+			"value": "6"
+		}, {
+			"id": "chart-container12",
+			"mid": "container12",
+			"chart": {
+				"caption": "水温(°C)"
+			},
+			"value": "12"
 		}
 	],
 	"AngularGaugeChartB": [

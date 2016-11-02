@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>My first chart using FusionCharts Suite XT</title>
+
+	</head>
+
+	<body>
+		<div id="chart-container">FusionCharts XT will load here!</div>
+
+		<script src="js/fusioncharts.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/themes/fusioncharts.theme.fint.js"></script>
+		<script type="text/javascript">
+			FusionCharts.ready(function() {
+				var fusioncharts = new FusionCharts({
+					type: 'column3d',
+					renderAt: 'chart-container',
+					width: '200',
+					height: '300',
+					dataFormat: 'json',
+					dataSource: {
+						"chart": {
+							"caption": "xx",
+							//"subCaption": "Last year",
+							"xAxisName": "Quarter",
+							"yAxisName": "Amount (In USD)",
+							"numberPrefix": "$",
+							"theme": "fint",
+							//Applying round edges and glass fill effect for data plots
+							"useRoundEdges": "1"
+						},
+						"data": [{
+							"label": "Q1",
+							"value": "1950000"
+						}]
+					}
+				});
+				fusioncharts.render();
+			});
+		</script>
+	</body>
+
+</html>

@@ -8,16 +8,20 @@ $.ajax({
 			CreateAngularGaugeChart(data.AngularGaugeChart[i].id, data.AngularGaugeChart[i]);
 		}
 
-		for(var i = 0; i < data.VbulletChart.length; i++) {
-			CreateVbulletChart(data.VbulletChart[i].id, data.VbulletChart[i]);
-		}
-
 		for(var i = 0; i < data.AngularGaugeChartB.length; i++) {
 			CreateAngularGaugeTypeB(data.AngularGaugeChartB[i].id, data.AngularGaugeChartB[i]);
 		}
 
 		for(var i = 0; i < data.DoughNut2d.length; i++) {
 			CreateDoughNut2d(data.DoughNut2d[i].id, data.DoughNut2d[i]);
+		}
+
+		for(var i = 0; i < data.Thermometer.length; i++) {
+			CreateThermometer(data.Thermometer[i].id, data.Thermometer[i]);
+		}
+
+		for(var i = 0; i < data.CylinderChart.length; i++) {
+			CreateCylinder(data.CylinderChart[i].id, data.CylinderChart[i]);
 		}
 	}
 });
@@ -75,7 +79,6 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 				},
 				'rendered': function(evtObj, argObj) {
 					//加载数据的时候
-
 					evtObj.sender.intervalVar = setInterval(function() {
 						var chartIns = evtObj.sender,
 							prcnt = AngularGaugeChart.dials.dial[0].value - 0 + parseInt(Math.floor(Math.random() * 10), 10);
@@ -147,7 +150,7 @@ function CreateVbulletChart(id, VbulletChart) {
 					var chartIns = evtObj.sender;
 					chartIns.intervalVar = setInterval(function() {
 						var prcnt = parseInt(Math.floor(Math.random() * 6), 10);
-						chartIns.feedData("value=" + prcnt + "&id=" + VbulletChart.id);
+						chartIns.feedData("&value=" + prcnt + "&id=" + VbulletChart.id);
 					}, 2000);
 				}
 			}
@@ -210,7 +213,8 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 					evtObj.sender.intervalVar = setInterval(function() {
 						var chartIns = evtObj.sender,
 							prcnt = AngularGaugeTypeB.dials.dial[0].value - 0 + parseInt(Math.floor(Math.random() * 10), 10);
-						chartIns.feedData("value=" + prcnt);
+						chartIns.feedData("&value=" + prcnt);
+
 					}, 2000);
 				},
 				"realtimeUpdateComplete": function(evtObj, argObj) {
@@ -266,50 +270,103 @@ function CreateDoughNut2d(id, DoughNut2d) {
 	});
 }
 
-CreateThermometer();
-
-function CreateThermometer() {
+function CreateThermometer(id, Thermometer) {
 
 	FusionCharts.ready(function() {
 		var chart = new FusionCharts({
 				type: 'thermometer',
-				renderAt: 'container12',
-				id: 'water',
+				renderAt: id,
+				id: Thermometer.mid,
 				width: '100%',
 				height: '100%',
 				dataFormat: 'json',
 				dataSource: {
 					"chart": {
-						"caption": "水温",
+						"caption": Thermometer.chart.caption,
 						"captionOnTop": "1",
 						"chartTopMargin": "5",
 						"chartBottomMargin": "5",
+						"chartLeftMargin": "0",
 						"baseFontColor": "#ffffff",
 						"majorTMColor": "#ffffff",
 						"lowerLimit": "0",
-						"upperLimit": "10",
-						"numberSuffix": "°C",
+						"upperLimit": "100",
+						"showGaugeBorder": "1",
+						"gaugeBorderColor": "#008ee4",
+						"decimals": "1",
 						"bgColor": "438383,76BBB6",
 						"bgratio": "10,90",
 						"bgAlpha": "100,100",
 						"showBorder": "1",
 						"showShadow": "1",
-						"showTooltip": "1",
-						"showHoverEffect": "0",
 						"ticksOnRight": "0",
-						"thmFillColor": "#008ee4"
+						"thmFillColor": "#008ee4",
+						"theme": "fint",
 					},
-					"value": "7"
+					"value": Thermometer.value
 				},
 				"events": {
 					"rendered": function(evtObj, argObj) {
 						var intervalVar = setInterval(function() {
-							var temp = parseInt(Math.floor(Math.random() * 6), 10);
-							FusionCharts.items["water"].feedData("value=" + temp);
+							var temp = parseInt(Math.floor(Math.random() * 56), 10);
+							var strData = "&value=" + temp;
+							FusionCharts.items[Thermometer.mid].feedData(strData);
 						}, 2000);
 					}
 				}
 			})
 			.render();
+	});
+}
+
+function CreateCylinder(id, Cylinder) {
+	FusionCharts.ready(function() {
+		var fusioncharts = new FusionCharts({
+			type: 'cylinder',
+			dataFormat: 'json',
+			id: 'fuelMeter-5',
+			renderAt: Cylinder.id,
+			width: '100%',
+			height: '100%',
+			dataSource: {
+				"chart": {
+					"theme": "fint",
+					"captionOnTop": "1",
+					"chartTopMargin": "5",
+					"chartLeftMargin": "0",
+					"chartBottomMargin": "0",
+					"caption": Cylinder.chart.caption,
+					"lowerLimit": "0",
+					"upperLimit": "100",
+					//"lowerLimitDisplay": "0",
+					//"upperLimitDisplay": "100",
+					"showValue": "1",
+					"baseFontColor": "#ffffff",
+					"majorTMColor": "#ffffff",
+					"bgColor": "438383,76BBB6",
+					"bgratio": "10,90",
+					"bgAlpha": "100,100",
+					"chartBottomMargin": "25",
+					"cylFillHoverColor": "#0099fd",
+					"cylFillHoverAlpha": "80",
+					"cylHeight": "290",
+					"cylOriginY": "325",
+					"cylRadius": "15",
+					"showBorder": "1",
+					"showShadow": "1",
+					"ticksOnRight": "0"
+				},
+				"value": Cylinder.value
+			},
+			"events": {
+				"rendered": function(evtObj, argObj) {
+					setInterval(function() {
+						var consVolume = parseInt(Math.floor(Math.random() * 56), 10)
+						FusionCharts("fuelMeter-5").feedData("&value=" + consVolume);
+					}, 2000);
+				}
+			}
+		});
+		fusioncharts.render();
 	});
 }
