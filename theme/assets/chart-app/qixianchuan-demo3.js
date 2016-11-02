@@ -234,6 +234,7 @@ function CreateDoughNut2d(id, DoughNut2d) {
 	FusionCharts.ready(function() {
 		var revenueChart = new FusionCharts({
 			type: 'doughnut2d',
+			id: "test",
 			renderAt: id,
 			width: '100%',
 			height: '100%',
@@ -253,7 +254,7 @@ function CreateDoughNut2d(id, DoughNut2d) {
 					"showLabels": "0",
 					"showPercentValues": "1",
 					"pieRadius": "62",
-					"labelDistance": "100",
+					"labelDistance": "1000",
 					"centerLabel": "$value",
 					"defaultCenterLabel": DoughNut2d.data[0].value,
 					"centerLabelBold": "1",
@@ -265,6 +266,13 @@ function CreateDoughNut2d(id, DoughNut2d) {
 					"theme": "fint"
 				},
 				"data": DoughNut2d.data
+			},
+			"events": {
+				"rendered": function(evtObj, argObj) {
+
+					console.log(evtObj);
+					console.log(argObj);
+				}
 			}
 		}).render();
 	});

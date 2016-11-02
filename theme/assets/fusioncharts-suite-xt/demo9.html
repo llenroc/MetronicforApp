@@ -34,6 +34,23 @@
 							"label": "Q1",
 							"value": "1950000"
 						}]
+					},
+					events: {
+						'beforeRender': function(evt, args) {
+							//在图形渲染之前
+						},
+						'rendered': function(evtObj, argObj) {
+							//加载数据的时候
+
+							console.log(evtObj)
+						},
+						"realtimeUpdateComplete": function(evtObj, argObj) {
+							//数据变化的时候
+						},
+						"renderComplete": function(evt, args) {},
+						"disposed": function(evtObj, argObj) {
+							clearInterval(evtObj.sender.intervalVar);
+						}
 					}
 				});
 				fusioncharts.render();
