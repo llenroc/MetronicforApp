@@ -106,6 +106,7 @@ function CreateVbulletChart(id, VbulletChart) {
 				"chart": {
 					"theme": "fint",
 					"lowerLimit": "0",
+					"upperLimit": "10",
 					"showBorder": "1",
 					"showTooltip": "1",
 					"minorTMNumber": "3",
@@ -117,10 +118,11 @@ function CreateVbulletChart(id, VbulletChart) {
 					"bgColor": "438383,76BBB6",
 					"bgratio": "10,90",
 					"bgAlpha": "100,100",
-					"upperLimit": "10",
+					"colorRangeFillRatio": "10,70,20",
+					"showShadow": "1",
 					"caption": VbulletChart.chart.caption
 				},
-				"colorRange": {
+				/*"colorRange": {
 					"color": [{
 						"minValue": "0",
 						"maxValue": "50",
@@ -134,8 +136,20 @@ function CreateVbulletChart(id, VbulletChart) {
 						"maxValue": "120",
 						"alpha": "25"
 					}]
-				},
+				},*/
 				"value": VbulletChart.value
+			},
+			events: {
+				'beforeRender': function(evt, args) {
+					//在图形渲染之前
+				},
+				'rendered': function(evtObj, argObj) {
+					var chartIns = evtObj.sender;
+					chartIns.intervalVar = setInterval(function() {
+						var prcnt = parseInt(Math.floor(Math.random() * 6), 10);
+						chartIns.feedData("value=" + prcnt + "&id=" + VbulletChart.id);
+					}, 2000);
+				}
 			}
 		});
 		fusioncharts.render();
@@ -224,6 +238,7 @@ function CreateDoughNut2d(id, DoughNut2d) {
 				"chart": {
 					"caption": DoughNut2d.chart.caption,
 					"captionOnTop": "1",
+					"chartTopMargin": "5",
 					"paletteColors": "#6BD4C8,#ffffff",
 					"showBorder": "1",
 					"use3DLighting": "1",
@@ -248,5 +263,53 @@ function CreateDoughNut2d(id, DoughNut2d) {
 				"data": DoughNut2d.data
 			}
 		}).render();
+	});
+}
+
+CreateThermometer();
+
+function CreateThermometer() {
+
+	FusionCharts.ready(function() {
+		var chart = new FusionCharts({
+				type: 'thermometer',
+				renderAt: 'container12',
+				id: 'water',
+				width: '100%',
+				height: '100%',
+				dataFormat: 'json',
+				dataSource: {
+					"chart": {
+						"caption": "水温",
+						"captionOnTop": "1",
+						"chartTopMargin": "5",
+						"chartBottomMargin": "5",
+						"baseFontColor": "#ffffff",
+						"majorTMColor": "#ffffff",
+						"lowerLimit": "0",
+						"upperLimit": "10",
+						"numberSuffix": "°C",
+						"bgColor": "438383,76BBB6",
+						"bgratio": "10,90",
+						"bgAlpha": "100,100",
+						"showBorder": "1",
+						"showShadow": "1",
+						"showTooltip": "1",
+						"showHoverEffect": "0",
+						"ticksOnRight": "0",
+						"thmFillColor": "#008ee4"
+					},
+					"value": "7"
+				},
+				"events": {
+					"rendered": function(evtObj, argObj) {
+						var intervalVar = setInterval(function() {
+							var temp = parseInt(Math.floor(Math.random() * 6), 10);
+							FusionCharts.items["water"].feedData("value=" + temp);
+						}, 2000);
+					}
+				}
+			})
+			.render();
 	});
 }

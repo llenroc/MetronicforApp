@@ -146,12 +146,6 @@
 				"caption": "油压"
 			},
 			"value": "8"
-		}, {
-			"id": "chart-container12",
-			"chart": {
-				"caption": "水温"
-			},
-			"value": "7"
 		}
 	],
 	"AngularGaugeChartB": [
