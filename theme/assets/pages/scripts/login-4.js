@@ -19,10 +19,10 @@ var Login = function () {
 
 	            messages: {
 	                username: {
-	                    required: "Username is required."
+	                    required: "用户名必填."
 	                },
 	                password: {
-	                    required: "Password is required."
+	                    required: "密码必填."
 	                }
 	            },
 
@@ -74,7 +74,7 @@ var Login = function () {
 
 	            messages: {
 	                email: {
-	                    required: "Email is required."
+	                    required: "邮箱必填."
 	                }
 	            },
 
@@ -135,10 +135,11 @@ var Login = function () {
 
         if (jQuery().select2 && $('#country_list').size() > 0) {
             $("#country_list").select2({
-	            placeholder: '<i class="fa fa-map-marker"></i>&nbsp;Select a Country',
+	            placeholder: '<i class="fa fa-map-marker"></i>&nbsp;选择国家',
 	            templateResult: format,
                 templateSelection: format,
                 width: 'auto', 
+                language: "zh-CN",
 	            escapeMarkup: function(m) {
 	                return m;
 	            }

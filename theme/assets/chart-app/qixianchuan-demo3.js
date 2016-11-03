@@ -270,8 +270,8 @@ function CreateDoughNut2d(id, DoughNut2d) {
 			"events": {
 				"rendered": function(evtObj, argObj) {
 
-					console.log(evtObj);
-					console.log(argObj);
+					//console.log(evtObj);
+					//console.log(argObj);
 				}
 			}
 		}).render();
