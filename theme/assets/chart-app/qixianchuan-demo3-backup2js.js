@@ -239,6 +239,32 @@ function CreateAngularGaugeTypeB(id, AngularGaugeTypeB) {
 }
 
 function CreateDoughNut2d(id, DoughNut2d) {
+
+	var chart = {
+		"caption": DoughNut2d.chart.caption,
+		"captionOnTop": "1",
+		"chartTopMargin": "5",
+		"paletteColors": "#6BD4C8,#ffffff",
+		"showBorder": "1",
+		"use3DLighting": "1",
+		"radius3D": "30",
+		"showShadow": "1",
+		"enableSmartLabels": "0",
+		"startingAngle": "45",
+		"showLabels": "0",
+		"showPercentValues": "1",
+		"pieRadius": "62",
+		"labelDistance": "1000",
+		"centerLabel": "$value",
+		//"defaultCenterLabel": DoughNut2d.data[0].value,
+		"centerLabelBold": "1",
+		"showTooltip": "1",
+		"baseFontColor": "#ffffff",
+		"bgColor": "438383,76BBB6",
+		"bgratio": "10,90",
+		"bgAlpha": "100,100",
+		"theme": "fint"
+	}
 	FusionCharts.ready(function() {
 		var revenueChart = new FusionCharts({
 			type: 'doughnut2d',
@@ -248,95 +274,61 @@ function CreateDoughNut2d(id, DoughNut2d) {
 			height: '100%',
 			dataFormat: 'json',
 			dataSource: {
-				"chart": {
-					"caption": DoughNut2d.chart.caption,
-					"captionOnTop": "1",
-					"chartTopMargin": "5",
-					"paletteColors": "#6BD4C8,#ffffff",
-					"showBorder": "1",
-					"use3DLighting": "1",
-					"radius3D": "30",
-					"showShadow": "1",
-					"enableSmartLabels": "0",
-					"startingAngle": "45",
-					"showLabels": "0",
-					"showPercentValues": "1",
-					"pieRadius": "62",
-					"labelDistance": "1000",
-					"centerLabel": "$value",
-					"defaultCenterLabel": DoughNut2d.data[0].value,
-					"centerLabelBold": "1",
-					"showTooltip": "1",
-					"baseFontColor": "#ffffff",
-					"bgColor": "438383,76BBB6",
-					"bgratio": "10,90",
-					"bgAlpha": "100,100",
-					"theme": "fint"
-				},
+				"chart": chart,
 				"data": DoughNut2d.data
 			},
 			"events": {
 				'beforeRender': function(evt, args) {
 					init(evt);
 				},
-				"rendered": function(evtObj, argObj) {},
+				"rendered": function(evtObj, argObj) {
+					//console.log(evtObj);
+					/*
+					evtObj.sender.intervalVar =
+						setInterval(function() {
+							//console.log(evtObj.sender.options.dataSource.data[0]);
+							var prcnt = evtObj.sender.options.dataSource.data[0];
+							prcnt.value = parseInt(Math.floor(Math.random() * 56), 10) + "";
+						}, 2000);
+					*/
+					//console.log(evtObj.sender.options);
+					//console.log(evtObj.sender.options.loadMessage);
+					//var loadMessage = evtObj.sender.options.loadMessage;
+					//loadMessage = "Hello world";
+					//console.log(argObj);
+
+					/*$("#chart-container16").updateFusionCharts({
+						
+					});*/
+
+				},
 				"realtimeUpdateComplete": function(evtObj, argObj) {
 					//数据变化的时候
+
 				},
-				"renderComplete": function(evt, args) {},
+				"renderComplete": function(evt, args) {
+
+				},
 				"disposed": function(evtObj, argObj) {
 					clearInterval(evtObj.sender.intervalVar);
-					clearInterval(intervalVar);
 				}
 			}
 		}).render();
 
 		var intervalVar = setInterval(function() {
-			$.ajax({
-				type: "get",
-				url: "json/DoughNut2d.json",
-				async: true,
-				dataType: 'json',
-				success: function(data) {
-					$("#chart-container16").updateFusionCharts({
-						dataSource: {
-							"chart": {
-								"caption": DoughNut2d.chart.caption,
-								"captionOnTop": "1",
-								"chartTopMargin": "5",
-								"paletteColors": "#6BD4C8,#ffffff",
-								"showBorder": "1",
-								"use3DLighting": "1",
-								"radius3D": "30",
-								"showShadow": "1",
-								"enableSmartLabels": "0",
-								"startingAngle": "45",
-								"showLabels": "0",
-								"showPercentValues": "1",
-								"pieRadius": "62",
-								"labelDistance": "1000",
-								"centerLabel": "$value",
-								"defaultCenterLabel": data.data[0].value,
-								"centerLabelBold": "1",
-								"showTooltip": "1",
-								"baseFontColor": "#ffffff",
-								"bgColor": "438383,76BBB6",
-								"bgratio": "10,90",
-								"bgAlpha": "100,100",
-								"theme": "fint"
-							},
-							"data": [{
-								"label": data.data[0].label,
-								"value": data.data[0].value
-							}, {
-								"label": data.data[1].label,
-								"value": data.data[1].value
-							}]
-						}
-					});
+			$("#chart-container16").updateFusionCharts({
+				dataSource: {
+					"chart": chart,
+					"data": [{
+						"label": "cos",
+						"value": "45"
+					}, {
+						"label": "其余",
+						"value": "55"
+					}]
 				}
 			});
-		}, 4000);
+		}, 3000);
 
 	});
 }
@@ -465,6 +457,7 @@ function CreateCylinder(id, Cylinder) {
 }
 
 function init(evt) {
+	//console.log(evt);
 	var loadMessage = evt.sender.options;
 	loadMessage.loadMessage = "正在加载图表，请稍后";
 	loadMessage.dataInvalidMessage = "无效的数据";

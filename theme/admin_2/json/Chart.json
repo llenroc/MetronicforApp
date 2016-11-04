@@ -163,7 +163,7 @@
 		{
 			"id": "chart-container13",
 			"chart": {
-				"caption": "VUM"
+				"caption": "KVM"
 			},
 			"dials": {
 				"dial": [
@@ -175,7 +175,7 @@
 		}, {
 			"id": "chart-container14",
 			"chart": {
-				"caption": "KVA"
+				"caption": "VMware"
 			},
 			"dials": {
 				"dial": [
@@ -187,7 +187,7 @@
 		}, {
 			"id": "chart-container15",
 			"chart": {
-				"caption": "Vtrix"
+				"caption": "Citrix"
 			},
 			"dials": {
 				"dial": [
@@ -199,7 +199,7 @@
 		}, {
 			"id": "chart-container18",
 			"chart": {
-				"caption": "KVMD"
+				"caption": "Hyper-V"
 			},
 			"dials": {
 				"dial": [
@@ -214,7 +214,7 @@
 		{
 			"id": "chart-container16",
 			"chart": {
-				"caption": "COS"
+				"caption": "COS占比"
 			},
 			"data": [
 				{
