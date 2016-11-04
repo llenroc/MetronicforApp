@@ -68,7 +68,9 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 				"dials": {
 					"dial": [{
 						"value": AngularGaugeChart.dials.dial[0].value,
-						"borderAlpha": "10",
+						//"borderColor":"#549997",
+						//"borderAlpha": "38",
+						//"borderThickness":"5",
 						"bgColor": "#549997,#1A625C,#549997"
 					}]
 				}
@@ -436,6 +438,7 @@ function CreateCylinder(id, Cylinder) {
 					"cylRadius": "15",
 					"showBorder": "1",
 					"showShadow": "1",
+
 					"ticksOnRight": "0"
 				},
 				"value": Cylinder.value
