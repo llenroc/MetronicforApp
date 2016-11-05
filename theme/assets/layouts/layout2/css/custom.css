@@ -245,42 +245,29 @@ body {
   /*Opera 11.10+*/ }
 
 /*右侧导航阴影*/
-.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover.navbar-collapse,
-.page-sidebar.navbar-collapse {
-  box-shadow: 10px 0 40px #0B3D56; }
+.page-content {
+  box-shadow: 10px 0 40px #0B3D56 inset; }
 
 /*返回顶部图标颜色*/
 .scroll-to-top > i {
   color: #000000; }
 
-/*各种图表的大小*/
-.AngularGaugeChart {
+/*各种图表的样式*/
+.qi-chart {
   width: 100%;
-  height: 160px; }
+  background: #8CC5B9;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
 
-.CylinderChart {
-  width: 100%;
-  height: 360px; }
+.qi-chart-a {
+  height: 160px;
+  line-height: 160px; }
 
-.VbulletChart {
-  width: 100%;
-  height: 360px; }
-
-.ThermometerChart {
-  width: 100%;
-  height: 360px; }
-
-.AngularGaugeChartB {
-  width: 100%;
-  height: 160px; }
-
-.DoughNut2d {
-  width: 100%;
-  height: 160px; }
-
-.Cylinder {
-  width: 100%;
-  height: 360px; }
+.qi-chart-b {
+  height: 360px;
+  line-height: 360px; }
 
 .nopadding {
   padding-left: 0;
@@ -297,7 +284,9 @@ body {
   background-color: rgba(255, 255, 255, 0); }
 
 .accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled.collapsed {
-  background-position: left 12px; }
+  background-position: left 12px;
+  border-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0); }
 
 .accordion .panel .panel-title .accordion-toggle {
   padding: 10px 20px; }
@@ -324,11 +313,6 @@ body {
   background: linear-gradient(to right, #245B56 0%, #2DB29A 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#245B56', endColorstr='#2DB29A',GradientType=0 ); }
 
-/*:root .panel-default>.panel-heading {
-    filter:none;
-    border-color: rgba(255,255,255,0);
-    background-color: rgba(255,255,255,0);
-}*/
 .panel {
   border-color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0); }
@@ -345,7 +329,27 @@ body {
   border-color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0); }
 
-/*.panel-group .panel {
-    border-color: rgba(255,255,255,0);
-    background-color: rgba(255,255,255,0);
-}*/
+/*左侧导航*/
+.nav-item a span {
+  /*color: #fff;*/ }
+
+.page-sidebar .page-sidebar-menu > li > a > i {
+  /*color: #fff;*/
+  font-size: 40px; }
+
+.page-sidebar .page-sidebar-menu-closed > li > a > i {
+  font-size: 24px; }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a,
+.page-sidebar:hover .page-sidebar-menu > li.active > a {
+  /*background: #45EBDD;*/ }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a i {
+  /*color: #fff;*/ }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a span {
+  font-weight: bold; }
+
+.page-sidebar .page-sidebar-menu > li > a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a {
+  padding: 22px 15px 8px; }
