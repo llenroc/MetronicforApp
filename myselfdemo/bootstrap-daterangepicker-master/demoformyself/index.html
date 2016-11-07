@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../daterangepicker.css">
+ -->
+  <link rel="stylesheet" type="text/css" href="daterangepicker.css">
+ 	<script src="jquery/dist/jquery.js"></script>
+	<script src="bootstrap/dist/js/bootstrap.js"></script>
+	<!-- <script src="../moment.js"></script> -->
+  <script type="text/javascript" src="daterangepicker.js"></script>
+	<!-- <script type="text/javascript" src="../daterangepicker.js"></script> -->
+</head>
+<body>
+
+<button style="margin: 0;" class="btn btn-default btn-xs" id="date-range" type="button">
+        <span class="date-title"> 
+        2016-11-07 至2016-11-07
+        
+        </span> <i class="icon-caret-down"></i>
+      </button>
+
+<script type="text/javascript">
+$(function() {
+
+     var startdate = "2016-11-07";
+      var enddate = "2016-11-07";
+      //初始化日期控件
+      $('#date-range').daterangepicker(
+          {
+            format : 'YYYY-MM-DD',
+            startDate : startdate,
+            endDate : enddate,
+            locale : {
+              applyLabel : '确定',
+              cancelLabel : '取消',
+              fromLabel : '从',
+              toLabel : '至',
+              weekLabel : '周',
+              customRangeLabel : '日期范围',
+              daysOfWeek : moment()._lang._weekdaysMin.slice(),
+              monthNames : moment()._lang._monthsShort.slice(),
+              firstDay : 0
+            }
+          },
+          function(start, end) {
+            $('#date-range .date-title').html(
+                start.format('YYYY-MM-DD') + ' 至 '
+                    + end.format('YYYY-MM-DD'));
+            $(':hidden[name=startdate]').val(
+                start.format('YYYY-MM-DD'));
+            $(':hidden[name=enddate]')
+                .val(end.format('YYYY-MM-DD'));
+          });
+    
+});
+</script>
+</body>
+</html>

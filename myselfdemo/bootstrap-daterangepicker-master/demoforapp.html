@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+	  <link rel="stylesheet" type="text/css" href="demoformyself/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+      <script src="demoformyself/jquery/dist/jquery.min.js"></script>
+      <!-- <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+      <script type="text/javascript" src="moment.js"></script>
+      <script type="text/javascript" src="daterangepicker.js"></script>
+</head>
+<body>
+	<style>
+#wrapper
+{
+width:800px;
+margin:0 auto;
+color:#333;
+font-family:Tahoma;
+line-height:1.5;
+font-size:14px;
+}
+.demo { margin:30px 0;}
+.date-picker-wrapper .month-wrapper table .day.lalala { background-color:orange; }
+.options { display:none; border-left:6px solid #8ae; padding:10px; font-size:12px; line-height:1.4; background-color:#eee; border-radius:4px;}
+</style>
+</head>
+<body>
+<div>
+<header>
+<h1>jQuery可选择日期范围的日期选择器插件 <span>A jQuery plugin that allows user to select a date range</span></h1>
+<div>
+<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Calendar-Date-Time-picker/201504251737.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+</div>
+</header>
+<div class="htmleaf-content bgcolor-3">
+<h2>Demonstrations</h2>
+<div>
+Default settings: <input id="date-range0" size="30" value=""> 
+<a href="#">Show Config</a>
+<pre>
+{}</pre>
+</div>
+<div>
+Default settings with time enabled: <input id="date-range1" size="30" value="">
+<a href="#">Show Config</a>
+<pre>
+{
+startOfWeek: 'monday',
+separator : ' ~ ',
+format: 'DD.MM.YYYY HH:mm',
+autoClose: false,
+time: {
+enabled: true
+}
+}</pre>
+</div>
+<div>
+Default settings with default value: <input id="date-range2" size="30" value="2013-10-01 to 2013-11-04">
+<a href="#">Show Config</a>
+<pre>
+{}</pre>
+</div>
+<div>
+Force to Chinese: <input id="date-range3" size="30" value="">
+<a href="#">Show Config</a>
+<pre>
+{
+language:'cn'
+}</pre>
+</div>
+<div>
+Force to English: <input id="date-range4" size="30" value="">
+<a href="#">Show Config</a>
+<pre>
+{
+language:'en'
+} </pre>
+</div>
+<div>
+Sticky months: <input id="date-range17" size="30" value="">
+<a href="#">Show Config</a>
+<pre>
+{
+stickyMonths: true,
+startDate: '2013-01-10',
+endDate: '2013-05-10'
+} </pre>
+</div>
+</div>
+</div>
+<script>
+$(function()
+{
+$('a.show-option').click(function(evt)
+{
+evt.preventDefault();
+$(this).siblings('.options').slideToggle();
+});
+})
+</script>
+</body>
+</html>
