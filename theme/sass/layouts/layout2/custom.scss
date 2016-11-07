@@ -353,3 +353,67 @@ body {
 .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a {
     padding: 22px 15px 8px;
 }
+/*.nav-item.active.open{
+    width:220px;
+}*/
+/*日期选择*/
+.daterangepicker .ranges input[type=text] {
+    width: 80px!important;
+    font-size: 11px;
+    vertical-align: middle;
+}
+/*我的首页*/
+@mixin box {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 135px;
+}
+.yx {
+    background: url("../img/yx.png") no-repeat;
+    @include box;
+}
+.bj {
+    background: url("../img/bj.png") no-repeat;
+    @include box;
+}
+.tj {
+    background: url("../img/tj.png") no-repeat;
+    @include box;
+}
+.dj {
+    background: url("../img/dj.png") no-repeat;
+    @include box;
+}
+.icon0 {
+    width: 8px;
+    height: 34px;
+}
+.page-header.navbar .page-top {
+    background: #000000;
+    line-height: 68px;
+    vertical-align: middle;
+}
+.logo0 {
+    margin-top: 0.8rem;
+    margin-left: 1rem;
+}
+.logo1 {
+    margin-top: 2.2rem;
+    margin-left: 1rem;
+}
+.top-menu {
+    color: #fff;
+}
+.top-menu a {
+    color: #FFF;
+    text-decoration: none;
+}
+.top-menu a {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+//.top-menu a:last-child {
+//  padding-right: 15px;
+//}

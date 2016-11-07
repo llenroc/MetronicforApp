@@ -8,7 +8,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>qixianchuan-according</title>
+		<title>qixianchuan-datetimerange</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -17,6 +17,7 @@
 		<link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+
 		<!-- END GLOBAL MANDATORY STYLES -->
 		<!-- BEGIN THEME GLOBAL STYLES -->
 		<link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
@@ -37,23 +38,412 @@
 			<!-- BEGIN HEADER INNER -->
 			<div class="page-header-inner">
 				<!-- BEGIN LOGO -->
-
-				<!--<div class="page-logo">
-					<div class="menu-toggler sidebar-toggler center-block">
+				<div class="page-logo">
+					<a href="index.html">
+						<img src="../assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" /> </a>
+					<div class="menu-toggler sidebar-toggler">
+						<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
 					</div>
-				</div>-->
+				</div>
+				<!-- END LOGO -->
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+				<!-- END RESPONSIVE MENU TOGGLER -->
+				<!-- BEGIN PAGE ACTIONS -->
+				<!-- DOC: Remove "hide" class to enable the page header actions -->
+				<div class="page-actions">
+					<div class="btn-group">
+						<button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-plus"></i>&nbsp;
+                            <span class="hidden-sm hidden-xs">New&nbsp;</span>&nbsp;
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="javascript:;">
+									<i class="icon-docs"></i> New Post </a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="icon-tag"></i> New Comment </a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="icon-share"></i> Share </a>
+							</li>
+							<li class="divider"> </li>
+							<li>
+								<a href="javascript:;">
+									<i class="icon-flag"></i> Comments
+									<span class="badge badge-success">4</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="icon-users"></i> Feedbacks
+									<span class="badge badge-danger">2</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- END PAGE ACTIONS -->
+				<!-- BEGIN PAGE TOP -->
 				<div class="page-top">
-					<img src="../assets/layouts/layout2/img/logo0.png" class="logo-default pull-left img-responsive logo0" />
-					<img src="../assets/layouts/layout2/img/logo1.png" class="pull-left img-responsive logo1" />
+					<!-- BEGIN HEADER SEARCH BOX -->
+					<!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+					<form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="搜索..." name="query">
+							<span class="input-group-btn">
+                                <a href="javascript:;" class="btn submit">
+                                    <i class="icon-magnifier"></i>
+                                </a>
+                            </span>
+						</div>
+					</form>
+					<!-- END HEADER SEARCH BOX -->
+					<!-- BEGIN TOP NAVIGATION MENU -->
 					<div class="top-menu">
-
-						<span>当前用户：</span>
-						<span>Administrator</span>
-
-						<a href="#"><img src="../assets/layouts/layout2/img/notes_edit.png" />修改密码</a>
-						<a href="#"><img src="../assets/layouts/layout2/img/remove.png" />退出登录</a>
-
+						<ul class="nav navbar-nav pull-right">
+							<!-- BEGIN NOTIFICATION DROPDOWN -->
+							<!-- DOC: Apply "dropdown-dark" class below "dropdown-extended" to change the dropdown styte -->
+							<!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+							<!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+							<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+									<i class="icon-bell"></i>
+									<span class="badge badge-default"> 7 </span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="external">
+										<h3>
+                                            <span class="bold">12 pending</span> notifications</h3>
+										<a href="page_user_profile_1.html">view all</a>
+									</li>
+									<li>
+										<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+											<li>
+												<a href="javascript:;">
+													<span class="time">just now</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-success">
+                                                            <i class="fa fa-plus"></i>
+                                                        </span> New user registered. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">3 mins</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span> Server #12 overloaded. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">10 mins</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-warning">
+                                                            <i class="fa fa-bell-o"></i>
+                                                        </span> Server #2 not responding. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">14 hrs</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </span> Application error. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">2 days</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span> Database overloaded 68%. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">3 days</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span> A user IP blocked. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">4 days</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-warning">
+                                                            <i class="fa fa-bell-o"></i>
+                                                        </span> Storage Server #4 not responding dfdfdfd. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">5 days</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </span> System Error. </span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="time">9 days</span>
+													<span class="details">
+                                                        <span class="label label-sm label-icon label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </span> Storage server failed. </span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!-- END NOTIFICATION DROPDOWN -->
+							<!-- BEGIN INBOX DROPDOWN -->
+							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+							<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+									<i class="icon-envelope-open"></i>
+									<span class="badge badge-default"> 4 </span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="external">
+										<h3>You have
+                                            <span class="bold">7 New</span> Messages</h3>
+										<a href="app_inbox.html">view all</a>
+									</li>
+									<li>
+										<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+											<li>
+												<a href="#">
+													<span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+													<span class="subject">
+                                                        <span class="from"> Lisa Wong </span>
+													<span class="time">Just Now </span>
+													</span>
+													<span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+													<span class="subject">
+                                                        <span class="from"> Richard Doe </span>
+													<span class="time">16 mins </span>
+													</span>
+													<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
+													<span class="subject">
+                                                        <span class="from"> Bob Nilson </span>
+													<span class="time">2 hrs </span>
+													</span>
+													<span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+													<span class="subject">
+                                                        <span class="from"> Lisa Wong </span>
+													<span class="time">40 mins </span>
+													</span>
+													<span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+													<span class="subject">
+                                                        <span class="from"> Richard Doe </span>
+													<span class="time">46 mins </span>
+													</span>
+													<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!-- END INBOX DROPDOWN -->
+							<!-- BEGIN TODO DROPDOWN -->
+							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+							<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+									<i class="icon-calendar"></i>
+									<span class="badge badge-default"> 3 </span>
+								</a>
+								<ul class="dropdown-menu extended tasks">
+									<li class="external">
+										<h3>You have
+                                            <span class="bold">12 pending</span> tasks</h3>
+										<a href="app_todo.html">view all</a>
+									</li>
+									<li>
+										<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">New release v1.2 </span>
+													<span class="percent">30%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">40% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">Application deployment</span>
+													<span class="percent">65%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">65% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">Mobile app release</span>
+													<span class="percent">98%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">98% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">Database migration</span>
+													<span class="percent">10%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">10% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">Web server upgrade</span>
+													<span class="percent">58%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">58% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">Mobile development</span>
+													<span class="percent">85%</span>
+													</span>
+													<span class="progress">
+                                                        <span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">85% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="javascript:;">
+													<span class="task">
+                                                        <span class="desc">New UI release</span>
+													<span class="percent">38%</span>
+													</span>
+													<span class="progress progress-striped">
+                                                        <span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">38% Complete</span>
+													</span>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!-- END TODO DROPDOWN -->
+							<!-- BEGIN USER LOGIN DROPDOWN -->
+							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+							<li class="dropdown dropdown-user">
+								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+									<img alt="" class="img-circle" src="../assets/layouts/layout2/img/avatar3_small.jpg" />
+									<span class="username username-hide-on-mobile"> Nick </span>
+									<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-default">
+									<li>
+										<a href="page_user_profile_1.html">
+											<i class="icon-user"></i> My Profile </a>
+									</li>
+									<li>
+										<a href="app_calendar.html">
+											<i class="icon-calendar"></i> My Calendar </a>
+									</li>
+									<li>
+										<a href="app_inbox.html">
+											<i class="icon-envelope-open"></i> My Inbox
+											<span class="badge badge-danger"> 3 </span>
+										</a>
+									</li>
+									<li>
+										<a href="app_todo_2.html">
+											<i class="icon-rocket"></i> My Tasks
+											<span class="badge badge-success"> 7 </span>
+										</a>
+									</li>
+									<li class="divider"> </li>
+									<li>
+										<a href="page_user_lock_1.html">
+											<i class="icon-lock"></i> Lock Screen </a>
+									</li>
+									<li>
+										<a href="page_user_login_1.html">
+											<i class="icon-key"></i> Log Out </a>
+									</li>
+								</ul>
+							</li>
+							<!-- END USER LOGIN DROPDOWN -->
+							<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+							<li class="dropdown dropdown-extended quick-sidebar-toggler">
+								<span class="sr-only">Toggle Quick Sidebar</span>
+								<i class="icon-logout"></i>
+							</li>
+							<!-- END QUICK SIDEBAR TOGGLER -->
+						</ul>
 					</div>
 					<!-- END TOP NAVIGATION MENU -->
 				</div>
@@ -81,11 +471,11 @@
 					<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
 					<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 					<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-						<li class="nav-item start active open">
+						<li class="nav-item start">
 							<a href="qixianchuan-demo1.html" class="nav-link nav-toggle">
 								<i class="fa fa-3x fa-home"></i>
 								<span class="title">我的首页</span>
-								<span class="selected"></span>
+								<span class="arrow"></span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -95,11 +485,11 @@
 								<span class="arrow"></span>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active open">
 							<a href="qixianchuan-demo4.html" class="nav-link nav-toggle">
 								<i class="fa fa-cuspie fa-pie-chart fa-fw"></i>
 								<span class="title">数据统计</span>
-								<span class="arrow"></span>
+								<span class="selected"></span>
 							</a>
 						</li>
 						<li class="nav-item">
@@ -222,165 +612,10 @@
 
 					<!-- END PAGE HEADER-->
 
-					<!-- BEGIN ACCORDION PORTLET-->
-					<div class="portlet box">
-						<!--purple yellow green-->
+					<button id="date-range" style="margin: 0;" class="btn btn-default btn-xs" type="button">
+			        	<span class="date-title"> 2016-11-07 至2016-11-07</span> <i class="icon-caret-down"></i>
+			      	</button>
 
-						<div class="portlet-body">
-							<!--若要想让同时可以展开多个面板则去掉这个id="accordion2"-->
-							<div class="panel-group accordion scrollable" id="accordion2">
-								<div class="panel panel-default">
-									<div class="panel-heading panel-heading-parent">
-										<h4 class="panel-title">
-											<img class="pull-left icon0" src="../assets/layouts/layout2/img/icon0.png" />
-                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion2" href="#collapse_2_1">天津</a>
-                                        </h4>
-									</div>
-									<div id="collapse_2_1" class="panel-collapse in">
-										<div class="panel-body">
-											<div class="panel-group accordion scrollable" id="accordion3">
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_1">工厂A</a>
-                                        </h4>
-													</div>
-													<div id="collapse_3_1" class="panel-collapse in">
-														<div class="panel-body">
-															<div class="row">
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 yx">
-																	#1
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 bj">
-																	#2
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 dj">
-																	#3
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 tj">
-																	#4
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 yx">
-																	#5
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 bj">
-																	#6
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 dj">
-																	#7
-																</div>
-																<div class="col-xs-8 col-sm-2 col-md-2 col-lg-2 tj">
-																	#8
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_2">工厂B</a>
-                                                </h4>
-													</div>
-													<div id="collapse_3_2" class="panel-collapse collapse">
-														<div class="panel-body">
-															<p>
-																工厂B
-															</p>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_3">工厂C</a>
-                                                </h4>
-													</div>
-													<div id="collapse_3_3" class="panel-collapse collapse">
-														<div class="panel-body">
-															<p>
-																工厂C
-															</p>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h4 class="panel-title">
-                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#collapse_3_4">工厂D</a>
-                                                </h4>
-													</div>
-													<div id="collapse_3_4" class="panel-collapse collapse">
-														<div class="panel-body">
-															<p>
-																工厂D
-															</p>
-														</div>
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading panel-heading-parent">
-										<h4 class="panel-title">
-											<img class="pull-left icon0" src="../assets/layouts/layout2/img/icon0.png" />
-                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion2" href="#collapse_2_2">北京</a>
-                                        </h4>
-									</div>
-									<div id="collapse_2_2" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p> Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut. </p>
-											<p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-											</p>
-											<p> Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut. </p>
-											<p>
-												<a class="btn blue" href="ui_tabs_accordions_navs.html#collapse_2_2" target="_blank"> Activate this section via URL </a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading panel-heading-parent">
-										<h4 class="panel-title">
-											<img class="pull-left icon0" src="../assets/layouts/layout2/img/icon0.png" />
-                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion2" href="#collapse_2_3">上海</a>
-                                                </h4>
-									</div>
-									<div id="collapse_2_3" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor. </p>
-											<p> Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut. </p>
-											<p>
-												<a class="btn green" href="ui_tabs_accordions_navs.html#collapse_2_3" target="_blank"> Activate this section via URL </a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading panel-heading-parent">
-										<h4 class="panel-title">
-											<img class="pull-left icon0" src="../assets/layouts/layout2/img/icon0.png" />
-                                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion2" href="#collapse_2_4">深圳</a>
-                                                </h4>
-									</div>
-									<div id="collapse_2_4" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p> Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut. </p>
-											<p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor. </p>
-											<p> Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut. </p>
-											<p>
-												<a class="btn red" href="ui_tabs_accordions_navs.html#collapse_2_4" target="_blank"> Activate this section via URL </a>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END ACCORDION PORTLET-->
 				</div>
 				<!-- END CONTENT BODY -->
 			</div>
@@ -970,16 +1205,50 @@
 			<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 			<script src="../assets/global/plugins/jquery.blockui.min.js"></script>
 			<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
 			<!-- END CORE PLUGINS -->
 			<!-- BEGIN THEME GLOBAL SCRIPTS -->
 			<script src="../assets/global/scripts/app.min.js"></script>
 			<!-- END THEME GLOBAL SCRIPTS -->
+
 			<!-- BEGIN THEME LAYOUT SCRIPTS -->
 			<script src="../assets/layouts/layout2/scripts/layout.min.js"></script>
 			<script src="../assets/layouts/layout2/scripts/demo.min.js"></script>
 			<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
 			<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
 			<!-- END THEME LAYOUT SCRIPTS -->
+			<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+			<script src="../assets/qi-app/daterangepicker.js"></script>
+			<script type="text/javascript">
+				var startdate = "2016-11-07";
+				var enddate = "2016-11-07";
+				//初始化日期控件
+				$('#date-range').daterangepicker({
+						format: 'YYYY-MM-DD',
+						startDate: startdate,
+						endDate: enddate,
+						locale: {
+							applyLabel: '确定',
+							cancelLabel: '取消',
+							fromLabel: '从',
+							toLabel: '至',
+							weekLabel: '周',
+							customRangeLabel: '日期范围',
+							daysOfWeek: moment()._lang._weekdaysMin.slice(),
+							monthNames: moment()._lang._monthsShort.slice(),
+							firstDay: 0
+						}
+					},
+					function(start, end) {
+						$('#date-range .date-title').html(
+							start.format('YYYY-MM-DD') + ' 至 ' +
+							end.format('YYYY-MM-DD'));
+						$(':hidden[name=startdate]').val(
+							start.format('YYYY-MM-DD'));
+						$(':hidden[name=enddate]')
+							.val(end.format('YYYY-MM-DD'));
+					});
+			</script>
 	</body>
 
 </html>
