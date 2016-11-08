@@ -227,8 +227,66 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif; }
 
+/*左侧导航*/
+.nav-item a span {
+  /*color: #fff;*/ }
+
+.page-sidebar .page-sidebar-menu > li > a > i {
+  /*color: #fff;*/
+  font-size: 40px; }
+
+.page-sidebar .page-sidebar-menu-closed > li > a > i {
+  font-size: 24px; }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a,
+.page-sidebar:hover .page-sidebar-menu > li.active > a {
+  /*background: #45EBDD;*/ }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a i {
+  /*color: #fff;*/ }
+
+.page-sidebar .page-sidebar-menu > li.active.open > a span {
+  font-weight: bold; }
+
+.page-sidebar .page-sidebar-menu > li > a,
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a {
+  padding: 22px 15px 8px; }
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  to {
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06); } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  to {
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06); } }
+
+@-webkit-keyframes pulse-reverse {
+  from {
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes pulse-reverse {
+  from {
+    -webkit-transform: scale3d(1.06, 1.06, 1.06);
+    transform: scale3d(1.06, 1.06, 1.06); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
 /*内容背景渐变*/
 .page-container-bg-solid .page-content {
+  background: #8CC5B9;
   FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#8CC5B9,endColorStr=#45687F);
   /*IE 6 7 8*/
   background: -ms-linear-gradient(top, #8CC5B9, #45687F);
@@ -242,7 +300,7 @@ body {
   background: -webkit-linear-gradient(top, #8CC5B9, #45687F);
   /*Safari5.1 Chrome 10+*/
   background: -o-linear-gradient(top, #8CC5B9, #45687F);
-  /*Opera 11.10+*/ }
+  /*Opera 11.060+*/ }
 
 /*右侧导航阴影*/
 .page-content {
@@ -320,34 +378,6 @@ body {
   border-color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0); }
 
-/*左侧导航*/
-.nav-item a span {
-  /*color: #fff;*/ }
-
-.page-sidebar .page-sidebar-menu > li > a > i {
-  /*color: #fff;*/
-  font-size: 40px; }
-
-.page-sidebar .page-sidebar-menu-closed > li > a > i {
-  font-size: 24px; }
-
-.page-sidebar .page-sidebar-menu > li.active.open > a,
-.page-sidebar:hover .page-sidebar-menu > li.active > a {
-  /*background: #45EBDD;*/ }
-
-.page-sidebar .page-sidebar-menu > li.active.open > a i {
-  /*color: #fff;*/ }
-
-.page-sidebar .page-sidebar-menu > li.active.open > a span {
-  font-weight: bold; }
-
-.page-sidebar .page-sidebar-menu > li > a,
-.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a {
-  padding: 22px 15px 8px; }
-
-/*.nav-item.active.open{
-    width:220px;
-}*/
 /*日期选择*/
 .daterangepicker .ranges input[type=text] {
   width: 80px !important;
@@ -364,7 +394,8 @@ body {
   padding-bottom: 130px;
   background-position: center center;
   box-shadow: 10px 0 40px #0B3D56 inset;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  overflow: hidden; }
 
 .bj {
   background: url("../img/bj.png") no-repeat;
@@ -375,7 +406,8 @@ body {
   padding-bottom: 130px;
   background-position: center center;
   box-shadow: 10px 0 40px #0B3D56 inset;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  overflow: hidden; }
 
 .tj {
   background: url("../img/tj.png") no-repeat;
@@ -386,7 +418,8 @@ body {
   padding-bottom: 130px;
   background-position: center center;
   box-shadow: 10px 0 40px #0B3D56 inset;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  overflow: hidden; }
 
 .dj {
   background: url("../img/dj.png") no-repeat;
@@ -397,7 +430,8 @@ body {
   padding-bottom: 130px;
   background-position: center center;
   box-shadow: 10px 0 40px #0B3D56 inset;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  overflow: hidden; }
 
 .icon0 {
   width: 8px;
@@ -421,8 +455,27 @@ body {
 
 .top-menu a {
   color: #FFF;
-  text-decoration: none; }
-
-.top-menu a {
+  text-decoration: none;
   padding-left: 15px;
   padding-right: 15px; }
+
+.page-top {
+  padding-left: 15px; }
+
+.page-top,
+.page-top a {
+  color: #FFF;
+  text-decoration: none; }
+
+/*数据统计*/
+.bar-char-box {
+  height: 420px; }
+
+.bar-char-box img {
+  margin-top: 115px;
+  display: block; }
+  .bar-char-box img:hover {
+    cursor: pointer; }
+
+.mscolumn3d {
+  height: 420px; }

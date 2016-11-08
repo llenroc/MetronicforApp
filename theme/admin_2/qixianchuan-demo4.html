@@ -34,422 +34,39 @@
 
 	<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
 		<!-- BEGIN HEADER -->
-		<div class="page-header navbar navbar-fixed-top">
-			<!-- BEGIN HEADER INNER -->
-			<div class="page-header-inner">
-				<!-- BEGIN LOGO -->
+		<div class="page-header navbar navbar-fixed-top visible-xs">
+			<div class="page-header-inner ">
 				<div class="page-logo">
-					<a href="index.html">
-						<img src="../assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" /> </a>
-					<div class="menu-toggler sidebar-toggler">
-						<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-					</div>
+					<img src="../assets/layouts/layout2/img/logo1.png" alt="logo" class="logo-default" />
+					<div class="menu-toggler sidebar-toggler"></div>
 				</div>
-				<!-- END LOGO -->
-				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
-				<!-- END RESPONSIVE MENU TOGGLER -->
-				<!-- BEGIN PAGE ACTIONS -->
-				<!-- DOC: Remove "hide" class to enable the page header actions -->
-				<div class="page-actions">
-					<div class="btn-group">
-						<button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-plus"></i>&nbsp;
-                            <span class="hidden-sm hidden-xs">New&nbsp;</span>&nbsp;
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-						<ul class="dropdown-menu" role="menu">
-							<li>
-								<a href="javascript:;">
-									<i class="icon-docs"></i> New Post </a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<i class="icon-tag"></i> New Comment </a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<i class="icon-share"></i> Share </a>
-							</li>
-							<li class="divider"> </li>
-							<li>
-								<a href="javascript:;">
-									<i class="icon-flag"></i> Comments
-									<span class="badge badge-success">4</span>
-								</a>
-							</li>
-							<li>
-								<a href="javascript:;">
-									<i class="icon-users"></i> Feedbacks
-									<span class="badge badge-danger">2</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- END PAGE ACTIONS -->
-				<!-- BEGIN PAGE TOP -->
 				<div class="page-top">
-					<!-- BEGIN HEADER SEARCH BOX -->
-					<!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-					<form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="搜索..." name="query">
-							<span class="input-group-btn">
-                                <a href="javascript:;" class="btn submit">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </span>
+					<div class="row">
+						<div class="col-xs-12">
+							<span>当前用户：</span>
+							<span>Administrator</span>
+							<a href="#"><img src="../assets/layouts/layout2/img/notes_edit.png" />修改密码</a>
+							<a href="#"><img src="../assets/layouts/layout2/img/remove.png" />退出登录</a>
 						</div>
-					</form>
-					<!-- END HEADER SEARCH BOX -->
-					<!-- BEGIN TOP NAVIGATION MENU -->
-					<div class="top-menu">
-						<ul class="nav navbar-nav pull-right">
-							<!-- BEGIN NOTIFICATION DROPDOWN -->
-							<!-- DOC: Apply "dropdown-dark" class below "dropdown-extended" to change the dropdown styte -->
-							<!-- DOC: Apply "dropdown-hoverable" class after below "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
-							<!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
-							<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-									<i class="icon-bell"></i>
-									<span class="badge badge-default"> 7 </span>
-								</a>
-								<ul class="dropdown-menu">
-									<li class="external">
-										<h3>
-                                            <span class="bold">12 pending</span> notifications</h3>
-										<a href="page_user_profile_1.html">view all</a>
-									</li>
-									<li>
-										<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
-											<li>
-												<a href="javascript:;">
-													<span class="time">just now</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-success">
-                                                            <i class="fa fa-plus"></i>
-                                                        </span> New user registered. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">3 mins</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Server #12 overloaded. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">10 mins</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Server #2 not responding. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">14 hrs</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> Application error. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">2 days</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Database overloaded 68%. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">3 days</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> A user IP blocked. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">4 days</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Storage Server #4 not responding dfdfdfd. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">5 days</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> System Error. </span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="time">9 days</span>
-													<span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Storage server failed. </span>
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<!-- END NOTIFICATION DROPDOWN -->
-							<!-- BEGIN INBOX DROPDOWN -->
-							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-							<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-									<i class="icon-envelope-open"></i>
-									<span class="badge badge-default"> 4 </span>
-								</a>
-								<ul class="dropdown-menu">
-									<li class="external">
-										<h3>You have
-                                            <span class="bold">7 New</span> Messages</h3>
-										<a href="app_inbox.html">view all</a>
-									</li>
-									<li>
-										<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-											<li>
-												<a href="#">
-													<span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-													<span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-													<span class="time">Just Now </span>
-													</span>
-													<span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-													<span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-													<span class="time">16 mins </span>
-													</span>
-													<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
-													<span class="subject">
-                                                        <span class="from"> Bob Nilson </span>
-													<span class="time">2 hrs </span>
-													</span>
-													<span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-													<span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-													<span class="time">40 mins </span>
-													</span>
-													<span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													<span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-													<span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-													<span class="time">46 mins </span>
-													</span>
-													<span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<!-- END INBOX DROPDOWN -->
-							<!-- BEGIN TODO DROPDOWN -->
-							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-							<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
-								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-									<i class="icon-calendar"></i>
-									<span class="badge badge-default"> 3 </span>
-								</a>
-								<ul class="dropdown-menu extended tasks">
-									<li class="external">
-										<h3>You have
-                                            <span class="bold">12 pending</span> tasks</h3>
-										<a href="app_todo.html">view all</a>
-									</li>
-									<li>
-										<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">New release v1.2 </span>
-													<span class="percent">30%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">40% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">Application deployment</span>
-													<span class="percent">65%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">65% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">Mobile app release</span>
-													<span class="percent">98%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">98% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">Database migration</span>
-													<span class="percent">10%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">10% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">Web server upgrade</span>
-													<span class="percent">58%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">58% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">Mobile development</span>
-													<span class="percent">85%</span>
-													</span>
-													<span class="progress">
-                                                        <span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">85% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<span class="task">
-                                                        <span class="desc">New UI release</span>
-													<span class="percent">38%</span>
-													</span>
-													<span class="progress progress-striped">
-                                                        <span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">38% Complete</span>
-													</span>
-													</span>
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<!-- END TODO DROPDOWN -->
-							<!-- BEGIN USER LOGIN DROPDOWN -->
-							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-							<li class="dropdown dropdown-user">
-								<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-									<img alt="" class="img-circle" src="../assets/layouts/layout2/img/avatar3_small.jpg" />
-									<span class="username username-hide-on-mobile"> Nick </span>
-									<i class="fa fa-angle-down"></i>
-								</a>
-								<ul class="dropdown-menu dropdown-menu-default">
-									<li>
-										<a href="page_user_profile_1.html">
-											<i class="icon-user"></i> My Profile </a>
-									</li>
-									<li>
-										<a href="app_calendar.html">
-											<i class="icon-calendar"></i> My Calendar </a>
-									</li>
-									<li>
-										<a href="app_inbox.html">
-											<i class="icon-envelope-open"></i> My Inbox
-											<span class="badge badge-danger"> 3 </span>
-										</a>
-									</li>
-									<li>
-										<a href="app_todo_2.html">
-											<i class="icon-rocket"></i> My Tasks
-											<span class="badge badge-success"> 7 </span>
-										</a>
-									</li>
-									<li class="divider"> </li>
-									<li>
-										<a href="page_user_lock_1.html">
-											<i class="icon-lock"></i> Lock Screen </a>
-									</li>
-									<li>
-										<a href="page_user_login_1.html">
-											<i class="icon-key"></i> Log Out </a>
-									</li>
-								</ul>
-							</li>
-							<!-- END USER LOGIN DROPDOWN -->
-							<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-							<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-							<li class="dropdown dropdown-extended quick-sidebar-toggler">
-								<span class="sr-only">Toggle Quick Sidebar</span>
-								<i class="icon-logout"></i>
-							</li>
-							<!-- END QUICK SIDEBAR TOGGLER -->
-						</ul>
 					</div>
-					<!-- END TOP NAVIGATION MENU -->
 				</div>
-				<!-- END PAGE TOP -->
 			</div>
-			<!-- END HEADER INNER -->
+		</div>
+		<div class="page-header navbar navbar-fixed-top hidden-xs">
+			<div class="page-header-inner">
+				<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+				<div class="page-top">
+					<img src="../assets/layouts/layout2/img/logo0.png" class="logo-default pull-left img-responsive logo0" />
+					<img src="../assets/layouts/layout2/img/logo1.png" class="pull-left img-responsive logo1" />
+					<div class="top-menu">
+						<span>当前用户：</span>
+						<span>Administrator</span>
+						<a href="#"><img src="../assets/layouts/layout2/img/notes_edit.png" />修改密码</a>
+						<a href="#"><img src="../assets/layouts/layout2/img/remove.png" />退出登录</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN HEADER & CONTENT DIVIDER -->
@@ -611,11 +228,46 @@
 					<!-- END THEME PANEL -->
 
 					<!-- END PAGE HEADER-->
-
-					<button id="date-range" style="margin: 0;" class="btn btn-default btn-xs" type="button">
-			        	<span class="date-title"> 2016-11-07 至2016-11-07</span> <i class="icon-caret-down"></i>
-			      	</button>
-
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-7">
+							<form class="form-horizontal" role="form">
+								<div class="form-body">
+									<div class="form-group">
+										<label class="col-xs-3 col-md-2 control-label font-white">查询时间</label>
+										<div class="col-xs-9 col-md-3">
+											<button id="date-range" class="btn btn-default btn-md" type="button">
+							        			<span class="date-title"> 2016-11-07 至2016-11-07</span> <i class="fa fa-calendar"></i>
+							      			</button>
+										</div>
+										<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
+											<div class="input-group">
+												<input type="text" class="form-control">
+												<span class="input-group-btn">
+                                            <button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
+                                         </span>
+											</div>
+											<!-- /input-group -->
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-5">
+							<button type="button" class="btn green col-sm-offset-1">稼 动 率</button>
+							<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">运行状态汇总</button>
+							<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">报警明细汇总</button>
+						</div>
+					</div>
+					<div class="row bar-char-box">
+						<img src="../assets/layouts/layout2/img/left-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
+						<div class="col-xs-12 visible-xs">
+							<button type="button" class="btn pull-left bg-green-sharp bg-font-green-sharp"><<</button>
+							<button type="button" class="btn pull-right bg-green-sharp bg-font-green-sharp"><<</button>
+						</div>
+						<div id="chart-container" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 center-block mscolumn3d"></div>
+						<img src="../assets/layouts/layout2/img/right-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
+					</div>
 				</div>
 				<!-- END CONTENT BODY -->
 			</div>
@@ -1248,6 +900,171 @@
 						$(':hidden[name=enddate]')
 							.val(end.format('YYYY-MM-DD'));
 					});
+			</script>
+
+			<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js" charset="utf-8"></script>
+			<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js" charset="utf-8"></script>
+			<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js" charset="utf-8"></script>
+			<script type="text/javascript">
+				FusionCharts.ready(function() {
+					var fusioncharts = new FusionCharts({
+						type: 'mscolumn3d',
+						renderAt: 'chart-container',
+						width: '100%',
+						height: '100%',
+						dataFormat: 'json',
+						dataSource: {
+							"chart": {
+								//"caption": "Comparison of Quarterly Revenue",
+								//"xAxisname": "Quarter",
+								//								"yAxisName": "Revenues (In USD)",
+								//								"numberPrefix": "$",
+								"plotFillAlpha": "80",
+								//Cosmetics
+								"paletteColors": "#0075c2,#1aaf5d",
+								"baseFontColor": "#333333",
+								"baseFont": "Helvetica Neue,Arial",
+								"captionFontSize": "14",
+								"subcaptionFontSize": "14",
+								"subcaptionFontBold": "0",
+								"showBorder": "0",
+								"bgColor": "#ffffff",
+								"showShadow": "0",
+								"canvasBgColor": "#ffffff",
+								"canvasBorderAlpha": "0",
+								"divlineAlpha": "100",
+								"divlineColor": "#999999",
+								"divlineThickness": "1",
+								"divLineIsDashed": "1",
+								"divLineDashLen": "1",
+								"divLineGapLen": "1",
+								"usePlotGradientColor": "0",
+								"showplotborder": "0",
+								"valueFontColor": "#ffffff",
+								"placeValuesInside": "1",
+								"showHoverEffect": "1",
+								"rotateValues": "1",
+								"showXAxisLine": "1",
+								"xAxisLineThickness": "1",
+								"xAxisLineColor": "#999999",
+								"showAlternateHGridColor": "0",
+								"legendBgAlpha": "0",
+								"legendBorderAlpha": "0",
+								"legendShadow": "0",
+								"legendPosition": "right",
+								"legendItemFontSize": "10",
+								"legendItemFontColor": "#666666"
+							},
+							"categories": [{
+								"category": [{
+									"label": "Q1"
+								}, {
+									"label": "Q2"
+								}, {
+									"label": "Q3"
+								}, {
+									"label": "Q4"
+								}, {
+									"label": "Q5"
+								}, {
+									"label": "Q6"
+								}, {
+									"label": "Q7"
+								}, {
+									"label": "Q8"
+								}, {
+									"label": "Q9"
+								}, {
+									"label": "Q10"
+								}, {
+									"label": "Q11"
+								}, {
+									"label": "Q12"
+								}, {
+									"label": "Q13"
+								}, {
+									"label": "Q14"
+								}, {
+									"label": "Q15"
+								}, {
+									"label": "Q16"
+								}]
+							}],
+							"dataset": [{
+								"seriesname": "设备1",
+								"data": [{
+									"value": "10000"
+								}, {
+									"value": "11500"
+								}, {
+									"value": "12500"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}, {
+									"value": "15000"
+								}]
+							}, {
+								"seriesname": "设备2",
+								"data": [{
+									"value": "25400"
+								}, {
+									"value": "29800"
+								}, {
+									"value": "21800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}, {
+									"value": "26800"
+								}]
+							}]
+						}
+					});
+					fusioncharts.render();
+				});
 			</script>
 	</body>
 

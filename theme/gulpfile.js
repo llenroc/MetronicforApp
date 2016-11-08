@@ -71,6 +71,7 @@ gulp.task('samin', function() {
 //自己改造的方法,仅针对layout2
 gulp.task('sass:w', function() {
 	gulp.watch('./sass/layouts/layout2/custom.scss', ['samin']);
+	gulp.watch('./sass/layouts/layout2/custom-ext.scss', ['samin']);
 });
 
 //*** CSS & JS minify task
