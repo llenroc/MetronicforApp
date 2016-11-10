@@ -3,8 +3,8 @@
 		{
 			"id": "chart-container1",
 			"chart": {
-				"caption": "图例",
-				"subcaption": "速度"
+				"caption": "U L1-L2",
+				"subcaption": "V"
 			},
 			"dials": {
 				"dial": [
@@ -16,8 +16,8 @@
 		}, {
 			"id": "chart-container2",
 			"chart": {
-				"caption": "图例2",
-				"subcaption": "速度2"
+				"caption": "U L2-L3",
+				"subcaption": "V"
 			},
 			"dials": {
 				"dial": [
@@ -29,8 +29,8 @@
 		}, {
 			"id": "chart-container3",
 			"chart": {
-				"caption": "图例3",
-				"subcaption": "速度3"
+				"caption": "U L1-L3",
+				"subcaption": "V"
 			},
 			"dials": {
 				"dial": [

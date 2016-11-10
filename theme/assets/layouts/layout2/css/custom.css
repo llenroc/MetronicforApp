@@ -227,9 +227,19 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif; }
 
+.page-content-wrapper .page-content {
+  margin-left: 84px; }
+
 /*左侧导航*/
 .nav-item a span {
   /*color: #fff;*/ }
+
+@media (min-width: 992px) {
+  .page-content-wrapper .page-content {
+    margin-left: 84px; } }
+
+.page-sidebar {
+  width: 84px; }
 
 .page-sidebar .page-sidebar-menu > li > a > i {
   /*color: #fff;*/
@@ -311,15 +321,28 @@ body {
   color: #000000; }
 
 /*各种图表的样式*/
+.chart-box {
+  border: 1px solid #a4fbf3;
+  box-sizing: border-box; }
+
 .qi-chart {
-  width: 100%;
-  background: #8CC5B9;
+  box-shadow: -5px 0 4px #0B3D56,5px 0 4px #0B3D56,0 -5px 4px #0B3D56,0 5px 4px #0B3D56;
   color: #fff;
   margin-left: auto;
   margin-right: auto;
   text-align: center; }
 
+.chart-box-left {
+  padding: 5px 0 5px 5px; }
+
+.chart-box-middle {
+  padding: 5px; }
+
+.chart-box-right {
+  padding: 5px 5px 5px 0; }
+
 .qi-chart-a {
+  padding: 0;
   height: 160px;
   line-height: 160px; }
 
@@ -330,6 +353,62 @@ body {
 .nopadding {
   padding-left: 0;
   padding-right: 0; }
+
+.qi-text-box {
+  color: #fff;
+  letter-spacing: 1px;
+  padding-bottom: 10px; }
+  @media (min-width: 1400px) {
+    .qi-text-box img {
+      margin-left: 10px; }
+    .qi-text-box span {
+      margin-left: 18px; } }
+  .qi-text-box img {
+    float: left;
+    display: block;
+    margin-left: 10px; }
+  .qi-text-box span {
+    font-size: 16px;
+    margin-left: 18px;
+    display: block;
+    float: left; }
+  .qi-text-box .qi-text-title {
+    letter-spacing: 0;
+    font-size: 18px;
+    line-height: 24px; }
+    .qi-text-box .qi-text-title i {
+      font-style: normal;
+      font-size: 10px; }
+  .qi-text-box .qi-text-title-con {
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 28px;
+    line-height: 24px;
+    background: #4b9089;
+    text-align: right;
+    padding-right: 5px;
+    border: 2px solid #2f6d7c; }
+  .qi-text-box .mode-condition {
+    padding-top: 15px;
+    border: 1px solid #96ddd5;
+    box-sizing: border-box;
+    padding-bottom: 5px; }
+
+.qi-search-box {
+  color: #fff;
+  box-sizing: border-box; }
+
+.qi-search-box-inner {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 40px;
+  border: 1px solid #96ddd5; }
+
+.qi-search-box .row {
+  padding-left: 15px;
+  font-size: 18px;
+  line-height: 36px; }
 
 /*accordion手风琴*/
 .accordion .panel .panel-title .accordion-toggle.accordion-toggle-styled {
@@ -385,6 +464,9 @@ body {
   vertical-align: middle; }
 
 /*我的首页*/
+.portlet.box > .portlet-body {
+  padding: 0; }
+
 .yx {
   background: url("../img/yx.png") no-repeat;
   font-size: 18px;

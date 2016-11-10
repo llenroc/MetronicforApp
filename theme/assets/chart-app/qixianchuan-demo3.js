@@ -37,11 +37,16 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 			dataSource: {
 				"chart": {
 					"showBorder": "1",
-					"captionOnTop": "1",
+					"borderColor": "#3d7f88",
+					"borderThickness": "1",
+					"borderAlpha": "90",
+					//"captionOnTop": "1",
 					"captionAlignment": "left",
 					"caption": AngularGaugeChart.chart.caption,
-					"captionFontSize": "15",
+					"captionFontSize": "10",
 					"captionFontColor": "#ffffff",
+					"chartTopMargin": "0",
+					"chartBottomMargin": "0",
 					"subcaption": AngularGaugeChart.chart.subcaption,
 					"subCaptionFontSize": "12",
 					"subCaptionFontColor": "#ffffff",
