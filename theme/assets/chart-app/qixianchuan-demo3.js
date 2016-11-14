@@ -423,7 +423,7 @@ function CreateCylinder(id, Cylinder) {
 					"captionOnTop": "1",
 					"chartTopMargin": "5",
 					"chartLeftMargin": "0",
-					"chartBottomMargin": "0",
+					"chartBottomMargin": "5",
 					"caption": Cylinder.chart.caption,
 					"lowerLimit": "0",
 					"upperLimit": "100",
@@ -438,12 +438,11 @@ function CreateCylinder(id, Cylinder) {
 					//"chartBottomMargin": "25",
 					//"cylFillHoverColor": "#0099fd",
 					//"cylFillHoverAlpha": "100",
-					"cylHeight": "290",
-					"cylOriginY": "325",
+					//"cylHeight": "290",
+					//"cylOriginY": "325",
 					"cylRadius": "15",
 					"showBorder": "1",
 					"showShadow": "1",
-
 					"ticksOnRight": "0"
 				},
 				"value": Cylinder.value

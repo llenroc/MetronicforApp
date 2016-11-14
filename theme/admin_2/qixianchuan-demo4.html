@@ -228,45 +228,47 @@
 					<!-- END THEME PANEL -->
 
 					<!-- END PAGE HEADER-->
-					<div class="row">
-						<div class="col-sm-12 col-md-12 col-lg-7">
-							<form class="form-horizontal" role="form">
-								<div class="form-body">
-									<div class="form-group">
-										<label class="col-xs-3 col-md-2 control-label font-white">查询时间</label>
-										<div class="col-xs-9 col-md-3">
-											<button id="date-range" class="btn btn-default btn-md" type="button">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 col-md-12 col-lg-7">
+								<form class="form-horizontal" role="form">
+									<div class="form-body">
+										<div class="form-group">
+											<label class="col-xs-3 col-md-2 control-label font-white">查询时间</label>
+											<div class="col-xs-9 col-md-3">
+												<button id="date-range" class="btn btn-default btn-md" type="button">
 							        			<span class="date-title"> 2016-11-07 至2016-11-07</span> <i class="fa fa-calendar"></i>
 							      			</button>
-										</div>
-										<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
-										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
-											<div class="input-group">
-												<input type="text" class="form-control">
-												<span class="input-group-btn">
+											</div>
+											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
+											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
+												<div class="input-group">
+													<input type="text" class="form-control">
+													<span class="input-group-btn">
                                             <button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
                                          </span>
+												</div>
+												<!-- /input-group -->
 											</div>
-											<!-- /input-group -->
 										</div>
 									</div>
-								</div>
-							</form>
+								</form>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-4 col-lg-offset-1">
+								<button type="button" class="btn green col-sm-offset-1">稼 动 率</button>
+								<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">运行状态汇总</button>
+								<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">报警明细汇总</button>
+							</div>
 						</div>
-						<div class="col-sm-12 col-md-12 col-lg-5">
-							<button type="button" class="btn green col-sm-offset-1">稼 动 率</button>
-							<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">运行状态汇总</button>
-							<button type="button" class="btn bg-green-seagreen bg-font-green-seagreen">报警明细汇总</button>
+						<div class="row bar-char-box">
+							<img src="../assets/layouts/layout2/img/left-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
+							<div class="col-xs-12 visible-xs">
+								<button type="button" class="btn pull-left bg-green-sharp bg-font-green-sharp"><<</button>
+								<button type="button" class="btn pull-right bg-green-sharp bg-font-green-sharp"><<</button>
+							</div>
+							<div id="chart-container" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 center-block mscolumn3d"></div>
+							<img src="../assets/layouts/layout2/img/right-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
 						</div>
-					</div>
-					<div class="row bar-char-box">
-						<img src="../assets/layouts/layout2/img/left-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
-						<div class="col-xs-12 visible-xs">
-							<button type="button" class="btn pull-left bg-green-sharp bg-font-green-sharp"><<</button>
-							<button type="button" class="btn pull-right bg-green-sharp bg-font-green-sharp"><<</button>
-						</div>
-						<div id="chart-container" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 center-block mscolumn3d"></div>
-						<img src="../assets/layouts/layout2/img/right-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
 					</div>
 				</div>
 				<!-- END CONTENT BODY -->

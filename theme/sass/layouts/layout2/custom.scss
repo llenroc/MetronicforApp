@@ -349,6 +349,9 @@ body {
 .scroll-to-top>i {
     color: #000000;
 }
+.zt-box-p {
+    margin-top: 10px;
+}
 //设备监控Begin
 /*各种图表的样式*/
 .chart-box {
@@ -395,7 +398,7 @@ body {
     //border: 1px solid #96ddd5;
     //box-shadow: -5px 0 10px #96ddd5,5px 0 10px #96ddd5,0 -5px 10px #96ddd5,0 5px 10px #96ddd5;
     //padding-top: 10px; //  background: #4b9089;
-    padding-bottom: 10px; //  @media (min-width: 1400px) {
+    //padding-bottom: 10px; //  @media (min-width: 1400px) {
     //      img {
     //          margin-left: 10px;
     //      }
@@ -545,6 +548,35 @@ body {
 .dj {
     background: url("../img/dj.png") no-repeat;
     @include box;
+}
+@mixin paddingLeft-12 {
+    padding-left: -12px;
+}
+@mixin paddingRight-12 {
+    padding-right: -12px;
+}
+.zt-box {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 5px solid transparent;
+    box-shadow: 10px 0 40px #0B3D56 inset;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    @include paddingLeft-12;
+    @include paddingRight-12;
+    img {
+        display: block;
+        margin-top: 3px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .zt-box-text {
+        margin-top: 5px;
+        font-size: 20px;
+    }
 }
 .icon0 {
     width: 8px;
@@ -723,6 +755,10 @@ body {
         height: 120px;
         line-height: 120px;
     }
+    .qi-chart-b {
+        height: 365px;
+        line-height: 365px;
+    }
     .qi-text-box .mode-condition {
         padding-top: 10px;
         padding-bottom: 2px;
@@ -755,11 +791,28 @@ body {
         margin-top: -64px;
     }
     .qi-lg-marginTopb {
-        margin-top: -182px;
+        margin-top: -184px;
+    }
+    .analysis {
+        margin-left: -14px;
+        padding: 15px 15px 10px;
+    }
+    .qi-lg-marginTopb-p {
+        padding-top: 2px;
+        padding-right: 8px;
     }
 }
 /*大屏幕*/
 @media (min-width: 1367px) {
+    .container-fluid {
+        margin-top: 28px;
+    }
+    .zt {
+        padding-left: 54px;
+    }
+    .zt-box {
+        border-right: 20px solid transparent;
+    }
     .page-sidebar {
         width: 84px;
     }
@@ -778,12 +831,12 @@ body {
     .qi-machine {
         margin-left: -10px;
         margin-right: -10px;
-        padding-bottom: 134px;
+        padding-bottom: 63px;
     }
     .qi-sange {
         margin-left: -10px;
         margin-right: -10px;
-        padding: 15px 5px 5px;
+        padding: 15px 5px 2px;
         font-size: 18px;
     }
     .qi-xl-margin {
@@ -802,6 +855,73 @@ body {
         padding-bottom: 32px;
     }
     .qi-lg-marginTopb {
-        margin-top: -202px;
+        margin-top: -183px;
+    }
+    .qi-lg-marginTopa {
+        margin-top: -122px;
+    }
+    .analysis {
+        margin-left: -15px;
+        padding: 15px 15px 10px;
+    }
+    .qi-text-box img {
+        margin-left: 5px;
+    }
+    .qi-text-box span {
+        margin-left: 5px;
+    }
+    .qi-text-box .qi-text-title {
+        line-height: 32px;
+    }
+    .qi-text-box .qi-text-title-con {
+        height: 32px;
+        line-height: 32px;
+    }
+    .qi-search-box .row {
+        line-height: 44px;
+    }
+    .qi-chart-b {
+        height: 464px;
+        line-height: 464px;
+    }
+    .qi-pic-left {
+        position: absolute;
+        top: 20px;
+        left: 128px;
+        img {
+            display: block;
+        }
+        .qi-icon-r {
+            margin-left: 20px;
+        }
+    }
+    .qi-pic-right {
+        position: absolute;
+        top: 22px;
+        right: 92px;
+        img {
+            display: block;
+        }
+        .qi-icon-w {
+            margin-left: 28px;
+        }
+    }
+    .qi-lg-marginTopb-p {
+        padding-right: 8px;
+    }
+    .bar-char-box {
+        height: 620px;
+        margin-top:36px;
+    }
+    .bar-char-box img {
+        //  height: 420px;
+        margin-top: 215px;
+        display: block;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .mscolumn3d {
+        height: 620px;
     }
 }
