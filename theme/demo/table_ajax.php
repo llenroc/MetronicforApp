@@ -28,7 +28,7 @@
     $records["data"][] = array(
       '<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline"><input name="id[]" type="checkbox" class="checkboxes" value="'.$id.'"/><span></span></label>',
       $id,
-      '12/09/2013',
+      '15/11/2016',
       'Jhon Doe',
       'Jhon Doe',
       '450.60$',
