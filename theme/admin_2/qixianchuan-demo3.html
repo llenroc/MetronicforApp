@@ -227,8 +227,8 @@
 					<!-- END THEME PANEL -->
 					<!-- END PAGE HEADER-->
 					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-4 col-xl-4">
+						<div class="row phone-mb">
+							<div class="col-lg-4 col-xl-4 phone-mr">
 								<div class="row margin-bottom-10 chart-box">
 									<div class="col-xl-4 col-lg-4 col-xs-4 col-sm-4 chart-box-left">
 										<div id="chart-container1" class=" qi-chart qi-chart-a AngularGaugeChart">图表将呈现在这里</div>
@@ -338,7 +338,7 @@
 						</div>
 
 						<div class="row margin-bottom-10">
-							<div class="col-lg-4">
+							<div class="col-lg-4 phone-mr">
 								<div class="row margin-bottom-10 chart-box">
 									<div class="col-xl-4 col-lg-4 col-xs-4 col-sm-4 chart-box-left">
 										<div id="chart-container7" class=" qi-chart qi-chart-a AngularGaugeChart">图表将呈现在这里</div>
@@ -351,7 +351,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-4 qi-sange-p">
 								<div class="row chart-box qi-sange">
 									<!--<img src="../assets/layouts/layout2/img/sange.png" class="img-responsive" />-->
 									<div class="row" style="position:relative">
@@ -448,7 +448,9 @@
 				<!-- END QUICK SIDEBAR -->
 			</div>
 			<!-- END CONTAINER -->
-			<!-- BEGIN FOOTER -->
+			
+		</div>
+		<!-- BEGIN FOOTER -->
 			<div class="page-footer">
 				<div class="page-footer-inner"> 2016 &copy; Metronic Theme By
 					<a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
@@ -459,7 +461,6 @@
 				</div>
 			</div>
 			<!-- END FOOTER -->
-		</div>
 		<!--[if lt IE 9]>
 				<script src="../assets/global/plugins/respond.min.js"></script>
 				<script src="../assets/global/plugins/excanvas.min.js"></script> 
@@ -495,6 +496,7 @@
 		<script type="text/javascript">
 			$(function() {
 				console.log($(window).width());
+				console.log($(window).height());
 			})
 		</script>
 	</body>

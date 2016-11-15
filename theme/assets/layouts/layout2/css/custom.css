@@ -624,32 +624,6 @@ body {
   font-size: 11px;
   vertical-align: middle; }
 
-/*手机*/
-@media (max-width: 767px) {
-  .mt-29 {
-    margin-top: -22px; }
-  .qi-lg-marginTopa {
-    margin-top: 0; }
-  .qi-lg-marginTopb {
-    margin-top: 0; }
-  .qi-machine {
-    margin-left: -18px;
-    margin-right: -5px;
-    padding-bottom: 0; } }
-
-/*平板*/
-@media (min-width: 768px) {
-  .mt-29 {
-    margin-top: -22px; }
-  .qi-lg-marginTopa {
-    margin-top: 0; }
-  .qi-lg-marginTopb {
-    margin-top: 0; }
-  .qi-machine {
-    margin-left: -18px;
-    margin-right: -5px;
-    padding-bottom: 0; } }
-
 /*pc*/
 @media (max-width: 1366px) {
   .page-sidebar {
@@ -720,6 +694,58 @@ body {
     padding-left: 15px;
     font-size: 14px;
     line-height: 36px; } }
+
+/*平板*/
+@media (max-width: 768px) {
+  .mt-29 {
+    margin-top: -22px; }
+  .qi-lg-marginTopa {
+    margin-top: 0; }
+  .qi-lg-marginTopb {
+    margin-top: 0; }
+  .qi-machine {
+    margin-left: -18px;
+    margin-right: -5px;
+    padding-bottom: 0; } }
+
+/*手机*/
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden; }
+  .page-sidebar,
+  .page-sidebar.in {
+    width: 100%;
+    margin: 0 0 10px !important; }
+  .page-content-wrapper .page-content {
+    padding: 25px 10px 10px; }
+  .mt-29 {
+    margin-top: -22px; }
+  .qi-lg-marginTopa {
+    margin-top: 0; }
+  .qi-lg-marginTopb {
+    margin-top: 0; }
+  .qi-machine {
+    margin-left: -14px;
+    margin-right: -5px;
+    padding-bottom: 0; }
+  .qi-text-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 25px; }
+  .phone-mb {
+    margin-bottom: 10px; }
+  .pl5pr5 {
+    padding-left: 0;
+    padding-right: 10px; }
+  .qi-sange-p {
+    padding-left: 10px;
+    padding-right: 20px; }
+  .qi-chart-x {
+    padding-left: 1px;
+    padding-right: 8px; }
+  .phone-mr {
+    padding-right: 25px; } }
 
 /*大屏幕*/
 @media (min-width: 1367px) {
