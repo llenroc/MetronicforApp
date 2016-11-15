@@ -3,8 +3,8 @@
 		{
 			"id": "chart-container1",
 			"chart": {
-				"caption": "U L1-L2",
-				"subcaption": "V"
+				"caption": "U L1-L2 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -16,8 +16,8 @@
 		}, {
 			"id": "chart-container2",
 			"chart": {
-				"caption": "U L2-L3",
-				"subcaption": "V"
+				"caption": "U L2-L3 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -29,8 +29,8 @@
 		}, {
 			"id": "chart-container3",
 			"chart": {
-				"caption": "U L1-L3",
-				"subcaption": "V"
+				"caption": "U L1-L3 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -42,8 +42,8 @@
 		}, {
 			"id": "chart-container4",
 			"chart": {
-				"caption": "图例4",
-				"subcaption": "速度4"
+				"caption": "U L1-N 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -55,8 +55,8 @@
 		}, {
 			"id": "chart-container5",
 			"chart": {
-				"caption": "图例5",
-				"subcaption": "速度5"
+				"caption": "U L2-N 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -68,8 +68,8 @@
 		}, {
 			"id": "chart-container6",
 			"chart": {
-				"caption": "图例6",
-				"subcaption": "速度6"
+				"caption": "U L3-N 单位:V",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -81,8 +81,8 @@
 		}, {
 			"id": "chart-container7",
 			"chart": {
-				"caption": "图例7",
-				"subcaption": "速度7"
+				"caption": "I L1 单位:A",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -94,8 +94,8 @@
 		}, {
 			"id": "chart-container8",
 			"chart": {
-				"caption": "图例8",
-				"subcaption": "速度8"
+				"caption": "I L2 单位:A",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -107,8 +107,8 @@
 		}, {
 			"id": "chart-container9",
 			"chart": {
-				"caption": "图例9",
-				"subcaption": "速度9"
+				"caption": "I L3 单位:A",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -121,8 +121,8 @@
 		, {
 			"id": "chart-container17",
 			"chart": {
-				"caption": "图例17",
-				"subcaption": "速度17"
+				"caption": "F",
+				"subcaption": "HZ"
 			},
 			"dials": {
 				"dial": [
@@ -154,7 +154,7 @@
 			"id": "chart-container12",
 			"mid": "container12",
 			"chart": {
-				"caption": "水温(°C)"
+				"caption": "水温"
 			},
 			"value": "12"
 		}
@@ -163,7 +163,8 @@
 		{
 			"id": "chart-container13",
 			"chart": {
-				"caption": "KVM"
+				"caption": "P 单位:KW",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -175,7 +176,8 @@
 		}, {
 			"id": "chart-container14",
 			"chart": {
-				"caption": "VMware"
+				"caption": "Q 单位:Kvar",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -187,7 +189,8 @@
 		}, {
 			"id": "chart-container15",
 			"chart": {
-				"caption": "Citrix"
+				"caption": "S 单位:KVA",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -199,7 +202,8 @@
 		}, {
 			"id": "chart-container18",
 			"chart": {
-				"caption": "Hyper-V"
+				"caption": "Rev 单位:RPM",
+				"subcaption": ""
 			},
 			"dials": {
 				"dial": [
@@ -214,7 +218,8 @@
 		{
 			"id": "chart-container16",
 			"chart": {
-				"caption": "COS占比"
+				"caption": "COSφ",
+				"subcaption":"PF"
 			},
 			"data": [
 				{

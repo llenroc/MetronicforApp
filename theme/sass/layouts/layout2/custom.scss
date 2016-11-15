@@ -810,6 +810,9 @@ body {
         font-size: 14px;
         line-height: 36px;
     }
+    #chart-container11{
+//      padding-left:5px;
+    }
 }
 /*大屏幕*/
 @media (min-width: 1367px) {
@@ -932,5 +935,9 @@ body {
     }
     .mscolumn3d {
         height: 620px;
+    }
+    .analysisb {
+        margin-left: -14px;
+        padding: 7px 15px 17px;
     }
 }

@@ -808,4 +808,7 @@ body {
     .bar-char-box img:hover {
       cursor: pointer; }
   .mscolumn3d {
-    height: 620px; } }
+    height: 620px; }
+  .analysisb {
+    margin-left: -14px;
+    padding: 7px 15px 17px; } }
