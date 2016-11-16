@@ -237,9 +237,13 @@
 											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
 											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
 												<div class="input-group" style="position:relative;">
-													<input id="equipment" type="text" class="form-control">
+													<!--<input id="equipment" type="text" class="form-control equipment">-->
 													<!--<div id="equipment" class="form-control" style="position:relative;overflow:hidden;"></div>-->
-													<div id="tree_2" class="tree-demo" style="display:none;position:absolute;top:40px;left:0;"> </div>
+													<!--<div id="tree_2" class="tree-demo equipment" style="display:none;position:absolute;top:40px;left:0;"> </div>-->
+													<input type="text" class="form-control" id="equipmentval" />
+													<div id="equipment" class="form-control" style="border:none;background:transparent;position:absolute;left:-39px;top:0px;padding-top:30px;z-index: 9999;">
+														<div id="tree_2" class="tree-demo" style="display: none;"> </div>
+													</div>
 													<span class="input-group-btn">
                                             			<button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
                                          			</span>
@@ -258,7 +262,7 @@
 						</div>
 						<div class="row">
 							<div class="container-fluid">
-
+								<div id="equipmentval"></div>
 							</div>
 						</div>
 					</div>
@@ -316,34 +320,38 @@
 
 		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<script src="../assets/global/plugins/jstree/dist/jstree.min.js" type="text/javascript"></script>
-		<script src="../assets/pages/scripts/ui-tree.min.js" type="text/javascript"></script>
+		<!--<script src="../assets/pages/scripts/ui-tree.min.js" type="text/javascript"></script>-->
 		<script type="text/javascript">
 			$(function() {
-				//				$("#equipment").hover(function() {
-				//					$("#tree_2").show();
-				//				}, function() {
-				//					$("#tree_2").hide();
+				$("#equipment").hover(function() {
+					$("#tree_2").show();
+				}, function() {
+					$("#tree_2").hide();
+				});
+				//$("#equipment").hover(function() {
+				//	$("#tree_2").show();
+				//}, function() {
+				//	$("#tree_2").hide();
+				//});
+
+				//				var ii = 1;
+				//				$("#equipment").click(function() {
+				//					++ii;
+				//					if(ii % 2 == 0) {
+				//						$("#tree_2").show();
+				//					} else {
+				//						$("#tree_2").hide();
+				//					}
 				//				});
 
-								var ii = 1;
-								$("#equipment").click(function() {
-									++ii;
-									if(ii%2==0){
-										$("#tree_2").show();	
-									}else{
-										$("#tree_2").hide();
-									}
-								});
-
-				//				$("#equipment").focus(function() {
-				//					console.log("der");
+				//				$(".equipment").focus(function() {
+				//					//console.log("der");
 				//					$("#tree_2").show();
 				//				});
 				//
-				//				$("#equipment").blur(function() {
+				//				$("#tree_2").blur(function() {
 				//					$("#tree_2").hide();
 				//				});
-				//
 				//				$("#tree_2").click(function() {
 				//					$(this).show();
 				//				});
@@ -359,8 +367,10 @@
 								"text": "Same but with checkboxes",
 								"children": [{
 									"id": 11,
-									"text": "aa"
-
+									"text": "aa",
+									"state": {
+										"selected": true
+									}
 								}, {
 									"id": 12,
 									"text": "custom icon",
@@ -409,15 +419,14 @@
 						for(i = 0, j = data.selected.length; i < j; i++) {
 							//var temp = data.instance.get_node(data.selected[i]).text;
 							//temp= temp.replace("initially selected","");
-
 							if(data.instance.get_node(data.selected[i]).text !== 'initially selected') {
 								r.push(data.instance.get_node(data.selected[i]).text);
 							}
-
 							//r.splice(0, 1);
-
 						}
-						$('#equipment').val(r.join(', '));
+						//$('#equipmentval').html(r.join(', '));
+						//console.log(r);
+						$('#equipmentval').val(r.join(', '));
 					})
 					.jstree();
 			})
