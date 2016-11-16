@@ -313,7 +313,10 @@
 											<div class="form-group">
 												<div class="col-xs-9 col-sm-4 col-md-4 col-lg-12">
 													<div class="input-group">
-														<input type="text" class="form-control">
+														<!--<input id type="text" class="form-control">-->
+														<div id="equipment" class="form-control">
+															<div id="tree_2" class="tree-demo"> </div>
+														</div>
 														<span class="input-group-btn">
                                             			<button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
                                          			</span>
@@ -448,19 +451,19 @@
 				<!-- END QUICK SIDEBAR -->
 			</div>
 			<!-- END CONTAINER -->
-			
+
 		</div>
 		<!-- BEGIN FOOTER -->
-			<div class="page-footer">
-				<div class="page-footer-inner"> 2016 &copy; Metronic Theme By
-					<a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-					<a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
-					<div class="scroll-to-top">
-						<i class="icon-arrow-up"></i>
-					</div>
+		<div class="page-footer">
+			<div class="page-footer-inner"> 2016 &copy; Metronic Theme By
+				<a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
+				<a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+				<div class="scroll-to-top">
+					<i class="icon-arrow-up"></i>
 				</div>
 			</div>
-			<!-- END FOOTER -->
+		</div>
+		<!-- END FOOTER -->
 		<!--[if lt IE 9]>
 				<script src="../assets/global/plugins/respond.min.js"></script>
 				<script src="../assets/global/plugins/excanvas.min.js"></script> 
@@ -484,19 +487,93 @@
 		<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
 		<!-- END THEME LAYOUT SCRIPTS -->
 		<!--for my app Begin-->
-		<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js" charset="utf-8"></script>
-		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js" charset="utf-8"></script>
-		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js" charset="utf-8"></script>
+		<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
 		<!--<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.ocean.js" charset="utf-8"></script>
 		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.carbon.js" charset="utf-8"></script>
 		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.zune.js" charset="utf-8"></script>-->
 		<script src="../assets/chart-app/qixianchuan-demo3.js"></script>
 		<!--for my app End-->
+		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 
+		<script src="../assets/global/plugins/jstree/dist/jstree.min.js" type="text/javascript"></script>
+
+		<script src="../assets/pages/scripts/ui-tree.min.js" type="text/javascript"></script>
+		<script>
+//			$(function() {
+//				console.log($(window).width());
+//				console.log($(window).height());
+//			})
+		</script>
 		<script type="text/javascript">
 			$(function() {
-				console.log($(window).width());
-				console.log($(window).height());
+				$("#equipment").hover(function() {
+					$("#tree_2").show();
+				}, function() {
+					$("#tree_2").hide();
+				});
+
+				$('#tree_2').jstree({
+					'plugins': ["wholerow", "checkbox", "types"],
+					'core': {
+						"themes": {
+							"responsive": true
+						},
+						'data': [{
+								"id": 1,
+								"text": "Same but with checkboxes",
+								"children": [{
+									"id": 11,
+									"text": "initially selected",
+									"state": {
+										"selected": true
+									}
+								}, {
+									"id": 12,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-danger"
+								}, {
+									"id": 13,
+									"text": "initially open",
+									"icon": "fa fa-folder icon-state-default",
+									"state": {
+										"opened": true
+									},
+									"id": 14,
+									"children": ["Another node"]
+								}, {
+									"id": 15,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-warning"
+								}, {
+									"id": 16,
+									"text": "disabled node",
+									"icon": "fa fa-check icon-state-success",
+									"state": {
+										"disabled": true
+									}
+								}]
+							},
+							"And wholerow selection"
+						]
+					},
+					"types": {
+						"default": {
+							"icon": "fa fa-folder icon-state-warning icon-lg"
+						},
+						"file": {
+							"icon": "fa fa-file icon-state-warning icon-lg"
+						}
+					}
+				});
+
+				$('#tree_2').on("changed.jstree", function(e, data) {
+					//console.log(data);
+					//console.log(data.selected);
+					//console.log(data.selected[0]);
+					console.log(data.instance.get_selected(true)[0].text);
+				});
 			})
 		</script>
 	</body>

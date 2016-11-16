@@ -236,8 +236,10 @@
 										<div class="form-group">
 											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
 											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
-												<div class="input-group">
-													<input type="text" class="form-control">
+												<div class="input-group" style="position:relative;">
+													<input id="equipment" type="text" class="form-control">
+													<!--<div id="equipment" class="form-control" style="position:relative;overflow:hidden;"></div>-->
+													<div id="tree_2" class="tree-demo" style="display:none;position:absolute;top:40px;left:0;"> </div>
 													<span class="input-group-btn">
                                             			<button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
                                          			</span>
@@ -256,18 +258,19 @@
 						</div>
 						<div class="row">
 							<div class="container-fluid">
-								
+
 							</div>
 						</div>
 					</div>
-
 				</div>
-				<!-- END CONTENT BODY -->
-			</div>
-			<!-- END CONTENT -->
-			<!-- BEGIN QUICK SIDEBAR -->
 
-			<!-- END QUICK SIDEBAR -->
+			</div>
+			<!-- END CONTENT BODY -->
+		</div>
+		<!-- END CONTENT -->
+		<!-- BEGIN QUICK SIDEBAR -->
+
+		<!-- END QUICK SIDEBAR -->
 		</div>
 		<!-- END CONTAINER -->
 		<!-- BEGIN FOOTER -->
@@ -279,38 +282,146 @@
 					<i class="icon-arrow-up"></i>
 				</div>
 			</div>
-			<!-- END FOOTER -->
-			<!--[if lt IE 9]>
+		</div>
+		<!-- END FOOTER -->
+		<!--[if lt IE 9]>
 				<script src="../assets/global/plugins/respond.min.js"></script>
 				<script src="../assets/global/plugins/excanvas.min.js"></script> 
 				<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
 			<![endif]-->
-			<!-- BEGIN CORE PLUGINS -->
-			<script src="../assets/global/plugins/jquery.min.js"></script>
-			<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
-			<script src="../assets/global/plugins/js.cookie.min.js"></script>
-			<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-			<script src="../assets/global/plugins/jquery.blockui.min.js"></script>
-			<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+		<!-- BEGIN CORE PLUGINS -->
+		<script src="../assets/global/plugins/jquery.min.js"></script>
+		<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../assets/global/plugins/js.cookie.min.js"></script>
+		<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="../assets/global/plugins/jquery.blockui.min.js"></script>
+		<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 
-			<!-- END CORE PLUGINS -->
-			<!-- BEGIN THEME GLOBAL SCRIPTS -->
-			<script src="../assets/global/scripts/app.min.js"></script>
-			<!-- END THEME GLOBAL SCRIPTS -->
+		<!-- END CORE PLUGINS -->
+		<!-- BEGIN THEME GLOBAL SCRIPTS -->
+		<script src="../assets/global/scripts/app.min.js"></script>
+		<!-- END THEME GLOBAL SCRIPTS -->
 
-			<!-- BEGIN THEME LAYOUT SCRIPTS -->
-			<script src="../assets/layouts/layout2/scripts/layout.min.js"></script>
-			<script src="../assets/layouts/layout2/scripts/demo.min.js"></script>
-			<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
-			<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
-			<!-- END THEME LAYOUT SCRIPTS -->
+		<!-- BEGIN THEME LAYOUT SCRIPTS -->
+		<script src="../assets/layouts/layout2/scripts/layout.min.js"></script>
+		<script src="../assets/layouts/layout2/scripts/demo.min.js"></script>
+		<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
+		<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
+		<!-- END THEME LAYOUT SCRIPTS -->
 
-			<script src="../assets/global/scripts/datatable.js" type="text/javascript"></script>
-			<script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-			<script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-			<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-			
+		<script src="../assets/global/scripts/datatable.js"></script>
+		<script src="../assets/global/plugins/datatables/datatables.min.js"></script>
+		<script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
+		<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
+		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+		<script src="../assets/global/plugins/jstree/dist/jstree.min.js" type="text/javascript"></script>
+		<script src="../assets/pages/scripts/ui-tree.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				//				$("#equipment").hover(function() {
+				//					$("#tree_2").show();
+				//				}, function() {
+				//					$("#tree_2").hide();
+				//				});
+
+								var ii = 1;
+								$("#equipment").click(function() {
+									++ii;
+									if(ii%2==0){
+										$("#tree_2").show();	
+									}else{
+										$("#tree_2").hide();
+									}
+								});
+
+				//				$("#equipment").focus(function() {
+				//					console.log("der");
+				//					$("#tree_2").show();
+				//				});
+				//
+				//				$("#equipment").blur(function() {
+				//					$("#tree_2").hide();
+				//				});
+				//
+				//				$("#tree_2").click(function() {
+				//					$(this).show();
+				//				});
+
+				$('#tree_2').jstree({
+					'plugins': ["wholerow", "checkbox", "types"],
+					'core': {
+						"themes": {
+							"responsive": true
+						},
+						'data': [{
+								"id": 1,
+								"text": "Same but with checkboxes",
+								"children": [{
+									"id": 11,
+									"text": "aa"
+
+								}, {
+									"id": 12,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-danger"
+								}, {
+									"id": 13,
+									"text": "initially open",
+									"icon": "fa fa-folder icon-state-default",
+									"state": {
+										"opened": true
+									},
+									"id": 14,
+									"children": ["Another node"]
+								}, {
+									"id": 15,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-warning"
+								}, {
+									"id": 16,
+									"text": "disabled node",
+									"icon": "fa fa-check icon-state-success",
+									"state": {
+										"disabled": true
+									}
+								}]
+							},
+							"And wholerow selection"
+						]
+					},
+					"types": {
+						"default": {
+							"icon": "fa fa-folder icon-state-warning icon-lg"
+						},
+						"file": {
+							"icon": "fa fa-file icon-state-warning icon-lg"
+						}
+					}
+				});
+
+				$('#tree_2').on("changed.jstree", function(e, data) {
+						//for(i = 0, j = data.selected.length; i < j; i++) {
+						//	console.log(data.instance.get_node(data.selected[i]).text);
+						//	$("#equipment").text(data.instance.get_node(data.selected[i]).text);
+						//}
+						var i, j, r = [];
+						for(i = 0, j = data.selected.length; i < j; i++) {
+							//var temp = data.instance.get_node(data.selected[i]).text;
+							//temp= temp.replace("initially selected","");
+
+							if(data.instance.get_node(data.selected[i]).text !== 'initially selected') {
+								r.push(data.instance.get_node(data.selected[i]).text);
+							}
+
+							//r.splice(0, 1);
+
+						}
+						$('#equipment').val(r.join(', '));
+					})
+					.jstree();
+			})
+		</script>
 	</body>
 
 </html>
