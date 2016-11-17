@@ -704,27 +704,24 @@ body {
     padding-top: 30px;
     z-index: 9999; }
   .tree-demo {
+    width: 100%;
     margin-top: 4px;
-    margin-left: -5px; }
+    margin-left: -5px;
+    padding-right: 5px; }
   .tree-demo .jstree-container-ul {
     background: #eee;
-    margin-right: 5px; }
+    padding-bottom: 5px;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 30px; }
   #equipment-small {
-    left: -56px; } }
+    left: -18px; }
+  #equipment-small .tree-demo .jstree-container-ul {
+    left: -66px;
+    padding-right: 30px; } }
 
 /*平板*/
-@media (max-width: 768px) {
-  .mt-29 {
-    margin-top: -22px; }
-  .qi-lg-marginTopa {
-    margin-top: 0; }
-  .qi-lg-marginTopb {
-    margin-top: 0; }
-  .qi-machine {
-    margin-left: -18px;
-    margin-right: -5px;
-    padding-bottom: 0; } }
-
 /*手机*/
 @media (max-width: 767px) {
   html,
@@ -762,7 +759,15 @@ body {
     padding-left: 1px;
     padding-right: 8px; }
   .phone-mr {
-    padding-right: 25px; } }
+    padding-right: 25px; }
+  .xl-mt {
+    margin-top: 34px; }
+  .tree-demo {
+    position: relative;
+    display: inline-block; }
+    .tree-demo .jstree-container-ul {
+      position: relative;
+      display: inline-block; } }
 
 /*大屏幕*/
 @media (min-width: 1367px) {
@@ -854,4 +859,22 @@ body {
     height: 620px; }
   .analysisb {
     margin-left: -14px;
-    padding: 7px 15px 17px; } }
+    padding: 7px 15px 17px; }
+  .input-group .equipment {
+    width: 88%;
+    border: none;
+    background: transparent;
+    position: absolute;
+    left: -6px;
+    top: 0;
+    padding-top: 30px;
+    z-index: 9999; }
+  .tree-demo {
+    margin-top: 4px;
+    margin-left: -5px; }
+  .tree-demo .jstree-container-ul {
+    background: #eee;
+    margin-right: 5px;
+    max-height: 350px; }
+  #equipment-small {
+    left: -26px; } }

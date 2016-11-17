@@ -245,7 +245,7 @@
 											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
 											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
 												<div class="input-group" style="position:relative;">
-													<input type="text" class="form-control" id="equipmentval" />
+													<input type="text" class="form-control" id="equipmentval" readonly />
 													<div id="equipment" class="form-control equipment">
 														<div id="tree_2" class="tree-demo" style="display: none;"></div>
 													</div>
@@ -358,9 +358,9 @@
 		<script type="text/javascript">
 			$(function() {
 				$("#equipment").hover(function() {
-					$("#tree_2").show(300);
+					$("#tree_2").stop().show(300);
 				}, function() {
-					$("#tree_2").hide(300);
+					$("#tree_2").stop().hide(300);
 				});
 
 				$('#tree_2').jstree({
@@ -370,35 +370,43 @@
 							"responsive": true
 						},
 						'data': [{
-								"id": 1,
-								"text": "Same but with checkboxes",
+							"id": 1,
+							"text": "设备制造商",
+							"children": [{
+								"id": 11,
+								"text": "福建某集团",
+								"state": {
+									"selected": true
+								}
+							}, {
+								"id": 12,
+								"text": "天津某企业"
+								/*,
+								"icon": "fa fa-warning icon-state-danger"*/
+							}, {
+								"id": 13,
+								"text": "成都某企业"
+								/*,
+								"icon": "fa fa-folder icon-state-default"*/,
+								"state": {
+									"opened": true
+								},
 								"children": [{
-									"id": 11,
-									"text": "aa",
-									"state": {
-										"selected": true
-									}
-								}, {
-									"id": 12,
-									"text": "custom icon",
-									"icon": "fa fa-warning icon-state-danger"
-								}, {
-									"id": 13,
-									"text": "initially open",
-									"icon": "fa fa-folder icon-state-default",
-									"state": {
-										"opened": true
-									},
 									"id": 14,
-									"children": ["Another node"]
-								}, {
-									"id": 15,
-									"text": "custom icon",
-									"icon": "fa fa-warning icon-state-warning"
+									"text": "成都市某某公司"
 								}]
-							},
-							"And wholerow selection"
-						]
+							}, {
+								"id": 15,
+								"text": "厦门某公司"
+								/*,
+								"icon": "fa fa-warning icon-state-warning"*/
+							}]
+						}, {
+							"id": 2,
+							"text": "贵州某公司"
+							/*,
+							"icon": "fa fa-warning icon-state-danger"*/
+						}]
 					},
 					"types": {
 						"default": {
