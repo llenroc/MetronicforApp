@@ -28,6 +28,8 @@
 		<link href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
 		<link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
 		<!-- END THEME LAYOUT STYLES -->
+		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
 	<!-- END HEAD -->
@@ -242,11 +244,14 @@
 											</div>
 											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
 											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
-												<div class="input-group">
-													<input type="text" class="form-control">
+												<div class="input-group" style="position:relative;">
+													<input type="text" class="form-control" id="equipmentval" />
+													<div id="equipment" class="form-control equipment">
+														<div id="tree_2" class="tree-demo" style="display: none;"></div>
+													</div>
 													<span class="input-group-btn">
-                                            <button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
-                                         </span>
+                                            			<button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
+                                         			</span>
 												</div>
 												<!-- /input-group -->
 											</div>
@@ -311,8 +316,9 @@
 		<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
 		<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
 		<!-- END THEME LAYOUT SCRIPTS -->
-		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+
 		<script src="../assets/qi-app/daterangepicker.js"></script>
+		<script src="../assets/global/plugins/jstree/dist/jstree.min.js"></script>
 		<script>
 			var startdate = "2016-11-07";
 			var enddate = "2016-11-07";
@@ -348,6 +354,74 @@
 		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
 		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
 		<script src="../assets/chart-app/qixianchuan-demo4.js"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				$("#equipment").hover(function() {
+					$("#tree_2").show(300);
+				}, function() {
+					$("#tree_2").hide(300);
+				});
+
+				$('#tree_2').jstree({
+					'plugins': ["wholerow", "checkbox", "types"],
+					'core': {
+						"themes": {
+							"responsive": true
+						},
+						'data': [{
+								"id": 1,
+								"text": "Same but with checkboxes",
+								"children": [{
+									"id": 11,
+									"text": "aa",
+									"state": {
+										"selected": true
+									}
+								}, {
+									"id": 12,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-danger"
+								}, {
+									"id": 13,
+									"text": "initially open",
+									"icon": "fa fa-folder icon-state-default",
+									"state": {
+										"opened": true
+									},
+									"id": 14,
+									"children": ["Another node"]
+								}, {
+									"id": 15,
+									"text": "custom icon",
+									"icon": "fa fa-warning icon-state-warning"
+								}]
+							},
+							"And wholerow selection"
+						]
+					},
+					"types": {
+						"default": {
+							"icon": "fa fa-folder icon-state-warning icon-lg"
+						},
+						"file": {
+							"icon": "fa fa-file icon-state-warning icon-lg"
+						}
+					}
+				});
+
+				$('#tree_2').on("changed.jstree", function(e, data) {
+						var i, j, r = [];
+						for(i = 0, j = data.selected.length; i < j; i++) {
+							if(data.instance.get_node(data.selected[i]).text !== 'initially selected') {
+								r.push(data.instance.get_node(data.selected[i]).text);
+							}
+						}
+						$('#equipmentval').val(r.join(', '));
+					})
+					.jstree();
+			})
+		</script>
 	</body>
 
 </html>
