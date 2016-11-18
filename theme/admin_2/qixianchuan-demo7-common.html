@@ -7,7 +7,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>qixianchuan-history</title>
+		<title>常见问题</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -216,7 +216,7 @@
 								</form>
 							</div>
 							<div class="col-lg-1">
-								<button type="button" class="btn uppercase green-jungle"><i class="fa fa-plus-square"></i> 新增</button>
+								<button id="addItem" type="button" class="btn uppercase green-jungle"><i class="fa fa-plus-square"></i> 新增</button>
 							</div>
 							<div class="col-sm-12 col-md-12 col-lg-5">
 								<a href="qixianchuan-demo5.html" class="btn green col-sm-offset-1">实时报警</a>
@@ -235,7 +235,7 @@
 										<div class="tools"> </div>
 									</div>
 									<div class="portlet-body">
-										<table class="table table-striped table-bordered table-hover" id="sample_1">
+										<table id="sample_1" class="table table-striped table-bordered table-hover">
 											<thead>
 												<tr>
 													<th>序号</th>
@@ -287,6 +287,32 @@
 				</div>
 			</div>
 		</div>
+
+		<!--弹层-->
+		<div class="portlet-body form" id="form" style="display: none;">
+			<form class="form-horizontal" role="form">
+				<div class="form-body">
+					<div class="form-group">
+						<label class="col-md-3 control-label">问题</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="请输入您的问题">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">意见</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" placeholder="请输入您的意见">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">备注</label>
+						<div class="col-md-9">
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 		<!--[if lt IE 9]>
 				<script src="../assets/global/plugins/respond.min.js"></script>
 				<script src="../assets/global/plugins/excanvas.min.js"></script> 
@@ -308,10 +334,15 @@
 		<script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
 		<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 		<script src="../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+		<script src="../assets/qi-app/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function() {
 				var table = $('#sample_1');
 				var oTable = table.dataTable({
+					columnDefs: [{
+						orderable: false, //禁用排序
+						targets: 4 //指定的列
+					}],
 					"language": {
 						"processing": "玩命加载中...",
 						"lengthMenu": "显示 _MENU_ 项结果",
@@ -368,6 +399,46 @@
 					"pageLength": 10,
 					"dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 				});
+			})
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				//页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
+				$("#addItem").click(function() {
+					layer.open({
+						type: 1,
+						title: '新增常见问题',
+						content: $('#form'),
+						anim: 1,
+						btn: ['新增', '取消'],
+						yes: function(index, layero) {
+							//按钮【按钮一】的回调
+							layer.close(index);
+						},
+						btn2: function(index, layero) {
+							//按钮【按钮二】的回调
+						},
+						cancel: function() {
+							//右上角关闭回调
+						}
+					});
+				});
+				//					//官网欢迎页
+				//					layer.open({
+				//						type: 2,
+				//						title: 'layer弹层组件官网',
+				//						fix: false,
+				//						maxmin: true,
+				//						shadeClose: true,
+				//						area: ['1100px', '600px'],
+				//						content: 'http://sentsin.com/jquery/layer/?form=local',
+				//						end: function() {
+				//							layer.tips('Hi', '#about', {
+				//								tips: 1
+				//							})
+				//						}
+				//					});
+
 			})
 		</script>
 	</body>

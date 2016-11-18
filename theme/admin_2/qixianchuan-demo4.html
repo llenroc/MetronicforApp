@@ -7,19 +7,20 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>qixianchuan-datetimerange</title>
+		<title>数据统计</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+		<link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
 		<link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
 		<link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
 		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -268,6 +269,11 @@
 		<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
 		<script src="../assets/qi-app/daterangepicker.js"></script>
 		<script src="../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+
+		<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
+		<script src="../assets/chart-app/qixianchuan-demo4.js"></script>
 		<script>
 			var startdate = "2016-11-07";
 			var enddate = "2016-11-07";
@@ -298,10 +304,6 @@
 						.val(end.format('YYYY-MM-DD'));
 				});
 		</script>
-		<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js"></script>
-		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
-		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
-		<script src="../assets/chart-app/qixianchuan-demo4.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$("#equipment").hover(function() {

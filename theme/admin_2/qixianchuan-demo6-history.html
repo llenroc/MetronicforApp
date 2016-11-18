@@ -7,7 +7,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>qixianchuan-history</title>
+		<title>历史报警管理</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -394,6 +394,10 @@
 			$(function() {
 				var table = $('#sample_1');
 				var oTable = table.dataTable({
+					columnDefs: [{
+						orderable: false, //禁用排序
+						targets: 6 //指定的列
+					}],
 					"language": {
 						"processing": "玩命加载中...",
 						"lengthMenu": "显示 _MENU_ 项结果",
