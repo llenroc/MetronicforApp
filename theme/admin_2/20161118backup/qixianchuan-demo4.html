@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html>
 	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
 
 	<head>
 		<meta charset="utf-8" />
-		<title>qixianchuan-history</title>
+		<title>qixianchuan-datetimerange</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
 		<link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-		<link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-		<link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+		<!-- END GLOBAL MANDATORY STYLES -->
+		<!-- BEGIN THEME GLOBAL STYLES -->
 		<link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
 		<link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME GLOBAL STYLES -->
+		<!-- BEGIN THEME LAYOUT STYLES -->
 		<link href="../assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME LAYOUT STYLES -->
+		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
+	<!-- END HEAD -->
 
 	<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+		<!-- BEGIN HEADER -->
 		<div class="page-header navbar navbar-fixed-top visible-xs">
 			<div class="page-header-inner ">
 				<div class="page-logo">
@@ -60,10 +70,25 @@
 				</div>
 			</div>
 		</div>
+		<!-- END HEADER -->
+		<!-- BEGIN HEADER & CONTENT DIVIDER -->
 		<div class="clearfix"> </div>
+		<!-- END HEADER & CONTENT DIVIDER -->
+		<!-- BEGIN CONTAINER -->
 		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
 			<div class="page-sidebar-wrapper">
+				<!-- END SIDEBAR -->
+				<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+				<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 				<div class="page-sidebar navbar-collapse collapse">
+					<!-- BEGIN SIDEBAR MENU -->
+					<!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+					<!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+					<!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+					<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+					<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+					<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 					<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 						<li class="nav-item start">
 							<a href="qixianchuan-demo1.html" class="nav-link nav-toggle">
@@ -79,14 +104,14 @@
 								<span class="arrow"></span>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active open">
 							<a href="qixianchuan-demo4.html" class="nav-link nav-toggle">
 								<i class="fa fa-cuspie fa-pie-chart fa-fw"></i>
 								<span class="title">数据统计</span>
 								<span class="selected"></span>
 							</a>
 						</li>
-						<li class="nav-item active open">
+						<li class="nav-item">
 							<a href="qixianchuan-demo5.html" class="nav-link nav-toggle">
 								<i class="fa fa-3x fa-exclamation-triangle fa-fw"></i>
 								<span class="title">报警管理</span>
@@ -108,10 +133,17 @@
 							</a>
 						</li>
 					</ul>
+					<!-- END SIDEBAR MENU -->
 				</div>
+				<!-- END SIDEBAR -->
 			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
 			<div class="page-content-wrapper">
+				<!-- BEGIN CONTENT BODY -->
 				<div class="page-content">
+					<!-- BEGIN PAGE HEADER-->
+					<!-- BEGIN THEME PANEL -->
 					<div class="theme-panel">
 						<div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="点击打开高级主题定制面板">
 							<i class="icon-settings"></i>
@@ -195,94 +227,61 @@
 							</div>
 						</div>
 					</div>
-					<div class="container-fluid xl-mt">
-						<div class="row margin-bottom-10">
+					<!-- END THEME PANEL -->
+
+					<!-- END PAGE HEADER-->
+					<div class="container-fluid">
+						<div class="row">
 							<div class="col-sm-12 col-md-12 col-lg-7">
 								<form class="form-horizontal" role="form">
 									<div class="form-body">
 										<div class="form-group">
+											<label class="col-xs-3 col-md-2 control-label font-white">查询时间</label>
+											<div class="col-xs-9 col-md-3">
+												<button id="date-range" class="btn btn-default btn-md" type="button">
+							        			<span class="date-title"> 2016-11-07 至2016-11-07</span> <i class="fa fa-calendar"></i>
+							      			</button>
+											</div>
 											<label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
-											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-10">
+											<div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
 												<div class="input-group" style="position:relative;">
-													<input id="equipmentval" type="text" class="form-control" readonly />
-													<div id="equipment" class="form-control equipment portlet-body">
-														<div id="tree_2" class="tree-demo" style="display: none;"> </div>
+													<input type="text" class="form-control" id="equipmentval" readonly />
+													<div id="equipment" class="form-control equipment">
+														<div id="tree_2" class="tree-demo" style="display: none;"></div>
 													</div>
 													<span class="input-group-btn">
                                             			<button class="btn bg-green bg-font-green" type="button"><i class="fa fa-search"></i></button>
                                          			</span>
 												</div>
+												<!-- /input-group -->
 											</div>
 										</div>
 									</div>
 								</form>
 							</div>
-							<div class="col-sm-12 col-md-12 col-lg-5">
-								<a href="qixianchuan-demo5.html" class="btn green col-sm-offset-1">实时报警</a>
-								<a href="qixianchuan-demo6-history.html" class="btn green-seagreen">历史报警</a>
-								<a href="qixianchuan-demo7-common.html" class="btn green-seagreen">常见问题</a>
+							<div class="col-sm-12 col-md-12 col-lg-4 col-lg-offset-1">
+								<button type="button" class="btn green col-sm-offset-1">稼 动 率</button>
+								<button type="button" class="btn green-seagreen">运行状态汇总</button>
+								<button type="button" class="btn green-seagreen">报警明细汇总</button>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="portlet light">
-									<div class="portlet-title">
-										<div class="caption font-red">
-											<i class="fa fa-warning icon-state-warning font-red"></i>
-											<span class="caption-subject bold">历史报警信息</span>
-										</div>
-										<div class="tools"> </div>
-									</div>
-									<div class="portlet-body">
-										<table class="table table-striped table-bordered table-hover" id="sample_1">
-											<thead>
-												<tr>
-													<th>报警编号</th>
-													<th>设备编号</th>
-													<th>设备名称</th>
-													<th>设备序列号</th>
-													<th>报警时间</th>
-													<th>报警信息</th>
-													<th>操作</th>
-												</tr>
-											</thead>
-											<tfoot>
-												<tr>
-													<th>报警编号</th>
-													<th>设备编号</th>
-													<th>设备名称</th>
-													<th>设备序列号</th>
-													<th>报警时间</th>
-													<th>报警信息</th>
-													<th>操作</th>
-												</tr>
-											</tfoot>
-											<tbody>
-												<tr>
-													<td>Tiger Nixon</td>
-													<td>System Architect</td>
-													<td>Edinburgh</td>
-													<td>61</td>
-													<td>2011/04/25</td>
-													<td>$320,800</td>
-													<td>
-														<button class="btn btn-sm green btn-outline filter-submit">
-            												<i class="fa fa-edit"></i> 报警处理</button>
-														<button class="btn btn-sm green btn-outline filter-submit ">
-            												<i class="fa fa-search"></i> 查看</button>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
+						<div class="row bar-char-box">
+							<img src="../assets/layouts/layout2/img/left-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
+							<div class="col-xs-12 visible-xs">
+								<button type="button" class="btn pull-left bg-green-sharp bg-font-green-sharp"> << </button>
+								<button type="button" class="btn pull-right bg-green-sharp bg-font-green-sharp"> >> </button>
 							</div>
+							<div id="chart-container" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 center-block mscolumn3d"></div>
+							<img src="../assets/layouts/layout2/img/right-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
 						</div>
 					</div>
 				</div>
+				<!-- END CONTENT BODY -->
 			</div>
+			<!-- END CONTENT -->
 		</div>
-		</div>
+		<!-- END CONTAINER -->
+		<!-- BEGIN FOOTER -->
 		<div class="page-footer">
 			<div class="page-footer-inner"> 2016 &copy; Metronic Theme By
 				<a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
@@ -292,27 +291,70 @@
 				</div>
 			</div>
 		</div>
+		<!-- END FOOTER -->
 		<!--[if lt IE 9]>
 				<script src="../assets/global/plugins/respond.min.js"></script>
 				<script src="../assets/global/plugins/excanvas.min.js"></script> 
 				<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
 			<![endif]-->
+		<!-- BEGIN CORE PLUGINS -->
 		<script src="../assets/global/plugins/jquery.min.js"></script>
 		<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
 		<script src="../assets/global/plugins/js.cookie.min.js"></script>
 		<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 		<script src="../assets/global/plugins/jquery.blockui.min.js"></script>
 		<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+		<!-- END CORE PLUGINS -->
+		<!-- BEGIN THEME GLOBAL SCRIPTS -->
 		<script src="../assets/global/scripts/app.min.js"></script>
+		<!-- END THEME GLOBAL SCRIPTS -->
+
+		<!-- BEGIN THEME LAYOUT SCRIPTS -->
 		<script src="../assets/layouts/layout2/scripts/layout.min.js"></script>
 		<script src="../assets/layouts/layout2/scripts/demo.min.js"></script>
 		<script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
 		<script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
-		<script src="../assets/global/scripts/datatable.js"></script>
-		<script src="../assets/global/plugins/datatables/datatables.min.js"></script>
-		<script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
-		<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+		<!-- END THEME LAYOUT SCRIPTS -->
+
+		<script src="../assets/qi-app/daterangepicker.js"></script>
 		<script src="../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+		<script>
+			var startdate = "2016-11-07";
+			var enddate = "2016-11-07";
+			//初始化日期控件
+			$('#date-range').daterangepicker({
+					format: 'YYYY-MM-DD',
+					startDate: startdate,
+					endDate: enddate,
+					locale: {
+						applyLabel: '确定',
+						cancelLabel: '取消',
+						fromLabel: '从',
+						toLabel: '至',
+						weekLabel: '周',
+						customRangeLabel: '日期范围',
+						daysOfWeek: moment()._lang._weekdaysMin.slice(),
+						monthNames: moment()._lang._monthsShort.slice(),
+						firstDay: 0
+					}
+				},
+				function(start, end) {
+					$('#date-range .date-title').html(
+						start.format('YYYY-MM-DD') + ' 至 ' +
+						end.format('YYYY-MM-DD'));
+					$(':hidden[name=startdate]').val(
+						start.format('YYYY-MM-DD'));
+					$(':hidden[name=enddate]')
+						.val(end.format('YYYY-MM-DD'));
+				});
+		</script>
+
+		<script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
+		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
+		<script src="../assets/chart-app/qixianchuan-demo4.js"></script>
+
 		<script type="text/javascript">
 			$(function() {
 				$("#equipment").hover(function() {
@@ -388,70 +430,6 @@
 						$('#equipmentval').val(r.join(', '));
 					})
 					.jstree();
-			})
-		</script>
-		<script>
-			$(function() {
-				var table = $('#sample_1');
-				var oTable = table.dataTable({
-					"language": {
-						"processing": "玩命加载中...",
-						"lengthMenu": "显示 _MENU_ 项结果",
-						"zeroRecords": "没有匹配结果",
-						"info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-						"infoEmpty": "显示第 0 至 0 项结果，共 0 项",
-						"infoFiltered": "(由 _MAX_ 项结果过滤)",
-						"infoPostFix": "",
-						"search": "搜索:",
-						"url": "",
-						"paginate": {
-							"first": "首页",
-							"previous": "上页",
-							"next": "下页",
-							"last": "末页"
-						},
-						"aria": {
-							"sortAscending": ": 升序排序",
-							"sortDescending": ": 降序排序"
-						},
-						"emptyTable": "无数据"
-					},
-					buttons: [{
-						extend: 'print',
-						className: 'btn dark btn-outline',
-						text: '打印'
-					}, {
-						extend: 'copy',
-						className: 'btn red btn-outline',
-						text: '拷贝'
-					}, {
-						extend: 'pdf',
-						className: 'btn green btn-outline'
-
-					}, {
-						extend: 'excel',
-						className: 'btn yellow btn-outline '
-					}, {
-						extend: 'csv',
-						className: 'btn purple btn-outline '
-					}, {
-						extend: 'colvis',
-						className: 'btn dark btn-outline',
-						//text: 'Columns'
-						text: '列显示'
-					}],
-					responsive: true,
-					"order": [
-						[0, 'asc']
-					],
-					"lengthMenu": [
-						[5, 10, 15, 20, -1],
-						[5, 10, 15, 20, "All"] // change per page values here
-					],
-					"pageLength": 10,
-					"dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
-				});
-
 			})
 		</script>
 	</body>

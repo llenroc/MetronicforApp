@@ -767,7 +767,11 @@ body {
     display: inline-block; }
     .tree-demo .jstree-container-ul {
       position: relative;
-      display: inline-block; } }
+      display: inline-block; }
+  #equipment-small {
+    left: -6px; }
+  #equipment-small .tree-demo .jstree-container-ul {
+    left: 0px; } }
 
 /*大屏幕*/
 @media (min-width: 1367px) {
