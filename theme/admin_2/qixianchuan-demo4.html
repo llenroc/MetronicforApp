@@ -20,7 +20,7 @@
 		<link href="../assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
 		<link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="../assets/qi-app/daterangepicker.css" />
+		<link href="../assets/qi-app/daterangepicker.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -252,10 +252,10 @@
 			</div>
 		</div>
 		<!--[if lt IE 9]>
-				<script src="../assets/global/plugins/respond.min.js"></script>
-				<script src="../assets/global/plugins/excanvas.min.js"></script> 
-				<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
-			<![endif]-->
+			<script src="../assets/global/plugins/respond.min.js"></script>
+			<script src="../assets/global/plugins/excanvas.min.js"></script> 
+			<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+		<![endif]-->
 		<script src="../assets/global/plugins/jquery.min.js"></script>
 		<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
 		<script src="../assets/global/plugins/js.cookie.min.js"></script>
@@ -274,36 +274,46 @@
 		<script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
 		<script src="../assets/chart-app/qixianchuan-demo4.js"></script>
 		<script>
-			var startdate = "2016-11-07";
-			var enddate = "2016-11-07";
-			//初始化日期控件
-			$('#date-range').daterangepicker({
-					format: 'YYYY-MM-DD',
-					startDate: startdate,
-					endDate: enddate,
-					locale: {
-						applyLabel: '确定',
-						cancelLabel: '取消',
-						fromLabel: '从',
-						toLabel: '至',
-						weekLabel: '周',
-						customRangeLabel: '日期范围',
-						daysOfWeek: moment()._lang._weekdaysMin.slice(),
-						monthNames: moment()._lang._monthsShort.slice(),
-						firstDay: 0
-					}
-				},
-				function(start, end) {
-					$('#date-range .date-title').html(
-						start.format('YYYY-MM-DD') + ' 至 ' +
-						end.format('YYYY-MM-DD'));
-					$(':hidden[name=startdate]').val(
-						start.format('YYYY-MM-DD'));
-					$(':hidden[name=enddate]')
-						.val(end.format('YYYY-MM-DD'));
-				});
+			$.ajax({
+				type: "get",
+				url: "json/date.json",
+				async: true,
+				dataType: 'json',
+				success: function(data) {
+					var startdate = "2011-11-11";
+					var enddate = "2011-11-11";
+					startdate = data.startdate;
+					enddate = data.enddate;
+					//初始化日期控件	
+					$('#date-range').daterangepicker({
+							format: 'YYYY-MM-DD',
+							startDate: startdate,
+							endDate: enddate,
+							locale: {
+								applyLabel: '确定',
+								cancelLabel: '取消',
+								fromLabel: '从',
+								toLabel: '至',
+								weekLabel: '周',
+								customRangeLabel: '日期范围',
+								daysOfWeek: moment()._lang._weekdaysMin.slice(),
+								monthNames: moment()._lang._monthsShort.slice(),
+								firstDay: 0
+							}
+						},
+						function(start, end) {
+							$('#date-range .date-title').html(
+								start.format('YYYY-MM-DD') + ' 至 ' +
+								end.format('YYYY-MM-DD'));
+							$(':hidden[name=startdate]').val(
+								start.format('YYYY-MM-DD'));
+							$(':hidden[name=enddate]')
+								.val(end.format('YYYY-MM-DD'));
+						});
+				}
+			});
 		</script>
-		<script type="text/javascript">
+		<script>
 			$(function() {
 				$("#equipment1").hover(function() {
 					$("#tree_2").stop().show(300);
@@ -317,46 +327,58 @@
 						"themes": {
 							"responsive": false
 						},
-						'data': [{
-								"id": "1",
-								"text": "设备制造商",
-								"children": [{
-									"id": "11",
-									"text": "福建某集团",
-									"state": {
-										"selected": true
-									}
-								}, {
-									"id": "12",
-									"text": "天津某企业"
-								}, {
-									"id": "13",
-									"text": "成都某企业",
-									"state": {
-										"opened": true
-									},
-									"children": [{
-										"id": "131",
-										"text": "成都市某某公司"
-									}]
-								}, {
-									"id": "15",
-									"text": "贵州某公司"
-								}]
+						'data': {
+							'url': function(node) {
+								return node.id === '#' ?
+									'./json/jstree_roots.json' :
+									'./json/jstree_children.json';
 							},
-
-							{
-								"id": "2",
-								"text": "天津某公司",
-								"state": {
-									"opened": true
-								},
-								"children": [{
-									"id": "21",
-									"text": "深圳某企业"
-								}]
+							'data': function(node) {
+								return {
+									'id': node.id
+								};
 							}
-						]
+						}
+						//						'data': [{
+						//								"id": "1",
+						//								"text": "设备制造商",
+						//								"children": [{
+						//									"id": "11",
+						//									"text": "福建某集团",
+						//									"state": {
+						//										"selected": true
+						//									}
+						//								}, {
+						//									"id": "12",
+						//									"text": "天津某企业"
+						//								}, {
+						//									"id": "13",
+						//									"text": "成都某企业",
+						//									"state": {
+						//										"opened": true
+						//									},
+						//									"children": [{
+						//										"id": "131",
+						//										"text": "成都市某某公司"
+						//									}]
+						//								}, {
+						//									"id": "15",
+						//									"text": "贵州某公司"
+						//								}]
+						//							},
+						//
+						//							{
+						//								"id": "2",
+						//								"text": "天津某公司",
+						//								"state": {
+						//									"opened": true
+						//								},
+						//								"children": [{
+						//									"id": "21",
+						//									"text": "深圳某企业"
+						//								}]
+						//							}
+						//						]
 					},
 					"types": {
 						"default": {

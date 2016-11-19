@@ -161,6 +161,7 @@ var UITree = function () {
                       return '../demo/jstree_ajax_data.php';
                     },
                     'data' : function (node) {
+                    	console.log(node);
                       return { 'parent' : node.id };
                     }
                 }
