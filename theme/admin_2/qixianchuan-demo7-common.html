@@ -289,7 +289,7 @@
 		</div>
 
 		<!--弹层-->
-		<div class="portlet-body form" id="form" style="display: none;">
+		<div id="form" class="portlet-body form" style="display: none;">
 			<form class="form-horizontal" role="form">
 				<div class="form-body">
 					<div class="form-group">
@@ -403,7 +403,6 @@
 		</script>
 		<script type="text/javascript">
 			$(function() {
-				//页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
 				$("#addItem").click(function() {
 					layer.open({
 						type: 1,

@@ -695,7 +695,7 @@ body {
     font-size: 14px;
     line-height: 36px; }
   .input-group .equipment {
-    width: 88%;
+    width: 95%;
     border: none;
     background: transparent;
     position: absolute;
@@ -714,12 +714,14 @@ body {
     max-height: 350px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 30px; }
+    padding-right: 10px; }
   #equipment-small {
+    width: 88%;
     left: -18px; }
   #equipment-small .tree-demo .jstree-container-ul {
-    left: -66px;
-    padding-right: 30px; } }
+    left: -66px; }
+  #equipment1 {
+    width: 89%; } }
 
 /*平板*/
 /*手机*/
@@ -769,9 +771,14 @@ body {
       position: relative;
       display: inline-block; }
   #equipment-small {
+    width: 86%;
     left: -6px; }
   #equipment-small .tree-demo .jstree-container-ul {
-    left: 0px; } }
+    left: 0; }
+  .input-group .equipment {
+    width: 88%; }
+  #equipment1 {
+    width: 86%; } }
 
 /*大屏幕*/
 @media (min-width: 1367px) {
