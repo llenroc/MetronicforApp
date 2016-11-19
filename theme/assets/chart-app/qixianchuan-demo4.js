@@ -66,8 +66,35 @@ function Createmscolumn3d(id, mscolumn3d) {
 					"category": mscolumn3d.category
 				}],
 				"dataset": mscolumn3d.dataset
+
+			},
+			"events": {
+				"beforeRender": function(evt, args) {
+					//console.log("df");bar2d
+					//
+					init(evt);
+					if($(window).width() <= 767) {
+						evt.sender.chartType("bar2d");
+					}
+
+				},
+				'rendered': function(evtObj, argObj) {
+					//加载数据的时候
+
+				}
 			}
 		});
 		fusioncharts.render();
 	});
+}
+
+function init(evt) {
+	var loadMessage = evt.sender.options;
+	loadMessage.loadMessage = "正在加载图表，请稍后";
+	loadMessage.dataInvalidMessage = "无效的数据";
+	loadMessage.dataEmptyMessage = "不显示数据";
+	loadMessage.renderErrorMessage = "无法绘制图表";
+	loadMessage.dataLoadErrorMessage = "加载数据中的错误";
+	loadMessage.dataLoadStartMessage = "检索数据。请稍等";
+	loadMessage.typeNotSupportedMessage = "不支持图表类型";
 }

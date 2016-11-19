@@ -215,7 +215,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-lg-1">
+							<div class="col-lg-1 margin-bottom-10">
 								<button id="addItem" type="button" class="btn uppercase green-jungle"><i class="fa fa-plus-square"></i> 新增</button>
 							</div>
 							<div class="col-sm-12 col-md-12 col-lg-5">
@@ -261,9 +261,9 @@
 													<td>Edinburgh</td>
 													<td>61</td>
 													<td>
-														<button class="btn btn-sm green btn-outline filter-submit margin-bottom">
+														<button class="btn btn-sm green btn-outline filter-submit margin-bottom" onclick="_edit('表格编辑','1')">
             												<i class="fa fa-pencil"></i> 修改</button>
-														<button class="btn btn-sm red btn-outline filter-cancel">
+														<button class="btn btn-sm red btn-outline filter-cancel" onclick="_del(this,1)">
         													<i class="fa fa-times"></i> 删除</button>
 													</td>
 												</tr>
@@ -402,12 +402,44 @@
 			})
 		</script>
 		<script type="text/javascript">
+			function _del(obj, id) {
+				layer.confirm('确认要删除吗？', function(index) {
+					$(obj).parents("tr").remove();
+					layer.msg('已删除!', {
+						icon: 1,
+						time: 1000
+					});
+				});
+			}
+
+			function _edit(title, id) {
+				layer.open({
+					type: 1,
+					fix: false, //不固定
+					maxmin: true,
+					shade: 0.4,
+					title: title,
+					content: $('#form'),
+					btn: ['修改', '取消'],
+					yes: function(index, layero) {
+						//按钮【按钮一】的回调
+						layer.close(index);
+					},
+					btn2: function(index, layero) {
+						//按钮【按钮二】的回调
+					},
+					cancel: function() {
+						//右上角关闭回调
+					}
+				});
+			}
 			$(function() {
 				$("#addItem").click(function() {
 					layer.open({
 						type: 1,
 						title: '新增常见问题',
 						content: $('#form'),
+						maxmin: true,
 						anim: 1,
 						btn: ['新增', '取消'],
 						yes: function(index, layero) {
@@ -422,6 +454,7 @@
 						}
 					});
 				});
+
 				//					//官网欢迎页
 				//					layer.open({
 				//						type: 2,
