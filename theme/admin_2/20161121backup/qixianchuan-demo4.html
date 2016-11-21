@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>数据统计</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/qi-app/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+        <div class="page-header navbar navbar-fixed-top visible-xs">
+            <div class="page-header-inner ">
+                <div class="page-logo">
+                    <img src="../assets/layouts/layout2/img/logo1.png" alt="logo" class="logo-default" />
+                    <div class="menu-toggler sidebar-toggler"></div>
+                </div>
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <div class="page-top">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span>当前用户：</span>
+                            <span>Administrator</span>
+                            <a href="#">
+                                <img src="../assets/layouts/layout2/img/notes_edit.png" />修改密码</a>
+                            <a href="#">
+                                <img src="../assets/layouts/layout2/img/remove.png" />退出登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-header navbar navbar-fixed-top hidden-xs">
+            <div class="page-header-inner">
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <div class="page-top">
+                    <img src="../assets/layouts/layout2/img/logo0.png" class="logo-default pull-left img-responsive logo0" />
+                    <img src="../assets/layouts/layout2/img/logo1.png" class="pull-left img-responsive logo1" />
+                    <div class="top-menu">
+                        <span>当前用户：</span>
+                        <span>Administrator</span>
+                        <a href="#">
+                            <img src="../assets/layouts/layout2/img/notes_edit.png" />修改密码</a>
+                        <a href="#">
+                            <img src="../assets/layouts/layout2/img/remove.png" />退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="page-container">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="nav-item start">
+                            <a href="qixianchuan-demo1.html" class="nav-link nav-toggle">
+                                <i class="fa fa-3x fa-home"></i>
+                                <span class="title">我的首页</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="qixianchuan-demo3.html" class="nav-link nav-toggle">
+                                <i class="fa fa-cuschart fa-bar-chart fa-fw"></i>
+                                <span class="title">设备监控</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item active open">
+                            <a href="qixianchuan-demo4.html" class="nav-link nav-toggle">
+                                <i class="fa fa-cuspie fa-pie-chart fa-fw"></i>
+                                <span class="title">数据统计</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="qixianchuan-demo5.html" class="nav-link nav-toggle">
+                                <i class="fa fa-3x fa-exclamation-triangle fa-fw"></i>
+                                <span class="title">报警管理</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="fa fa-file-text fa-cusfile"></i>
+                                <span class="title">设备管理</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="fa fa-cogs fa-cusfogs"></i>
+                                <span class="title">系统管理</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="theme-panel">
+                        <div class="toggler tooltips" data-container="body" data-placement="left" data-html="true" data-original-title="点击打开高级主题定制面板">
+                            <i class="icon-settings"></i>
+                        </div>
+                        <div class="toggler-close">
+                            <i class="icon-close"></i>
+                        </div>
+                        <div class="theme-options">
+                            <div class="theme-option theme-colors clearfix">
+                                <span> 主题颜色 </span>
+                                <ul>
+                                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
+                                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
+                                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
+                                    <li class="color-dark tooltips" data-style="dark" data-container="body" data-original-title="Dark"> </li>
+                                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
+                                </ul>
+                            </div>
+                            <div class="theme-option">
+                                <span> 主题风格 </span>
+                                <select class="layout-style-option form-control input-small">
+                                    <option value="square" selected="selected">方角</option>
+                                    <option value="rounded">圆角</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 布局 </span>
+                                <select class="layout-option form-control input-small">
+                                    <option value="fluid" selected="selected">流体</option>
+                                    <option value="boxed">盒装</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 头部 </span>
+                                <select class="page-header-option form-control input-small">
+                                    <option value="fixed" selected="selected">固定的</option>
+                                    <option value="default">默认的</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 顶部的下拉</span>
+                                <select class="page-header-top-dropdown-style-option form-control input-small">
+                                    <option value="light" selected="selected">明色</option>
+                                    <option value="dark">暗色</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 侧边栏模式</span>
+                                <select class="sidebar-option form-control input-small">
+                                    <option value="fixed">固定的</option>
+                                    <option value="default" selected="selected">默认的</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 侧边栏样式</span>
+                                <select class="sidebar-style-option form-control input-small">
+                                    <option value="default" selected="selected">默认的</option>
+                                    <option value="compact">紧凑的</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 侧边栏菜单 </span>
+                                <select class="sidebar-menu-option form-control input-small">
+                                    <option value="accordion" selected="selected">手风琴</option>
+                                    <option value="hover">悬停</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 侧边栏的位置 </span>
+                                <select class="sidebar-pos-option form-control input-small">
+                                    <option value="left" selected="selected">左边</option>
+                                    <option value="right">右边</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 底部 </span>
+                                <select class="page-footer-option form-control input-small">
+                                    <option value="fixed">固定的</option>
+                                    <option value="default" selected="selected">默认的</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row margin-bottom-10">
+                            <div class="col-sm-12 col-md-12 col-lg-7">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-xs-3 col-md-2 control-label font-white">查询时间</label>
+                                            <div class="col-xs-9 col-md-3">
+                                                <button id="date-range" class="btn btn-default btn-md" type="button">
+                                                    <span class="date-title"> 2016-11-07 至2016-11-07</span>
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </div>
+                                            <label class="control-label col-xs-3 col-sm-2 col-md-2 col-lg-2 font-white">设备</label>
+                                            <div class="col-xs-9 col-sm-4 col-md-4 col-lg-5">
+                                                <div class="input-group" style="position:relative;">
+                                                    <input type="text" class="form-control" id="equipmentval" readonly />
+                                                    <div id="equipment1" class="form-control equipment">
+                                                        <div id="tree_2" class="tree-demo" style="display: none;"></div>
+                                                    </div>
+                                                    <span class="input-group-btn">
+                                                        <button class="btn bg-green bg-font-green" type="button">
+                                                            <i class="fa fa-search"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 col-lg-offset-1">
+                                <button type="button" class="btn green col-sm-offset-1">稼 动 率</button>
+                                <button type="button" class="btn green-seagreen">运行状态汇总</button>
+                                <button type="button" class="btn green-seagreen">报警明细汇总</button>
+                            </div>
+                        </div>
+                        <div class="row bar-char-box">
+                            <img src="../assets/layouts/layout2/img/left-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" />
+                            <div class="col-xs-12 visible-xs margin-bottom-10">
+                                <button type="button" class="btn pull-left bg-green-sharp bg-font-green-sharp">
+                                    << </button>
+                                        <button type="button" class="btn pull-right bg-green-sharp bg-font-green-sharp"> >> </button>
+                            </div>
+                            <div id="chart-container" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 center-block mscolumn3d"></div>
+                            <img src="../assets/layouts/layout2/img/right-btn-q.png" class="col-xs-12 col-sm-1 col-md-1 col-lg-1 img-responsive hidden-xs" /> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2016 &copy; Metronic Theme By
+                <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
+                <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+        <!--[if lt IE 9]>
+			<script src="../assets/global/plugins/respond.min.js"></script>
+			<script src="../assets/global/plugins/excanvas.min.js"></script> 
+			<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+		<![endif]-->
+        <script src="../assets/global/plugins/jquery.min.js"></script>
+        <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/global/plugins/js.cookie.min.js"></script>
+        <script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../assets/global/plugins/jquery.blockui.min.js"></script>
+        <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+        <script src="../assets/global/scripts/app.min.js"></script>
+        <script src="../assets/layouts/layout2/scripts/layout.min.js"></script>
+        <script src="../assets/layouts/layout2/scripts/demo.min.js"></script>
+        <script src="../assets/layouts/global/scripts/quick-sidebar.min.js"></script>
+        <script src="../assets/layouts/global/scripts/quick-nav.min.js"></script>
+        <script src="../assets/qi-app/daterangepicker.js"></script>
+        <script src="../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+        <script src="../assets/fusioncharts-suite-xt/js/fusioncharts.js"></script>
+        <script src="../assets/fusioncharts-suite-xt/plugin/fusioncharts-jquery-plugin.min.js"></script>
+        <script src="../assets/fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
+        <script src="../assets/chart-app/qixianchuan-demo4.js"></script>
+        <script>
+            $.ajax(
+            {
+                type: "get",
+                url: "json/date.json",
+                async: true,
+                dataType: 'json',
+                success: function(data)
+                {
+                    var startdate = "2011-11-11";
+                    var enddate = "2011-11-11";
+                    startdate = data.startdate;
+                    enddate = data.enddate;
+                    //初始化日期控件	
+                    $('#date-range').daterangepicker(
+                    {
+                        format: 'YYYY-MM-DD',
+                        startDate: startdate,
+                        endDate: enddate,
+                        locale:
+                        {
+                            applyLabel: '确定',
+                            cancelLabel: '取消',
+                            fromLabel: '从',
+                            toLabel: '至',
+                            weekLabel: '周',
+                            customRangeLabel: '日期范围',
+                            daysOfWeek: moment()._lang._weekdaysMin.slice(),
+                            monthNames: moment()._lang._monthsShort.slice(),
+                            firstDay: 0
+                        }
+                    }, function(start, end)
+                    {
+                        $('#date-range .date-title').html(start.format('YYYY-MM-DD') + ' 至 ' + end.format('YYYY-MM-DD'));
+                        $(':hidden[name=startdate]').val(start.format('YYYY-MM-DD'));
+                        $(':hidden[name=enddate]').val(end.format('YYYY-MM-DD'));
+                    });
+                }
+            });
+        </script>
+        <script>
+            $(function()
+            {
+                $("#equipment1").hover(function()
+                {
+                    $("#tree_2").stop().show(300);
+                }, function()
+                {
+                    $("#tree_2").stop().hide(300);
+                });
+                $('#tree_2').jstree(
+                {
+                    'plugins': ["wholerow", "checkbox", "types"],
+                    'core':
+                    {
+                        "themes":
+                        {
+                            "responsive": false
+                        },
+                        'data':
+                        {
+                            'url': function(node)
+                            {
+                                return node.id === '#' ? './json/jstree_roots.json' : './json/jstree_children.json';
+                            },
+                            'data': function(node)
+                            {
+                                return {
+                                    'id': node.id
+                                };
+                            }
+                        }
+                        //						'data': [{
+                        //								"id": "1",
+                        //								"text": "设备制造商",
+                        //								"children": [{
+                        //									"id": "11",
+                        //									"text": "福建某集团",
+                        //									"state": {
+                        //										"selected": true
+                        //									}
+                        //								}, {
+                        //									"id": "12",
+                        //									"text": "天津某企业"
+                        //								}, {
+                        //									"id": "13",
+                        //									"text": "成都某企业",
+                        //									"state": {
+                        //										"opened": true
+                        //									},
+                        //									"children": [{
+                        //										"id": "131",
+                        //										"text": "成都市某某公司"
+                        //									}]
+                        //								}, {
+                        //									"id": "15",
+                        //									"text": "贵州某公司"
+                        //								}]
+                        //							},
+                        //
+                        //							{
+                        //								"id": "2",
+                        //								"text": "天津某公司",
+                        //								"state": {
+                        //									"opened": true
+                        //								},
+                        //								"children": [{
+                        //									"id": "21",
+                        //									"text": "深圳某企业"
+                        //								}]
+                        //							}
+                        //						]
+                    },
+                    "types":
+                    {
+                        "default":
+                        {
+                            "icon": "fa fa-folder icon-state-warning icon-lg"
+                        },
+                        "file":
+                        {
+                            "icon": "fa fa-file icon-state-warning icon-lg"
+                        }
+                    }
+                });
+                $('#tree_2').on("changed.jstree", function(e, data)
+                {
+                    var i, j, r = [];
+                    for (i = 0, j = data.selected.length; i < j; i++)
+                    {
+                        if (data.instance.get_node(data.selected[i]).text !== 'initially selected')
+                        {
+                            r.push(data.instance.get_node(data.selected[i]).text);
+                        }
+                    }
+                    $('#equipmentval').val(r.join(', '));
+                }).jstree();
+            })
+        </script>
+        <script type="text/javascript">
+            function click(e)
+            {
+                if (document.all)
+                {
+                    if (event.button == 2 || event.button == 3)
+                    {
+                        alert("欢迎光临寒舍，有什么需要帮忙的话，请与站长联系！谢谢您的合作！！！");
+                        oncontextmenu = 'return false';
+                    }
+                }
+                if (document.layers)
+                {
+                    if (e.which == 3)
+                    {
+                        oncontextmenu = 'return false';
+                    }
+                }
+            }
+            if (document.layers)
+            {
+                document.captureEvents(Event.MOUSEDOWN);
+            }
+            document.onmousedown = click;
+            document.oncontextmenu = new Function("return false;")
+            document.onkeydown = document.onkeyup = document.onkeypress = function()
+            {
+                if (window.event.keyCode == 123)
+                {
+                    window.event.returnValue = false;
+                    return (false);
+                }
+            }
+        </script>
+    </body>
+
+</html>

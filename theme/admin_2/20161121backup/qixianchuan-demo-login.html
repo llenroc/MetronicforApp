@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>登录页面</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/pages/css/login-4.min.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+
+    <body class="login">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../assets/layouts/layout2/img/logo0.png" alt="" /> </a>
+        </div>
+        <div class="content">
+            <form class="login-form" action="index.html" method="post">
+                <h3 class="form-title">登录到您的帐户</h3>
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    <span> 请输入用户名和密码. </span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名" name="username" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密码" name="password" /> </div>
+                </div>
+                <div class="form-actions">
+                    <label class="rememberme mt-checkbox mt-checkbox-outline">
+                        <input type="checkbox" name="remember" value="1" /> 记住我
+                        <span></span>
+                    </label>
+                    <button type="submit" class="btn green pull-right"> 登录 </button>
+                </div>
+                <div class="forget-password">
+                    <h4>忘记密码 ?</h4>
+                    <p> 别着急，点击
+                        <a href="javascript:;" id="forget-password"> 这里 </a> 重置你的密码 </p>
+                </div>
+                <div class="create-account">
+                    <p> 还没有帐户吗？?&nbsp;
+                        <a href="javascript:;" id="register-btn"> 创建一个帐户 </a>
+                    </p>
+                </div>
+            </form>
+            <form class="forget-form" action="index.html" method="post">
+                <h3>忘记密码 ?</h3>
+                <p> 请输入您的电子邮件地址以重新设置您的密码。 </p>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fa fa-envelope"></i>
+                        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="邮箱" name="email" /> </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-btn" class="btn red btn-outline">返回 </button>
+                    <button type="submit" class="btn green pull-right"> 提交 </button>
+                </div>
+            </form>
+            <form class="register-form" action="index.html" method="post">
+                <h3>注册</h3>
+                <p> 请输入您的个人资料: </p>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">全名</label>
+                    <div class="input-icon">
+                        <i class="fa fa-font"></i>
+                        <input class="form-control placeholder-no-fix" type="text" placeholder="全名" name="fullname" /> </div>
+                </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">邮箱</label>
+                    <div class="input-icon">
+                        <i class="fa fa-envelope"></i>
+                        <input class="form-control placeholder-no-fix" type="text" placeholder="邮箱" name="邮箱" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">地址</label>
+                    <div class="input-icon">
+                        <i class="fa fa-check"></i>
+                        <input class="form-control placeholder-no-fix" type="text" placeholder="地址" name="address" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">城市/乡镇</label>
+                    <div class="input-icon">
+                        <i class="fa fa-location-arrow"></i>
+                        <input class="form-control placeholder-no-fix" type="text" placeholder="城市/乡镇" name="city" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">国家</label>
+                    <select name="country" id="country_list" class="select2 form-control">
+                        <option value="">选择国家</option>
+                        <option value="CN">中国</option>
+                        <option value="AF">阿富汗</option>
+                        <option value="AL">阿尔巴尼亚</option>
+                        <option value="DZ">阿尔及利亚</option>
+                        <option value="AS">美国萨摩亚</option>
+                        <option value="AD">安道尔</option>
+                        <option value="AO">安哥拉</option>
+                        <option value="AI">安圭拉</option>
+                        <option value="AR">阿根廷</option>
+                        <option value="AM">亚美尼亚</option>
+                        <option value="AW">阿鲁巴</option>
+                        <option value="AU">澳大利亚</option>
+                        <option value="AT">奥地利</option>
+                        <option value="AZ">阿塞拜疆</option>
+                        <option value="BS">巴哈马</option>
+                        <option value="BH">巴林</option>
+                        <option value="BD">孟加拉国</option>
+                        <option value="BB">巴巴多斯</option>
+                        <option value="BY">白俄罗斯</option>
+                        <option value="BE">比利时</option>
+                        <option value="BZ">伯利兹</option>
+                        <option value="BJ">贝宁</option>
+                        <option value="BM">百慕大群岛</option>
+                        <option value="BT">不丹</option>
+                        <option value="BO">玻利维亚</option>
+                        <option value="BA">Bosnia和Herzegowina</option>
+                        <option value="BW">博茨瓦纳</option>
+                        <option value="BV">布维岛</option>
+                        <option value="BR">巴西</option>
+                        <option value="IO">英属印度洋领地</option>
+                        <option value="BN">文莱达鲁萨兰国</option>
+                        <option value="BG">保加利亚</option>
+                        <option value="BF">布基纳法索</option>
+                        <option value="BI">布隆迪</option>
+                        <option value="KH">柬埔寨</option>
+                        <option value="CM">喀麦隆</option>
+                        <option value="CA">加拿大</option>
+                        <option value="CV">佛得角</option>
+                        <option value="KY">开曼群岛</option>
+                        <option value="CF">中非共和国</option>
+                        <option value="TD">乍得</option>
+                        <option value="CL">智利</option>
+                        <option value="CX">圣诞岛</option>
+                        <option value="CC">科科斯（基林）群岛</option>
+                        <option value="CO">哥伦比亚</option>
+                        <option value="KM">科摩罗</option>
+                        <option value="CG">刚果</option>
+                        <option value="CD">刚果民主共和国</option>
+                        <option value="CK">库克群岛</option>
+                        <option value="CR">哥斯达黎加</option>
+                        <option value="CI">科特迪瓦</option>
+                        <option value="HR">克罗地亚（克罗地亚）</option>
+                        <option value="CU">古巴</option>
+                        <option value="CY">塞浦路斯</option>
+                        <option value="CZ">捷克共和国</option>
+                        <option value="DK">丹麦</option>
+                        <option value="DJ">吉布提</option>
+                        <option value="DM">多米尼加</option>
+                        <option value="DO">多明尼加共和国</option>
+                        <option value="EC">厄瓜多尔</option>
+                        <option value="EG">埃及</option>
+                        <option value="SV">萨尔瓦多</option>
+                        <option value="GQ">赤道几内亚</option>
+                        <option value="ER">厄立特里亚</option>
+                        <option value="EE">爱沙尼亚</option>
+                        <option value="ET">埃塞俄比亚</option>
+                        <option value="FK">福克兰群岛（Malvinas）</option>
+                        <option value="FO">法罗群岛</option>
+                        <option value="FJ">斐济</option>
+                        <option value="FI">芬兰</option>
+                        <option value="FR">法国</option>
+                        <option value="GF">法属圭亚那</option>
+                        <option value="PF">法属波利尼西亚</option>
+                        <option value="TF">法属南半球领地</option>
+                        <option value="GA">加蓬</option>
+                        <option value="GM">冈比亚</option>
+                        <option value="GE">佐治亚州</option>
+                        <option value="DE">德国</option>
+                        <option value="GH">加纳</option>
+                        <option value="GI">直布罗陀</option>
+                        <option value="GR">希腊</option>
+                        <option value="GL">格陵兰岛</option>
+                        <option value="GD">格林纳达</option>
+                        <option value="GP">瓜德罗普岛</option>
+                        <option value="GU">关岛</option>
+                        <option value="GT">危地马拉</option>
+                        <option value="GN">几内亚</option>
+                        <option value="GW">几内亚比绍</option>
+                        <option value="GY">圭亚那</option>
+                        <option value="HT">海地</option>
+                        <option value="HM">听到和马克唐纳群岛</option>
+                        <option value="VA">圣见（梵蒂冈城国）</option>
+                        <option value="HN">洪都拉斯</option>
+                        <option value="HK">香港</option>
+                        <option value="HU">匈牙利</option>
+                        <option value="IS">冰岛</option>
+                        <option value="IN">印度</option>
+                        <option value="ID">印度尼西亚</option>
+                        <option value="IR">伊朗（伊斯兰共和国）</option>
+                        <option value="IQ">伊拉克</option>
+                        <option value="IE">爱尔兰</option>
+                        <option value="IL">以色列</option>
+                        <option value="IT">意大利</option>
+                        <option value="JM">牙买加</option>
+                        <option value="JP">日本</option>
+                        <option value="JO">乔丹</option>
+                        <option value="KZ">哈萨克斯坦</option>
+                        <option value="KE">肯尼亚</option>
+                        <option value="KI">基里巴斯</option>
+                        <option value="KP">韩国，民主人民共和国</option>
+                        <option value="KR">韩国共和国</option>
+                        <option value="KW">科威特</option>
+                        <option value="KG">吉尔吉斯斯坦</option>
+                        <option value="LA">老挝人民民主共和国</option>
+                        <option value="LV">拉脱维亚</option>
+                        <option value="LB">黎巴嫩</option>
+                        <option value="LS">莱索托</option>
+                        <option value="LR">利比里亚</option>
+                        <option value="LY">阿拉伯利比亚</option>
+                        <option value="LI">列支敦士登</option>
+                        <option value="LT">立陶宛</option>
+                        <option value="LU">卢森堡</option>
+                        <option value="MO">澳门</option>
+                        <option value="MK">马其顿、前南斯拉夫的马其顿共和国</option>
+                        <option value="MG">马达加斯加</option>
+                        <option value="MW">马拉维</option>
+                        <option value="MY">马来西亚</option>
+                        <option value="MV">马尔代夫</option>
+                        <option value="ML">马里</option>
+                        <option value="MT">马耳他</option>
+                        <option value="MH">马绍尔群岛</option>
+                        <option value="MQ">马提尼克</option>
+                        <option value="MR">毛里塔尼亚</option>
+                        <option value="MU">毛里求斯</option>
+                        <option value="YT">马约特岛</option>
+                        <option value="MX">墨西哥</option>
+                        <option value="FM">密克罗尼西亚，联合国</option>
+                        <option value="MD">摩尔多瓦共和国</option>
+                        <option value="MC">摩纳哥</option>
+                        <option value="MN">蒙古</option>
+                        <option value="MS">蒙特塞拉特岛</option>
+                        <option value="MA">摩洛哥</option>
+                        <option value="MZ">莫桑比克</option>
+                        <option value="MM">缅甸</option>
+                        <option value="NA">纳米比亚</option>
+                        <option value="NR">瑙鲁</option>
+                        <option value="NP">尼泊尔</option>
+                        <option value="NL">荷兰</option>
+                        <option value="AN">荷属安的列斯群岛</option>
+                        <option value="NC">新喀里多尼亚</option>
+                        <option value="NZ">新西兰</option>
+                        <option value="NI">尼加拉瓜</option>
+                        <option value="NE">尼日尔</option>
+                        <option value="NG">尼日利亚</option>
+                        <option value="NU">纽埃</option>
+                        <option value="NF">诺福克岛</option>
+                        <option value="MP">北马里亚纳群岛</option>
+                        <option value="NO">挪威</option>
+                        <option value="OM">阿曼</option>
+                        <option value="PK">巴基斯坦</option>
+                        <option value="PW">帕劳</option>
+                        <option value="PA">巴拿马</option>
+                        <option value="PG">巴布亚新几内亚</option>
+                        <option value="PY">巴拉圭</option>
+                        <option value="PE">秘鲁</option>
+                        <option value="PH">菲律宾</option>
+                        <option value="PN">皮特凯恩</option>
+                        <option value="PL">波兰</option>
+                        <option value="PT">葡萄牙</option>
+                        <option value="PR">波多黎各</option>
+                        <option value="QA">卡塔尔</option>
+                        <option value="RE">重聚</option>
+                        <option value="RO">罗马尼亚</option>
+                        <option value="RU">俄罗斯联邦</option>
+                        <option value="RW">卢旺达</option>
+                        <option value="KN">Saint Kitts和尼维斯</option>
+                        <option value="LC">圣露西亚</option>
+                        <option value="VC">Saint Vincent和格林纳丁斯</option>
+                        <option value="WS">萨摩亚</option>
+                        <option value="SM">圣马力诺</option>
+                        <option value="ST">圣多美和普林西比</option>
+                        <option value="SA">沙特阿拉伯</option>
+                        <option value="SN">塞内加尔</option>
+                        <option value="SC">塞舌尔</option>
+                        <option value="SL">塞拉利昂</option>
+                        <option value="SG">新加坡</option>
+                        <option value="SK">斯洛伐克（斯洛伐克共和国）</option>
+                        <option value="SI">斯洛文尼亚</option>
+                        <option value="SB">所罗门群岛</option>
+                        <option value="SO">索马里</option>
+                        <option value="ZA">南非</option>
+                        <option value="GS">南乔治亚岛和南三明治群岛</option>
+                        <option value="ES">西班牙</option>
+                        <option value="LK">斯里兰卡</option>
+                        <option value="SH">圣海伦娜</option>
+                        <option value="PM">圣彼埃尔和Miquelon</option>
+                        <option value="SD">苏丹</option>
+                        <option value="SR">苏里南</option>
+                        <option value="SJ">斯瓦尔巴群岛</option>
+                        <option value="SZ">斯威士兰</option>
+                        <option value="SE">瑞典</option>
+                        <option value="CH">瑞士</option>
+                        <option value="SY">阿拉伯叙利亚共和国</option>
+                        <option value="TW">台湾省中国</option>
+                        <option value="TJ">塔吉克斯坦</option>
+                        <option value="TZ">坦桑尼亚，联合共和国</option>
+                        <option value="TH">泰国</option>
+                        <option value="TG">多哥</option>
+                        <option value="TK">托克劳群岛</option>
+                        <option value="TO">汤加</option>
+                        <option value="TT">特立尼达和多巴哥</option>
+                        <option value="TN">突尼斯</option>
+                        <option value="TR">土耳其</option>
+                        <option value="TM">土库曼斯坦</option>
+                        <option value="TC">土耳其和凯科斯群岛</option>
+                        <option value="TV">图瓦卢</option>
+                        <option value="UG">乌干达</option>
+                        <option value="UA">乌克兰</option>
+                        <option value="AE">阿拉伯联合酋长国</option>
+                        <option value="GB">大不列颠联合王国</option>
+                        <option value="US">美国</option>
+                        <option value="UM">美国小外围岛屿</option>
+                        <option value="UY">乌拉圭</option>
+                        <option value="UZ">乌兹别克斯坦</option>
+                        <option value="VU">瓦努阿图</option>
+                        <option value="VE">委内瑞拉</option>
+                        <option value="VN">越南</option>
+                        <option value="VG">英属处女群岛（英国）</option>
+                        <option value="VI">处女群岛（美国）</option>
+                        <option value="WF">沃利斯和富图纳群岛</option>
+                        <option value="EH">西撒哈拉</option>
+                        <option value="YE">也门</option>
+                        <option value="ZM">赞比亚</option>
+                        <option value="ZW">津巴布韦</option>
+                    </select>
+                </div>
+                <p> 请输入您的帐户详细信息: </p>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="用户名" name="username" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="密码" name="password" /> </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">重新键入您的密码</label>
+                    <div class="controls">
+                        <div class="input-icon">
+                            <i class="fa fa-check"></i>
+                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="重新键入您的密码" name="rpassword" /> </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="mt-checkbox mt-checkbox-outline">
+                        <input type="checkbox" name="tnc" /> 我同意
+                        <a href="javascript:;">服务条款</a>和
+                        <a href="javascript:;">隐私政策</a>
+                        <span></span>
+                    </label>
+                    <div id="register_tnc_error"> </div>
+                </div>
+                <div class="form-actions">
+                    <button id="register-back-btn" type="button" class="btn red btn-outline"> 返回 </button>
+                    <button type="submit" id="register-submit-btn" class="btn green pull-right"> 注册 </button>
+                </div>
+            </form>
+        </div>
+        <!--[if lt IE 9]>
+				<script src="../assets/global/plugins/respond.min.js"></script>
+				<script src="../assets/global/plugins/excanvas.min.js"></script> 
+				<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
+		<![endif]-->
+        <script src="../assets/global/plugins/jquery.min.js"></script>
+        <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/global/plugins/js.cookie.min.js"></script>
+        <script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../assets/global/plugins/jquery.blockui.min.js"></script>
+        <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+        <script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+        <script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+        <script src="../assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js" charset="utf-8"></script>
+        <script src="../assets/global/plugins/select2/js/select2.full.min.js"></script>
+        <script src="../assets/global/plugins/select2/js/i18n/zh-CN.js" charset="utf-8"></script>
+        <script src="../assets/global/plugins/backstretch/jquery.backstretch.min.js"></script>
+        <script src="../assets/global/scripts/app.min.js"></script>
+        <script src="../assets/pages/scripts/login-4.min.js"></script>
+        <script type="text/javascript">
+            function click(e)
+            {
+                if (document.all)
+                {
+                    if (event.button == 2 || event.button == 3)
+                    {
+                        alert("欢迎光临寒舍，有什么需要帮忙的话，请与站长联系！谢谢您的合作！！！");
+                        oncontextmenu = 'return false';
+                    }
+                }
+                if (document.layers)
+                {
+                    if (e.which == 3)
+                    {
+                        oncontextmenu = 'return false';
+                    }
+                }
+            }
+            if (document.layers)
+            {
+                document.captureEvents(Event.MOUSEDOWN);
+            }
+            document.onmousedown = click;
+            document.oncontextmenu = new Function("return false;")
+            document.onkeydown = document.onkeyup = document.onkeypress = function()
+            {
+                if (window.event.keyCode == 123)
+                {
+                    window.event.returnValue = false;
+                    return (false);
+                }
+            }
+        </script>
+    </body>
+
+</html>

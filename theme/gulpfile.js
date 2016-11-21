@@ -116,6 +116,24 @@ gulp.task('minify', function() {
 	gulp.src(['./assets/chart-app/qixianchuan-demo3.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
 		suffix: '.min'
 	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo4.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo5.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo6.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo7.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo-login.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
+	gulp.src(['./assets/chart-app/qixianchuan-demo1.js', '!./assets/chart-app/*.min.js']).pipe(uglify()).pipe(rename({
+		suffix: '.min'
+	})).pipe(gulp.dest('./assets/chart-app/'));
 });
 
 //*** RTL convertor task

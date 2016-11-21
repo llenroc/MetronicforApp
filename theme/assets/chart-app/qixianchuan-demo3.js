@@ -41,7 +41,7 @@ function CreateAngularGaugeChart(id, AngularGaugeChart) {
 					"borderThickness": "1",
 					//"borderAlpha": "90",
 					//"manageresize": "1",
-					"alignCaptionWithCanvas":"1",
+					"alignCaptionWithCanvas": "1",
 					//"captionOnTop": "1",
 					"captionAlignment": "left",
 					"caption": AngularGaugeChart.chart.caption,
@@ -505,4 +505,98 @@ function init(evt) {
 	loadMessage.dataLoadErrorMessage = "加载数据中的错误";
 	loadMessage.dataLoadStartMessage = "检索数据。请稍等";
 	loadMessage.typeNotSupportedMessage = "不支持图表类型";
+}
+$(function() {
+	$("#equipment-small").hover(function() {
+		$("#tree_2").stop().show(300);
+	}, function() {
+		$("#tree_2").stop().hide(300);
+	});
+	$('#tree_2').jstree({
+		'plugins': ["wholerow", "checkbox", "types"],
+		'core': {
+			"themes": {
+				"responsive": false
+			},
+			'data': [{
+				"id": "1",
+				"text": "设备制造商",
+				"children": [{
+					"id": "11",
+					"text": "福建某集团",
+					"state": {
+						"selected": true
+					}
+				}, {
+					"id": "12",
+					"text": "天津某企业"
+				}, {
+					"id": "13",
+					"text": "成都某企业",
+					"state": {
+						"opened": true
+					},
+					"children": [{
+						"id": "131",
+						"text": "成都市某某公司"
+					}]
+				}, {
+					"id": "15",
+					"text": "贵州某公司"
+				}]
+			}, {
+				"id": "2",
+				"text": "天津某公司",
+				"state": {
+					"opened": true
+				},
+				"children": [{
+					"id": "21",
+					"text": "深圳某企业"
+				}]
+			}]
+		},
+		"types": {
+			"default": {
+				"icon": "fa fa-folder icon-state-warning icon-lg"
+			},
+			"file": {
+				"icon": "fa fa-file icon-state-warning icon-lg"
+			}
+		}
+	});
+	$('#tree_2').on("changed.jstree", function(e, data) {
+		var i, j, r = [];
+		for(i = 0, j = data.selected.length; i < j; i++) {
+			if(data.instance.get_node(data.selected[i]).text !== 'initially selected') {
+				r.push(data.instance.get_node(data.selected[i]).text);
+			}
+		}
+		$('#equipmentval').val(r.join(', '));
+	}).jstree();
+})
+
+function click(e) {
+	if(document.all) {
+		if(event.button == 2 || event.button == 3) {
+			alert("欢迎光临寒舍，有什么需要帮忙的话，请与站长联系！谢谢您的合作！！！");
+			oncontextmenu = 'return false';
+		}
+	}
+	if(document.layers) {
+		if(e.which == 3) {
+			oncontextmenu = 'return false';
+		}
+	}
+}
+if(document.layers) {
+	document.captureEvents(Event.MOUSEDOWN);
+}
+document.onmousedown = click;
+document.oncontextmenu = new Function("return false;")
+document.onkeydown = document.onkeyup = document.onkeypress = function() {
+	if(window.event.keyCode == 123) {
+		window.event.returnValue = false;
+		return(false);
+	}
 }

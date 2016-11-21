@@ -779,7 +779,9 @@ body {
   .input-group .equipment {
     width: 88%; }
   #equipment1 {
-    width: 86%; } }
+    width: 86%; }
+  .control-label {
+    margin-top: 7px; } }
 
 /*大屏幕*/
 @media (min-width: 1367px) {

@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
 
-	<body ng-app="myApp">
-		<div ng-controller="MyController">
-			<div fusioncharts width="170" height="160" type="angulargauge" dataSource="{{myDataSource}}">
-			</div>
-		</div>
-		<script src="js/fusioncharts.js" type="text/javascript"></script>
-		<script src="../../assets/global/plugins/angularjs/angular.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="plugin/angular-fusioncharts.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/themes/fusioncharts.theme.fint.js"></script>
-		<script type="text/javascript">
-			var app = angular.module("myApp", ["ng-fusioncharts"]);
-			app.controller('MyController', function($scope) {
-				$scope.myDataSource = {
-					"chart": {
-						"showBorder": "1",
-						"captionOnTop": "1",
-						"captionAlignment": "left",
-						"caption": "AngularGaugeChart",
-						"captionFontSize": "15",
-						"captionFontColor": "#ffffff",
-						"subcaption": "subcaption",
-						"subCaptionFontSize": "12",
-						"subCaptionFontColor": "#ffffff",
-						"gaugeStartAngle": "180",
-						"gaugeEndAngle": "90",
-						"lowerLimit": "0",
-						"upperLimit": "100",
-						"showTooltip": "1",
-						"gaugeInnerRadius": "98%",
-						"majorTMColor": "#ffffff",
-						"baseFontColor": "#ffffff",
-						"bgColor": "438383,76BBB6",
-						"bgratio": "10,90",
-						"bgAlpha": "100,100",
-						"showValue": "1",
-						"placeValuesInside": "1",
-						"theme": "fint"
-					},
-					"colorRange": {
-						"color": [{
-							"code": "#FFFFFF"
-						}]
-					},
-					"dials": {
-						"dial": [{
-							"value": "20",
-							"borderAlpha": "10",
-							"bgColor": "#549997,#1A625C,#549997"
-						}]
-					}
-				};
-			});
-		</script>
-	</body>
+    <body ng-app="myApp">
+        <div ng-controller="MyController">
+            <div fusioncharts width="170" height="160" type="angulargauge" dataSource="{{myDataSource}}"> </div>
+        </div>
+        <script src="js/fusioncharts.js" type="text/javascript"></script>
+        <script src="../../assets/global/plugins/angularjs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="plugin/angular-fusioncharts.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/themes/fusioncharts.theme.fint.js"></script>
+        <script type="text/javascript">
+            var app = angular.module("myApp", ["ng-fusioncharts"]);
+            app.controller('MyController', function($scope)
+            {
+                $scope.myDataSource = {
+                    "chart":
+                    {
+                        "showBorder": "1",
+                        "captionOnTop": "1",
+                        "captionAlignment": "left",
+                        "caption": "AngularGaugeChart",
+                        "captionFontSize": "15",
+                        "captionFontColor": "#ffffff",
+                        "subcaption": "subcaption",
+                        "subCaptionFontSize": "12",
+                        "subCaptionFontColor": "#ffffff",
+                        "gaugeStartAngle": "180",
+                        "gaugeEndAngle": "90",
+                        "lowerLimit": "0",
+                        "upperLimit": "100",
+                        "showTooltip": "1",
+                        "gaugeInnerRadius": "98%",
+                        "majorTMColor": "#ffffff",
+                        "baseFontColor": "#ffffff",
+                        "bgColor": "438383,76BBB6",
+                        "bgratio": "10,90",
+                        "bgAlpha": "100,100",
+                        "showValue": "1",
+                        "placeValuesInside": "1",
+                        "theme": "fint"
+                    },
+                    "colorRange":
+                    {
+                        "color": [
+                        {
+                            "code": "#FFFFFF"
+                        }]
+                    },
+                    "dials":
+                    {
+                        "dial": [
+                        {
+                            "value": "20",
+                            "borderAlpha": "10",
+                            "bgColor": "#549997,#1A625C,#549997"
+                        }]
+                    }
+                };
+            });
+        </script>
+    </body>
 
 </html>
